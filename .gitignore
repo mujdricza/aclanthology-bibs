@@ -1,3 +1,7 @@
+# Default output path #
+#######################
+outputs/data_acl/
+
 # Compiled source #
 ###################
 *.com
