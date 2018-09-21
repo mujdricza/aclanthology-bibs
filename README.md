@@ -15,7 +15,27 @@ Use at least python 3.6.
 # Use
 
 e.g. 
-> python3.6 aclantology_bibfiles_downloader.py ../outputs/data_acl_exp/ keep > ../outputs/data_acl_exp/out_downloadall_keep.txt
+```
+$ python aclantology_bibfiles_downloader.py 
+
+usage: aclantology_bibfiles_downloader.py [-h] -o OUTPUT_PATH
+                                             [-f DO_KEEP_OVERVIEW_FILES]
+                                             [-y YEAR]
+
+downloads bib files for the journals of ACL anthology
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT_PATH        path for the downloaded bib files -- it will be reused
+                        if already existing
+  -f DO_KEEP_OVERVIEW_FILES
+                        whether to keep intermediate overview files (if True:
+                        keep them in a subfolder, else they will be deleted at
+                        the end of the process)
+  -y YEAR               optional argument for downloading bibfiles for one
+                        particular year; format: yyyy
+
+```
 
 (Details see in code. If you only want to download the first _n_ pages, adjust the variable _last_page_ in the code.)
 
