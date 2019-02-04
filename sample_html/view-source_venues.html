@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>
+
+
+      ACL Anthology
+    </title>
+    <link href="https://aclanthology.info/catalog/opensearch.xml" title="ACL Anthology" type="application/opensearchdescription+xml" rel="search"/>
+    <link href="/assets/aclicon-4b361d20024e07166116ed729b9dc696.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/assets/application-df3251187e128df55318b4136dccc705.css" media="screen" rel="stylesheet" />
+    <script src="/assets/application-61ecc8e8991d256e6abe6abf56a78a80.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="beFmi0wT1LpS9JKGd5sWBt9OH2W+OYURnObYvXLiXn4=" name="csrf-token" />
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/flot/excanvas.min-acb26f3790770ef2451a6af29a42b712.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="blacklight-venues blacklight-venues-index">
+  <div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+ <div class="navbar-inner">
+  <div class="container">
+    <div class="row">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="span3">
+        <a class="brand" href="/">ACL Anthology</a>
+      </div>
+      <div class="span6 clearfix" id="searchbar">
+          <form accept-charset="UTF-8" action="https://aclanthology.info/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+
+      <div class="pull-left">
+        <label for="search_field" class="hide-text">Search in</label>
+        <select class="search_field input-small" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="publish_date">Year</option>
+<option value="venue_name">Venue</option>
+<option value="sig_name">SIG</option></select>
+        <span class="hide-text">for</span>
+      </div>
+       <div class="input-append pull-left">
+        <label for="q" class="hide-text">Search...</label>
+         <input class="search_q q" id="q" name="q" placeholder="Search..." type="text" />
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text">Search</span>
+          <i class="icon-search icon-white"></i>
+        </button>
+
+       </div>
+
+</form>
+      </div>
+
+      <div class="span3 nav-collapse">
+            <div class="util-links-login">
+        <a href="/users/sign_in">Login</a>
+    </div>
+
+
+  <div class="util-links-other">
+      <a href="/bookmarks">Bookmarks</a>
+    |
+    <a href="/search_history">History</a>
+  </div>
+
+        <!--% render :partial=>'shared/facets' %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- /container -->
+  <div id="main-container" class="container">
+            <!-- Top bar -->
+            <div id="search-found" class="row hidden-phone">
+
+            </div>
+            <!-- /Top bar -->
+            <div id="content" class="row">
+                <div class="span12">
+                  <div id="main-flashes">
+                    <div class="flash_messages">
+</div>
+
+                  </div>
+                  <div class="page-header">
+  <h1>Venues</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Acronym</th>
+      <th>Name</th>
+      <th>Venue type</th>
+      <!-- <th>Actions</th> -->
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>CL</td>
+        <td><a href="/venues/cl">Computational Linguistics Journal</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TACL</td>
+        <td><a href="/venues/tacl">Transactions of the Association for Computational Linguistics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/tacl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/tacl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ACL</td>
+        <td><a href="/venues/acl">ACL Annual Meeting</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/acl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/acl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EACL</td>
+        <td><a href="/venues/eacl">European Chapter of ACL</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/eacl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/eacl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NAACL</td>
+        <td><a href="/venues/naacl">North American Chapter of ACL</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/naacl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/naacl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>*SEMEVAL</td>
+        <td><a href="/venues/semeval">Lexical and Computational Semantics and Semantic Evaluation (formerly Workshop on Sense Evaluation)</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/semeval/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/semeval" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ANLP</td>
+        <td><a href="/venues/anlp">Applied Natural Language Processing Conference</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/anlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/anlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EMNLP</td>
+        <td><a href="/venues/emnlp">Conference on Empirical Methods in Natural Language Processing (and forerunners)</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/emnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/emnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>COLING</td>
+        <td><a href="/venues/coling">Int&#39;l Committee on Computational Linguistics (ICCL) Conf.</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/coling/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/coling" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>HLT</td>
+        <td><a href="/venues/hlt">Human Language Technology Conf.</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/hlt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/hlt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>IJCNLP</td>
+        <td><a href="/venues/ijcnlp">Int&#39;l Joint Conf. on Natural Language Processing (and workshops)</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ijcnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ijcnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LREC</td>
+        <td><a href="/venues/lrec">International Conference on Language Resources and Evaluation</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lrec/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lrec" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>PACLIC</td>
+        <td><a href="/venues/paclic">Pacific Asia Conference on Language, Information and Computation</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/paclic/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/paclic" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ROCLING/IJCLCLP</td>
+        <td><a href="/venues/rocling-ijclclp">Rocling Computation Linguistics Conference and Journal</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/rocling-ijclclp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/rocling-ijclclp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TINLAP</td>
+        <td><a href="/venues/tinlap">Theoretical Issues In Natural Language Processing</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/tinlap/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/tinlap" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ALTA</td>
+        <td><a href="/venues/alta">Australasian Language Technology Association Workshop</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/alta/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/alta" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>RANLP</td>
+        <td><a href="/venues/ranlp">International Conference Recent Advances in Natural Language Processing</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ranlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ranlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>JEP/TALN/RECITAL</td>
+        <td><a href="/venues/jep-taln-recital">JEP/TALN/RECITAL</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/jep-taln-recital/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/jep-taln-recital" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>MUC</td>
+        <td><a href="/venues/muc">Message Understanding Conf.</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/muc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/muc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TIPSTER</td>
+        <td><a href="/venues/tipster">NIST&#39;s TIPSTER Text Program</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/tipster/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/tipster" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LAW</td>
+        <td><a href="/venues/law">Linguistic Annotation Workshop</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/law/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/law" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>BioNLP</td>
+        <td><a href="/venues/bionlp">Biomedical Natural Language Processing Workshop</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/bionlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/bionlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>VLC</td>
+        <td><a href="/venues/vlc">Workshop on Very Large Corpora</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/vlc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/vlc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SIGDIAL</td>
+        <td><a href="/venues/sigdial">SIGDial Conference</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sigdial/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sigdial" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>FSMNLP</td>
+        <td><a href="/venues/fsmnlp">International Conference on Finite State Methods for Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/fsmnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/fsmnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ATANLP</td>
+        <td><a href="/venues/atanlp">Workshop on Applications of Tree Automata Techniques in Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/atanlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/atanlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>INLG</td>
+        <td><a href="/venues/inlg">International Natural Language Generation Conference</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/inlg/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/inlg" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ENLG</td>
+        <td><a href="/venues/enlg">European Workshop on Natural Language Generation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/enlg/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/enlg" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SIGHAN</td>
+        <td><a href="/venues/sighan">SIGHAN Workshop on Chinese Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sighan/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sighan" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LaTeCH</td>
+        <td><a href="/venues/latech">Workshop on Language Technology for Cultural Heritage, Social Sciences, and Humanities</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/latech/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/latech" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>MoL</td>
+        <td><a href="/venues/mol">Meeting on the Mathematics of Language</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/mol/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/mol" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WMT</td>
+        <td><a href="/venues/wmt">Workshop on Statistical Machine Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wmt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wmt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SSST</td>
+        <td><a href="/venues/ssst">Workshop on Syntax, Semantics and Structure in Statistical Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ssst/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ssst" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CONLL</td>
+        <td><a href="/venues/conll">Conference on Computational Natural Language Learning</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/conll/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/conll" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ALNLP</td>
+        <td><a href="/venues/alnlp">Workshop on Active Learning for Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/alnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/alnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WASSA</td>
+        <td><a href="/venues/wassa">Workshop on Computational Approaches to Subjectivity and Sentiment Analysis</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wassa/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wassa" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>IWPT</td>
+        <td><a href="/venues/iwpt">International Conference on Parsing Technologies</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/iwpt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/iwpt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SPMRL</td>
+        <td><a href="/venues/spmrl">Workshop on Statistical Parsing of Morphologically Rich Languages</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/spmrl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/spmrl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SIGMORPHON</td>
+        <td><a href="/venues/sigmorphon">Meeting of the ACL Special Interest Group on Computational Morphology and Phonology</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sigmorphon/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sigmorphon" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>*SEM</td>
+        <td><a href="/venues/sem">Joint Conference on Lexical and Computational Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sem/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sem" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>COSLI</td>
+        <td><a href="/venues/cosli">Workshop on Computational Models of Spatial Language Interpretation and Generation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cosli/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cosli" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WAMM</td>
+        <td><a href="/venues/wamm">Workshop on Annotation of Modal Meanings in Natural Language</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wamm/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wamm" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>GEMS</td>
+        <td><a href="/venues/gems">GEometrical Models of Natural Language Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/gems/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/gems" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>IWCS</td>
+        <td><a href="/venues/iwcs">International Conference on Computational Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/iwcs/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/iwcs" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>GL</td>
+        <td><a href="/venues/gl">International Conference on the Generative Lexicon</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/gl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/gl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TextInfer</td>
+        <td><a href="/venues/textinfer">Workshop on Textual Entailment</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/textinfer/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/textinfer" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NeSp-NLP</td>
+        <td><a href="/venues/nesp-nlp">Negation and Speculation in Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nesp-nlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nesp-nlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>PREP</td>
+        <td><a href="/venues/prep">Workshop on Prepositions</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/prep/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/prep" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ICoS</td>
+        <td><a href="/venues/icos">International Workshop on Inference in Computational Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/icos/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/icos" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>STEP</td>
+        <td><a href="/venues/step">Semantics in Text Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/step/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/step" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SEW</td>
+        <td><a href="/venues/sew">Workshop on Semantic Evaluations</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sew/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sew" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WS</td>
+        <td><a href="/venues/ws">Other Workshops and Events</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ws/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ws" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SEMITIC</td>
+        <td><a href="/venues/semitic">Workshop on Computational Approaches to Semitic Languages</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/semitic/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/semitic" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>PITR</td>
+        <td><a href="/venues/pitr">Workshop on Predicting and Improving Text Readability for Target Reader Populations</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/pitr/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/pitr" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SLPAT</td>
+        <td><a href="/venues/slpat">Workshop on Speech and Language Processing for Assistive Technologies</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/slpat/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/slpat" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WAC</td>
+        <td><a href="/venues/wac">Workshop on Web as Corpus</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wac/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wac" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CVIR</td>
+        <td><a href="/venues/cvir">Content Visualization and Intermedia Representations</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cvir/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cvir" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>GWC</td>
+        <td><a href="/venues/gwc">Global WordNet Conference</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/gwc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/gwc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CogACLL</td>
+        <td><a href="/venues/cogacll">Workshop on Cognitive Aspects of Computational Language Learning</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cogacll/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cogacll" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CAtoCL</td>
+        <td><a href="/venues/catocl">Workshop on Computational Approaches to Causality in Language</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/catocl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/catocl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>MWE</td>
+        <td><a href="/venues/mwe">Workshop on Multiword Expressions</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/mwe/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/mwe" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CLFL</td>
+        <td><a href="/venues/clfl">Workshop on Computational Linguistics for Literature</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/clfl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/clfl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>HyTra</td>
+        <td><a href="/venues/hytra">Workshop on Hybrid Approaches to Machine Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/hytra/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/hytra" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Louhi</td>
+        <td><a href="/venues/louhi">International Workshop on Health Text Mining and Information Analysis</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/louhi/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/louhi" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LASM</td>
+        <td><a href="/venues/lasm">Workshop on Language Analysis for Social Media</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lasm/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lasm" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EVENTS</td>
+        <td><a href="/venues/events">Workshop on EVENTS</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/events/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/events" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TTNLS</td>
+        <td><a href="/venues/ttnls">Workshop on Type Theory and Natural Language Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ttnls/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ttnls" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CVSC</td>
+        <td><a href="/venues/cvsc">Workshop on Continuous Vector Space Models and their Compositionality</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cvsc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cvsc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LG-LP</td>
+        <td><a href="/venues/lg-lp">Workshop on Lexical and Grammatical Resources for Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lg-lp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lg-lp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WANLP</td>
+        <td><a href="/venues/wanlp">Workshop on Arabic Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wanlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wanlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CodeSwitch</td>
+        <td><a href="/venues/codeswitch">Workshop on Computational Approaches to Code Switching</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/codeswitch/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/codeswitch" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>MOOCs</td>
+        <td><a href="/venues/moocs">Workshop on Modeling Large Scale Social Interaction In Massively Open Online Courses</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/moocs/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/moocs" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LT4VAR</td>
+        <td><a href="/venues/lt4var">Workshop on Language Technology for Closely Related Languages and Language Variants</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lt4var/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lt4var" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CogALex</td>
+        <td><a href="/venues/cogalex">Workshop on Cognitive Aspects of the Lexicon</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cogalex/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cogalex" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WSSANLP</td>
+        <td><a href="/venues/wssanlp">Workshop on South and Southeast Asian NLP</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wssanlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wssanlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ATS-MA</td>
+        <td><a href="/venues/ats-ma">Workshop on Automatic Text Simplification - Methods and Applications in the Multilingual Society</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ats-ma/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ats-ma" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ComAComA</td>
+        <td><a href="/venues/comacoma">Workshop on Computational Approaches to Compound Analysis</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/comacoma/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/comacoma" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SWAIE</td>
+        <td><a href="/venues/swaie">Workshop on Semantic Web and Information Extraction</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/swaie/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/swaie" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SADAATL</td>
+        <td><a href="/venues/sadaatl">Workshop on Synchronic and Diachronic Approaches to Analyzing Technical Language</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sadaatl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sadaatl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CompuTerm</td>
+        <td><a href="/venues/computerm">Workshop on Computational Terminology</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/computerm/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/computerm" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>OIAF4HLT</td>
+        <td><a href="/venues/oiaf4hlt">Workshop on Open Infrastructures and Analysis Frameworks for HLT</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/oiaf4hlt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/oiaf4hlt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>VarDial</td>
+        <td><a href="/venues/vardial">Workshop on Applying NLP Tools to Similar Languages, Varieties and Dialects</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/vardial/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/vardial" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>VL</td>
+        <td><a href="/venues/vl">Workshop on Vision and Language</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/vl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/vl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CLTW</td>
+        <td><a href="/venues/cltw">Celtic Language Technology Workshop</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cltw/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cltw" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>AHA</td>
+        <td><a href="/venues/aha">AHA!-Workshop on Information Discovery in Text</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/aha/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/aha" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLP4CALL</td>
+        <td><a href="/venues/nlp4call">Workshop on NLP for Computer-Assisted Language Learning</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlp4call/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlp4call" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WAT</td>
+        <td><a href="/venues/wat">Workshop on Asian Translation</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wat/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wat" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CSCT</td>
+        <td><a href="/venues/csct">Workshop on Computational Semantics in Clinical Text</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/csct/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/csct" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CoSLI</td>
+        <td><a href="/venues/cosli-99efb559-92fb-4ca6-b037-644e4849af80">Computational Models of Spatial Language Interpretation and Generation</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cosli-99efb559-92fb-4ca6-b037-644e4849af80/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cosli-99efb559-92fb-4ca6-b037-644e4849af80" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLP4ITA</td>
+        <td><a href="/venues/nlp4ita">Workshop on Natural Language Processing for Improving Textual Accessibility</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlp4ita/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlp4ita" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>DepLing</td>
+        <td><a href="/venues/depling">International Conference on Dependency Linguistics</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/depling/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/depling" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ALR</td>
+        <td><a href="/venues/alr">Workshop on Asian Language Resources</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/alr/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/alr" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>BUCC</td>
+        <td><a href="/venues/bucc">Workshop on Building and Using Comparable Corpora</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/bucc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/bucc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CMCL</td>
+        <td><a href="/venues/cmcl">Workshop on Cognitive Modeling and Computational Linguistics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cmcl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cmcl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SocialNLP</td>
+        <td><a href="/venues/socialnlp">Workshop on Natural Language Processing for Social Media</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/socialnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/socialnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>BEA</td>
+        <td><a href="/venues/bea">Workshop on Innovative Use of NLP for Building Educational Applications</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/bea/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/bea" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TextGraphs</td>
+        <td><a href="/venues/textgraphs">Graph-based Methods for Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/textgraphs/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/textgraphs" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TeachingNLP</td>
+        <td><a href="/venues/teachingnlp">Workshop on Teaching Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/teachingnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/teachingnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CLP</td>
+        <td><a href="/venues/clp">Chinese Language Processing</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/clp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/clp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NoDaLiDa</td>
+        <td><a href="/venues/nodalida">Nordic Conference of Computational Linguistics</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nodalida/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nodalida" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WNUT</td>
+        <td><a href="/venues/wnut">Workshop on Noisy User-generated Text</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/wnut/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/wnut" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NEWS</td>
+        <td><a href="/venues/news">Named Entities Workshop</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/news/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/news" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>S2MT</td>
+        <td><a href="/venues/s2mt">Workshop on Semantics-Driven Statistical Machine Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/s2mt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/s2mt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>GEAF</td>
+        <td><a href="/venues/geaf">Grammar Engineering Across Frameworks Workshop</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/geaf/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/geaf" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LDL</td>
+        <td><a href="/venues/ldl">Workshop on Linked Data in Linguistics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ldl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ldl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLP-TEA</td>
+        <td><a href="/venues/nlp-tea">Workshop on Natural Language Processing Techniques for Educational Applications</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlp-tea/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlp-tea" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CNewsStory</td>
+        <td><a href="/venues/cnewsstory">Workshop on Computing News Storylines</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cnewsstory/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cnewsstory" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EXprom</td>
+        <td><a href="/venues/exprom">Workshop on Extra-Propositional Aspects of Meaning in Computational Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/exprom/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/exprom" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Metaphor</td>
+        <td><a href="/venues/metaphor">Workshop on Metaphor in NLP</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/metaphor/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/metaphor" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LatentVar</td>
+        <td><a href="/venues/latentvar">Workshop on Vector Space Modeling for Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/latentvar/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/latentvar" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CLPsych</td>
+        <td><a href="/venues/clpsych">Workshop on Computational Linguistics and Clinical Psychology</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/clpsych/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/clpsych" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>DiscoMT</td>
+        <td><a href="/venues/discomt">Workshop on Discourse in Machine Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/discomt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/discomt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LSDSem</td>
+        <td><a href="/venues/lsdsem">Workshop on Linking Computational Models of Lexical, Sentential and Discourse-level Semantics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lsdsem/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lsdsem" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EAMT</td>
+        <td><a href="/venues/eamt">Conference of the European Association for Machine Translation</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/eamt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/eamt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>BSNLP</td>
+        <td><a href="/venues/bsnlp">Workshop on Balto-Slavic Natural Language Processing</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/bsnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/bsnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLP4TM</td>
+        <td><a href="/venues/nlp4tm">Workshop on Natural Language Processing for Translation Memories</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlp4tm/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlp4tm" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLPLOD</td>
+        <td><a href="/venues/nlplod">Workshop on Natural Language Processing and Linked Open Data</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlplod/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlplod" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>STIL</td>
+        <td><a href="/venues/stil">Brazilian Symposium in Information and Human Language Technology</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/stil/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/stil" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>DMTW</td>
+        <td><a href="/venues/dmtw">Deep Machine Translation Workshop</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/dmtw/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/dmtw" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SedMT</td>
+        <td><a href="/venues/sedmt">Workshop on Semantics-Driven Machine Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sedmt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sedmt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CORBON</td>
+        <td><a href="/venues/corbon">Workshop on Coreference Resolution Beyond OntoNotes</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/corbon/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/corbon" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>AKBC</td>
+        <td><a href="/venues/akbc">Workshop on Automated Knowledge Base Construction</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/akbc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/akbc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>BIRNDL</td>
+        <td><a href="/venues/birndl">Joint Workshop on Bibliometric-enhanced Information Retrieval and Natural Language Processing for Digital Libraries</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/birndl/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/birndl" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TAG+</td>
+        <td><a href="/venues/tag">International Workshop on Tree Adjoining Grammars and Related Formalisms</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/tag/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/tag" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ArgMining</td>
+        <td><a href="/venues/argmining">Workshop on Argument Mining</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/argmining/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/argmining" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>RepEval</td>
+        <td><a href="/venues/repeval">Workshop on Evaluating Vector-Space Representations for NLP</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/repeval/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/repeval" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Rep4NLP</td>
+        <td><a href="/venues/rep4nlp">Workshop on Representation Learning for NLP</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/rep4nlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/rep4nlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>BioASQ</td>
+        <td><a href="/venues/bioasq">BioASQ Workshop</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/bioasq/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/bioasq" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>StatFSM</td>
+        <td><a href="/venues/statfsm">Workshop on Statistical NLP and Weighted Automata</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/statfsm/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/statfsm" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WebNLG</td>
+        <td><a href="/venues/webnlg">International Workshop on Natural Language Generation and the Semantic Web</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/webnlg/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/webnlg" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLP+CSS</td>
+        <td><a href="/venues/nlp-css">Workshop on NLP and Computational Social Science</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlp-css/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlp-css" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CNS</td>
+        <td><a href="/venues/cns">Workshop on Computing News Storylines</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cns/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cns" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CCNLG</td>
+        <td><a href="/venues/ccnlg">Workshop on Computational Creativity in Natural Language Generation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ccnlg/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ccnlg" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>GramLex</td>
+        <td><a href="/venues/gramlex">Workshop on Grammar and Lexicon</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/gramlex/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/gramlex" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LT4DH</td>
+        <td><a href="/venues/lt4dh">Workshop on Language Technology Resources and Tools for Digital Humanities</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lt4dh/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lt4dh" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CL4LC</td>
+        <td><a href="/venues/cl4lc">Workshop on Computational Linguistics for Linguistic Complexity</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/cl4lc/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/cl4lc" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ClinicalNLP</td>
+        <td><a href="/venues/clinicalnlp">Clinical Natural Language Processing Workshop</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/clinicalnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/clinicalnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ICON</td>
+        <td><a href="/venues/icon">International Conference on Natural Language Processing</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/icon/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/icon" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>MultiLing</td>
+        <td><a href="/venues/multiling">Workshop on Multilingual Summarization</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/multiling/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/multiling" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EthNLP</td>
+        <td><a href="/venues/ethnlp">Workshop on Ethics in NLP</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ethnlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ethnlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SemBEaR</td>
+        <td><a href="/venues/sembear">Workshop on Computational Semantics Beyond Events and Roles</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sembear/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sembear" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SENSE</td>
+        <td><a href="/venues/sense">Workshop on Sense, Concept and Entity Representations and their Applications</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sense/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sense" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>UDW</td>
+        <td><a href="/venues/udw">Universal Dependencies Workshop</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/udw/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/udw" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ALW</td>
+        <td><a href="/venues/alw">Workshop on Abusive Language Online</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/alw/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/alw" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>RoboNLP</td>
+        <td><a href="/venues/robonlp">Workshop on Language Grounding for Robotics</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/robonlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/robonlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>WiNLP</td>
+        <td><a href="/venues/winlp">Women and Underrepresented Minorities in Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/winlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/winlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NMT</td>
+        <td><a href="/venues/nmt">Workshop on Neural Machine Translation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nmt/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nmt" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SCiL</td>
+        <td><a href="/venues/scil">Society for Computation in Linguistics</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/scil/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/scil" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>CRAC</td>
+        <td><a href="/venues/crac">Workshop on Computational models of Reference</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/crac/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/crac" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Ethics-NLP</td>
+        <td><a href="/venues/ethics-nlp">Workshop on Ethics in Natural Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/ethics-nlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/ethics-nlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Fig-Lang</td>
+        <td><a href="/venues/fig-lang">Workshop on Figurative Language Processing</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/fig-lang/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/fig-lang" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Gen-Deep</td>
+        <td><a href="/venues/gen-deep">Workshop on Generalization in the Age of Deep Learning</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/gen-deep/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/gen-deep" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>PEOPLES</td>
+        <td><a href="/venues/peoples">Workshop on Computational Modeling of People&#39;s Opinions, Personality, and Emotions in Social Media</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/peoples/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/peoples" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SCLeM</td>
+        <td><a href="/venues/sclem">Workshop on Subword and Character LEvel Models in NLP</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/sclem/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/sclem" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SpLU</td>
+        <td><a href="/venues/splu">Spatial Language Understanding</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/splu/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/splu" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Story-NLP</td>
+        <td><a href="/venues/story-nlp">Workshop on Storytelling</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/story-nlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/story-nlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>Style-Var</td>
+        <td><a href="/venues/style-var">Workshop on Stylistic Variation</a></td>
+        <td>ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/style-var/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/style-var" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>AMTA</td>
+        <td><a href="/venues/amta">Conference of the Association for Machine Translation in the Americas</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/amta/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/amta" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LR4NLP</td>
+        <td><a href="/venues/lr4nlp">Workshop on Linguistic Resources for NLP</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lr4nlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lr4nlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>SemDeep</td>
+        <td><a href="/venues/semdeep">Workshop on Semantic Deep Learning</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/semdeep/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/semdeep" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>LCCM</td>
+        <td><a href="/venues/lccm">Workshop on Language, Cognition and Computational Models</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/lccm/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/lccm" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>NLP4IF</td>
+        <td><a href="/venues/nlp4if">Workshop on NLP for Internet Freedom</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/nlp4if/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/nlp4if" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>EventStory</td>
+        <td><a href="/venues/eventstory">Workshop on Events and Stories in the News</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/eventstory/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/eventstory" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>TRAC</td>
+        <td><a href="/venues/trac">Workshop on Trolling, Aggression and Cyberbullying</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/trac/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/trac" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>ISA</td>
+        <td><a href="/venues/isa">ISO Workshop on Interoperable Semantic Annotation</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/isa/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/isa" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>PYLO</td>
+        <td><a href="/venues/pylo">Workshop on Computational Modeling of Polysynthetic Languages</a></td>
+        <td>Non ACL</td>
+        <!-- <td>
+          <a class="btn btn-mini" href="/venues/pylo/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/venues/pylo" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+  </tbody>
+</table>
+<!--
+<a class="btn btn-primary" href="/venues/new">New</a>
+ -->
+                </div>
+            </div>
+</div>
+
+
+<div class="container">
+	<hr>
+	<div id ="footer" class="span12">
+		<p>ACL materials are Copyright &#169; 1963-2018 ACL; other materials are copyrighted by their respective copyright holders.  Materials prior to 2016 here are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 International License</a>. Permission is granted to make copies for the purposes of teaching and research.  Materials published in or after 2016 are licensed on a <A HREF="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</A>.</p>
+
+		<p style="text-align: center"><a href="/credits">Credits</a> |
+      <a href="/volunteer">Volunteer</a> |
+      <a href="/contributors">Contributors</a> |
+      <a href="/corrections">Corrections</a> |
+      <a href="http://bit.ly/aclAnthologyQ">Ingestion Queue</a> |
+      <a href="https://github.com/acl-org/acl-anthology/issues/">Issues</a> |
+      <a href="/faq">FAQ</a>
+		</p>
+
+		<p><a href="http://mjpost.github.io">Matt Post</a> (Editor, 2019&ndash;) /
+		<a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> (Editor, 2008&ndash;2018) /
+		<a href="http://stevenbird.net/">Steven Bird</a> (Editor, 2001&ndash;2007)</p>
+
+<!--		<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/88x31-42fe130ae66482ef422a8aa0a3896f41.png" /></a> -->
+		<a href="http://creativecommons.org/licenses/by/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/cc4by-6c00ea211acf121a2b231d0c31c54b6c.png" /></a>
+	</div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>
+      ACL
+       -
+      ACL Anthology
+    </title>
+    <link href="https://aclanthology.info/catalog/opensearch.xml" title="ACL Anthology" type="application/opensearchdescription+xml" rel="search"/>
+    <link href="/assets/aclicon-4b361d20024e07166116ed729b9dc696.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/assets/application-df3251187e128df55318b4136dccc705.css" media="screen" rel="stylesheet" />
+    <script src="/assets/application-61ecc8e8991d256e6abe6abf56a78a80.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="beFmi0wT1LpS9JKGd5sWBt9OH2W+OYURnObYvXLiXn4=" name="csrf-token" />
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/flot/excanvas.min-acb26f3790770ef2451a6af29a42b712.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="blacklight-venues blacklight-venues-show">
+  <div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+ <div class="navbar-inner">
+  <div class="container">
+    <div class="row">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="span3">
+        <a class="brand" href="/">ACL Anthology</a>
+      </div>
+      <div class="span6 clearfix" id="searchbar">
+          <form accept-charset="UTF-8" action="https://aclanthology.info/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+
+      <div class="pull-left">
+        <label for="search_field" class="hide-text">Search in</label>
+        <select class="search_field input-small" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="publish_date">Year</option>
+<option value="venue_name">Venue</option>
+<option value="sig_name">SIG</option></select>
+        <span class="hide-text">for</span>
+      </div>
+       <div class="input-append pull-left">
+        <label for="q" class="hide-text">Search...</label>
+         <input class="search_q q" id="q" name="q" placeholder="Search..." type="text" />
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text">Search</span>
+          <i class="icon-search icon-white"></i>
+        </button>
+
+       </div>
+
+</form>
+      </div>
+
+      <div class="span3 nav-collapse">
+            <div class="util-links-login">
+        <a href="/users/sign_in">Login</a>
+    </div>
+
+
+  <div class="util-links-other">
+      <a href="/bookmarks">Bookmarks</a>
+    |
+    <a href="/search_history">History</a>
+  </div>
+
+        <!--% render :partial=>'shared/facets' %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- /container -->
+  <div id="main-container" class="container">
+            <!-- Top bar -->
+            <div id="search-found" class="row hidden-phone">
+
+            </div>
+            <!-- /Top bar -->
+            <div id="content" class="row">
+                <div class="span12">
+                  <div id="main-flashes">
+                    <div class="flash_messages">
+</div>
+
+                  </div>
+                  <div class="row">
+  <div class="span12 page-header">
+    <h2>ACL Annual Meeting (ACL)</h2>
+  </div>
+
+  <!-- <div class="span2">
+    <h3 style="text-align:center">Events</h3>
+    <table class="table table-striped">
+      <tbody>
+          <tr>
+            <td><a href="/events/acl-2018">2018</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1999">1999</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1998">1998</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1997">1997</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1996">1996</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1995">1995</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1994">1994</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1993">1993</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1992">1992</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1991">1991</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1990">1990</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1989">1989</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1988">1988</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1987">1987</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1986">1986</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1985">1985</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1984">1984</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1983">1983</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1982">1982</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1979">1979</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2017">2017</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2016">2016</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2015">2015</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1981">1981</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2014">2014</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2013">2013</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2012">2012</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2011">2011</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2010">2010</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-1980">1980</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2009">2009</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2008">2008</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2007">2007</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2006">2006</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2005">2005</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2004">2004</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2002">2002</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2001">2001</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2000">2000</a></td>
+          </tr>
+          <tr>
+            <td><a href="/events/acl-2003">2003</a></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="intro" class="span10">
+
+  </div> -->
+
+  <div class="span12">
+      <h4 style="text-align:center"><a href="/events/acl-2018">ACL 2018</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P18-1</td>
+              <td><a href="/volumes/proceedings-of-the-56th-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers">Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</a></td>
+              <td>257</td>
+            </tr>
+            <tr>
+              <td>P18-2</td>
+              <td><a href="/volumes/proceedings-of-the-56th-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers">Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</a></td>
+              <td>126</td>
+            </tr>
+            <tr>
+              <td>P18-3</td>
+              <td><a href="/volumes/proceedings-of-acl-2018-student-research-workshop">Proceedings of ACL 2018, Student Research Workshop</a></td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td>P18-4</td>
+              <td><a href="/volumes/proceedings-of-acl-2018-system-demonstrations">Proceedings of ACL 2018, System Demonstrations</a></td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>P18-5</td>
+              <td><a href="/volumes/proceedings-of-acl-2018-tutorial-abstracts">Proceedings of ACL 2018, Tutorial Abstracts</a></td>
+              <td>9</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2017">ACL 2017</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P17-1</td>
+              <td><a href="/volumes/proceedings-of-the-55th-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers">
+      Proceedings of the 55th Annual Meeting of the Association for
+      Computational Linguistics (Volume 1: Long Papers)
+    </a></td>
+              <td>196</td>
+            </tr>
+            <tr>
+              <td>P17-2</td>
+              <td><a href="/volumes/proceedings-of-the-55th-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers">
+      Proceedings of the 55th Annual Meeting of the Association for
+      Computational Linguistics (Volume 2: Short Papers)
+    </a></td>
+              <td>108</td>
+            </tr>
+            <tr>
+              <td>P17-3</td>
+              <td><a href="/volumes/proceedings-of-acl-2017-student-research-workshop">Proceedings of ACL 2017, Student Research Workshop</a></td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>P17-4</td>
+              <td><a href="/volumes/proceedings-of-acl-2017-system-demonstrations">Proceedings of ACL 2017, System Demonstrations</a></td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>P17-5</td>
+              <td><a href="/volumes/proceedings-of-acl-2017-tutorial-abstracts">Proceedings of ACL 2017, Tutorial Abstracts</a></td>
+              <td>7</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2016">ACL 2016</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P16-1</td>
+              <td><a href="/volumes/proceedings-of-the-54th-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers">
+      Proceedings of the 54th Annual Meeting of the Association for
+      Computational Linguistics (Volume 1: Long Papers)
+    </a></td>
+              <td>232</td>
+            </tr>
+            <tr>
+              <td>P16-2</td>
+              <td><a href="/volumes/proceedings-of-the-54th-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers">
+      Proceedings of the 54th Annual Meeting of the Association for
+      Computational Linguistics (Volume 2: Short Papers)
+    </a></td>
+              <td>98</td>
+            </tr>
+            <tr>
+              <td>P16-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2016-student-research-workshop">Proceedings of the ACL 2016 Student Research Workshop</a></td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td>P16-4</td>
+              <td><a href="/volumes/proceedings-of-acl-2016-system-demonstrations">Proceedings of ACL-2016 System Demonstrations</a></td>
+              <td>29</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2015">ACL 2015</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P15-1</td>
+              <td><a href="/volumes/proceedings-of-the-53rd-annual-meeting-of-the-association-for-computational-linguistics-and-the-7th-international-joint-conference-on-natural-language-processing-volume-1-long-papers">Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)</a></td>
+              <td>175</td>
+            </tr>
+            <tr>
+              <td>P15-2</td>
+              <td><a href="/volumes/proceedings-of-the-53rd-annual-meeting-of-the-association-for-computational-linguistics-and-the-7th-international-joint-conference-on-natural-language-processing-volume-2-short-papers">
+      Proceedings of the 53rd Annual Meeting of the Association for
+      Computational Linguistics and the 7th International Joint Conference on
+      Natural Language Processing (Volume 2: Short Papers)
+    </a></td>
+              <td>145</td>
+            </tr>
+            <tr>
+              <td>P15-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-ijcnlp-2015-student-research-workshop">Proceedings of the ACL-IJCNLP 2015 Student Research Workshop</a></td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>P15-4</td>
+              <td><a href="/volumes/proceedings-of-acl-ijcnlp-2015-system-demonstrations">Proceedings of ACL-IJCNLP 2015 System Demonstrations</a></td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>P15-5</td>
+              <td><a href="/volumes/tutorials">Tutorials</a></td>
+              <td>9</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2014">ACL 2014</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P14-1</td>
+              <td><a href="/volumes/proceedings-of-the-52nd-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers">
+      Proceedings of the 52nd Annual Meeting of the Association for
+      Computational Linguistics (Volume 1: Long Papers)
+    </a></td>
+              <td>148</td>
+            </tr>
+            <tr>
+              <td>P14-2</td>
+              <td><a href="/volumes/proceedings-of-the-52nd-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers">
+      Proceedings of the 52nd Annual Meeting of the Association for
+      Computational Linguistics (Volume 2: Short Papers)
+    </a></td>
+              <td>140</td>
+            </tr>
+            <tr>
+              <td>P14-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2014-student-research-workshop">Proceedings of the ACL 2014 Student Research Workshop</a></td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>P14-5</td>
+              <td><a href="/volumes/proceedings-of-52nd-annual-meeting-of-the-association-for-computational-linguistics-system-demonstrations">
+      Proceedings of 52nd Annual Meeting of the Association for Computational
+      Linguistics: System Demonstrations
+    </a></td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>P14-6</td>
+              <td><a href="/volumes/proceedings-of-the-52nd-annual-meeting-of-the-association-for-computational-linguistics-tutorials">
+      Proceedings of the 52nd Annual Meeting of the Association for
+      Computational Linguistics: Tutorials
+    </a></td>
+              <td>9</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2013">ACL 2013</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P13-1</td>
+              <td><a href="/volumes/proceedings-of-the-51st-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers">Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</a></td>
+              <td>175</td>
+            </tr>
+            <tr>
+              <td>P13-2</td>
+              <td><a href="/volumes/proceedings-of-the-51st-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers">Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</a></td>
+              <td>155</td>
+            </tr>
+            <tr>
+              <td>P13-3</td>
+              <td><a href="/volumes/51st-annual-meeting-of-the-association-for-computational-linguistics-proceedings-of-the-student-research-workshop">51st Annual Meeting of the Association for Computational Linguistics Proceedings of the Student Research Workshop</a></td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>P13-4</td>
+              <td><a href="/volumes/proceedings-of-the-51st-annual-meeting-of-the-association-for-computational-linguistics-system-demonstrations">Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics: System Demonstrations</a></td>
+              <td>35</td>
+            </tr>
+            <tr>
+              <td>P13-5</td>
+              <td><a href="/volumes/proceedings-of-the-51st-annual-meeting-of-the-association-for-computational-linguistics-tutorials">Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Tutorials)</a></td>
+              <td>8</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2012">ACL 2012</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P12-1</td>
+              <td><a href="/volumes/proceedings-of-the-50th-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers">Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</a></td>
+              <td>112</td>
+            </tr>
+            <tr>
+              <td>P12-2</td>
+              <td><a href="/volumes/proceedings-of-the-50th-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers">Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</a></td>
+              <td>77</td>
+            </tr>
+            <tr>
+              <td>P12-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2012-system-demonstrations">Proceedings of the ACL 2012 System Demonstrations</a></td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>P12-4</td>
+              <td><a href="/volumes/tutorial-abstracts-of-acl-2012">Tutorial Abstracts of ACL 2012</a></td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>W12-32</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2012-special-workshop-on-rediscovering-50-years-of-discoveries">Proceedings of the ACL-2012 Special Workshop on Rediscovering 50 Years of Discoveries</a></td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>W12-33</td>
+              <td><a href="/volumes/proceedings-of-acl-2012-student-research-workshop">Proceedings of ACL 2012 Student Research Workshop</a></td>
+              <td>13</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2011">ACL 2011</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P11-1</td>
+              <td><a href="/volumes/proceedings-of-the-49th-annual-meeting-of-the-association-for-computational-linguistics-human-language-technologies">Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies</a></td>
+              <td>165</td>
+            </tr>
+            <tr>
+              <td>P11-2</td>
+              <td><a href="/volumes/proceedings-of-the-49th-annual-meeting-of-the-association-for-computational-linguistics-human-language-technologies-25fe8116-f8b7-4956-8ae6-15e4c64a2b47">Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies</a></td>
+              <td>129</td>
+            </tr>
+            <tr>
+              <td>P11-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2011-student-session">Proceedings of the ACL 2011 Student Session</a></td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td>P11-4</td>
+              <td><a href="/volumes/proceedings-of-the-acl-hlt-2011-system-demonstrations">Proceedings of the ACL-HLT 2011 System Demonstrations</a></td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>P11-5</td>
+              <td><a href="/volumes/tutorial-abstracts-of-acl-2011">Tutorial Abstracts of ACL 2011</a></td>
+              <td>7</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2010">ACL 2010</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P10-1</td>
+              <td><a href="/volumes/proceedings-of-the-48th-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>161</td>
+            </tr>
+            <tr>
+              <td>P10-2</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2010-conference-short-papers">Proceedings of the ACL 2010 Conference Short Papers</a></td>
+              <td>71</td>
+            </tr>
+            <tr>
+              <td>P10-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2010-student-research-workshop">Proceedings of the ACL 2010 Student Research Workshop</a></td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>P10-4</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2010-system-demonstrations">Proceedings of the ACL 2010 System Demonstrations</a></td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>P10-5</td>
+              <td><a href="/volumes/tutorial-abstracts-of-acl-2010">Tutorial Abstracts of ACL 2010</a></td>
+              <td>7</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2009">ACL 2009</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P09-1</td>
+              <td><a href="/volumes/proceedings-of-the-joint-conference-of-the-47th-annual-meeting-of-the-acl-and-the-4th-international-joint-conference-on-natural-language-processing-of-the-afnlp">Proceedings of the Joint Conference of the 47th Annual Meeting of the ACL and the 4th International Joint Conference on Natural Language Processing of the AFNLP</a></td>
+              <td>122</td>
+            </tr>
+            <tr>
+              <td>P09-2</td>
+              <td><a href="/volumes/proceedings-of-the-acl-ijcnlp-2009-conference-short-papers">Proceedings of the ACL-IJCNLP 2009 Conference Short Papers</a></td>
+              <td>94</td>
+            </tr>
+            <tr>
+              <td>P09-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-ijcnlp-2009-student-research-workshop">Proceedings of the ACL-IJCNLP 2009 Student Research Workshop</a></td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>P09-4</td>
+              <td><a href="/volumes/proceedings-of-the-acl-ijcnlp-2009-software-demonstrations">Proceedings of the ACL-IJCNLP 2009 Software Demonstrations</a></td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>P09-5</td>
+              <td><a href="/volumes/tutorial-abstracts-of-acl-ijcnlp-2009">Tutorial Abstracts of ACL-IJCNLP 2009</a></td>
+              <td>7</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2008">ACL 2008</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P08-1</td>
+              <td><a href="/volumes/proceedings-of-acl-08-hlt">Proceedings of ACL-08: HLT</a></td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>P08-2</td>
+              <td><a href="/volumes/proceedings-of-acl-08-hlt-short-papers">Proceedings of ACL-08: HLT, Short Papers</a></td>
+              <td>69</td>
+            </tr>
+            <tr>
+              <td>P08-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-08-hlt-student-research-workshop">Proceedings of the ACL-08: HLT Student Research Workshop</a></td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>P08-4</td>
+              <td><a href="/volumes/proceedings-of-the-acl-08-hlt-demo-session">Proceedings of the ACL-08: HLT Demo Session</a></td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>P08-5</td>
+              <td><a href="/volumes/tutorial-abstracts-of-acl-08-hlt">Tutorial Abstracts of ACL-08: HLT</a></td>
+              <td>7</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2007">ACL 2007</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P07-1</td>
+              <td><a href="/volumes/proceedings-of-the-45th-annual-meeting-of-the-association-of-computational-linguistics">Proceedings of the 45th Annual Meeting of the Association of Computational Linguistics</a></td>
+              <td>132</td>
+            </tr>
+            <tr>
+              <td>P07-2</td>
+              <td><a href="/volumes/proceedings-of-the-45th-annual-meeting-of-the-association-for-computational-linguistics-companion-volume-proceedings-of-the-demo-and-poster-sessions">Proceedings of the 45th Annual Meeting of the Association for Computational Linguistics Companion Volume Proceedings of the Demo and Poster Sessions</a></td>
+              <td>58</td>
+            </tr>
+            <tr>
+              <td>P07-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-2007-student-research-workshop">Proceedings of the ACL 2007 Student Research Workshop</a></td>
+              <td>17</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2006">ACL 2006</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P06-1</td>
+              <td><a href="/volumes/proceedings-of-the-21st-international-conference-on-computational-linguistics-and-44th-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 21st International Conference on Computational Linguistics and 44th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>148</td>
+            </tr>
+            <tr>
+              <td>P06-2</td>
+              <td><a href="/volumes/proceedings-of-the-coling-acl-2006-main-conference-poster-sessions">Proceedings of the COLING/ACL 2006 Main Conference Poster Sessions</a></td>
+              <td>126</td>
+            </tr>
+            <tr>
+              <td>P06-3</td>
+              <td><a href="/volumes/proceedings-of-the-coling-acl-2006-student-research-workshop">Proceedings of the COLING/ACL 2006 Student Research Workshop</a></td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>P06-4</td>
+              <td><a href="/volumes/proceedings-of-the-coling-acl-2006-interactive-presentation-sessions">Proceedings of the COLING/ACL 2006 Interactive Presentation Sessions</a></td>
+              <td>21</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2005">ACL 2005</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P05-1</td>
+              <td><a href="/volumes/proceedings-of-the-43rd-annual-meeting-of-the-association-for-computational-linguistics-acl-05">Proceedings of the 43rd Annual Meeting of the Association for Computational Linguistics (ACL’05)</a></td>
+              <td>78</td>
+            </tr>
+            <tr>
+              <td>P05-2</td>
+              <td><a href="/volumes/proceedings-of-the-acl-student-research-workshop-7ccf9b83-099e-4aec-be5f-4a3430d48afd">Proceedings of the ACL Student Research Workshop</a></td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>P05-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-interactive-poster-and-demonstration-sessions-3ab00c09-e9d8-424b-a99b-f2703b36f55a">Proceedings of the ACL Interactive Poster and Demonstration Sessions</a></td>
+              <td>32</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2004">ACL 2004</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P04-1</td>
+              <td><a href="/volumes/proceedings-of-the-42nd-annual-meeting-of-the-association-for-computational-linguistics-acl-04">Proceedings of the 42nd Annual Meeting of the Association for Computational Linguistics (ACL-04)</a></td>
+              <td>89</td>
+            </tr>
+            <tr>
+              <td>P04-2</td>
+              <td><a href="/volumes/proceedings-of-the-acl-student-research-workshop">Proceedings of the ACL Student Research Workshop</a></td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>P04-3</td>
+              <td><a href="/volumes/proceedings-of-the-acl-interactive-poster-and-demonstration-sessions">Proceedings of the ACL Interactive Poster and Demonstration Sessions</a></td>
+              <td>35</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2003">ACL 2003</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P03-1</td>
+              <td><a href="/volumes/proceedings-of-the-41st-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 41st Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>72</td>
+            </tr>
+            <tr>
+              <td>P03-2</td>
+              <td><a href="/volumes/the-companion-volume-to-the-proceedings-of-41st-annual-meeting-of-the-association-for-computational-linguistics">The Companion Volume to the Proceedings of 41st Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>42</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2002">ACL 2002</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P02-1</td>
+              <td><a href="/volumes/proceedings-of-the-40th-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>66</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2001">ACL 2001</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P01-1</td>
+              <td><a href="/volumes/proceedings-of-the-39th-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 39th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>71</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-2000">ACL 2000</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P00-1</td>
+              <td><a href="/volumes/proceedings-of-the-38th-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 38th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>80</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1999">ACL 1999</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P99-1</td>
+              <td><a href="/volumes/proceedings-of-the-37th-annual-meeting-of-the-association-for-computational-linguistics">Proceedings of the 37th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>84</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1998">ACL 1998</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P98-1</td>
+              <td><a href="/volumes/36th-annual-meeting-of-the-association-for-computational-linguistics-and-17th-international-conference-on-computational-linguistics-volume-1">36th Annual Meeting of the Association for Computational Linguistics and 17th International Conference on Computational Linguistics, Volume 1</a></td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>P98-2</td>
+              <td><a href="/volumes/36th-annual-meeting-of-the-association-for-computational-linguistics-and-17th-international-conference-on-computational-linguistics-volume-2">36th Annual Meeting of the Association for Computational Linguistics and 17th International Conference on Computational Linguistics, Volume 2</a></td>
+              <td>129</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1997">ACL 1997</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P97-1</td>
+              <td><a href="/volumes/35th-annual-meeting-of-the-association-for-computational-linguistics">35th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>74</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1996">ACL 1996</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P96-1</td>
+              <td><a href="/volumes/34th-annual-meeting-of-the-association-for-computational-linguistics">34th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>59</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1995">ACL 1995</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P95-1</td>
+              <td><a href="/volumes/33rd-annual-meeting-of-the-association-for-computational-linguistics">33rd Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>57</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1994">ACL 1994</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P94-1</td>
+              <td><a href="/volumes/32nd-annual-meeting-of-the-association-for-computational-linguistics">32nd Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>53</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1993">ACL 1993</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P93-1</td>
+              <td><a href="/volumes/31st-annual-meeting-of-the-association-for-computational-linguistics">31st Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>48</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1992">ACL 1992</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P92-1</td>
+              <td><a href="/volumes/30th-annual-meeting-of-the-association-for-computational-linguistics">30th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>55</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1991">ACL 1991</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P91-1</td>
+              <td><a href="/volumes/29th-annual-meeting-of-the-association-for-ational-linguistics">29th Annual Meeting of the Association for ational Linguistics</a></td>
+              <td>57</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1990">ACL 1990</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P90-1</td>
+              <td><a href="/volumes/28th-annual-meeting-of-the-association-for-computational-linguistics">28th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>40</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1989">ACL 1989</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P89-1</td>
+              <td><a href="/volumes/27th-annual-meeting-of-the-association-for-computational-linguistics">27th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>35</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1988">ACL 1988</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P88-1</td>
+              <td><a href="/volumes/26th-annual-meeting-of-the-association-for-computational-linguistics">26th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>36</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1987">ACL 1987</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P87-1</td>
+              <td><a href="/volumes/25th-annual-meeting-of-the-association-for-computational-linguistics">25th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>35</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1986">ACL 1986</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P86-1</td>
+              <td><a href="/volumes/24th-annual-meeting-of-the-association-for-computational-linguistics">24th Annual Meeting of the Association for Computational Linguistics </a></td>
+              <td>42</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1985">ACL 1985</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P85-1</td>
+              <td><a href="/volumes/23rd-annual-meeting-of-the-association-for-computational-linguistics">23rd Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>41</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1984">ACL 1984</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P84-1</td>
+              <td><a href="/volumes/10th-international-conference-on-computational-linguistics-and-22nd-annual-meeting-of-the-association-for-computational-linguistics">10th International Conference on Computational Linguistics and 22nd Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>117</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1983">ACL 1983</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P83-1</td>
+              <td><a href="/volumes/21st-annual-meeting-of-the-association-for-computational-linguistics">21st Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>26</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1982">ACL 1982</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P82-1</td>
+              <td><a href="/volumes/20th-annual-meeting-of-the-association-for-computational-linguistics">20th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>40</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1981">ACL 1981</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P81-1</td>
+              <td><a href="/volumes/19th-annual-meeting-of-the-association-for-computational-linguistics">19th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>37</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1980">ACL 1980</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P80-1</td>
+              <td><a href="/volumes/18th-annual-meeting-of-the-association-for-computational-linguistics">18th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>45</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+      <h4 style="text-align:center"><a href="/events/acl-1979">ACL 1979</a></h4>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Anthology</th>
+            <th>Volume</th>
+            <th>Papers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>P79-1</td>
+              <td><a href="/volumes/17th-annual-meeting-of-the-association-for-computational-linguistics">17th Annual Meeting of the Association for Computational Linguistics</a></td>
+              <td>29</td>
+            </tr>
+        </tbody>
+      </table>
+      <br />
+  </div>
+
+</div>
+                </div>
+            </div>
+</div>
+
+
+<div class="container">
+	<hr>
+	<div id ="footer" class="span12">
+		<p>ACL materials are Copyright &#169; 1963-2018 ACL; other materials are copyrighted by their respective copyright holders.  Materials prior to 2016 here are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 International License</a>. Permission is granted to make copies for the purposes of teaching and research.  Materials published in or after 2016 are licensed on a <A HREF="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</A>.</p>
+
+		<p style="text-align: center"><a href="/credits">Credits</a> |
+      <a href="/volunteer">Volunteer</a> |
+      <a href="/contributors">Contributors</a> |
+      <a href="/corrections">Corrections</a> |
+      <a href="http://bit.ly/aclAnthologyQ">Ingestion Queue</a> |
+      <a href="https://github.com/acl-org/acl-anthology/issues/">Issues</a> |
+      <a href="/faq">FAQ</a>
+		</p>
+
+		<p><a href="http://mjpost.github.io">Matt Post</a> (Editor, 2019&ndash;) /
+		<a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> (Editor, 2008&ndash;2018) /
+		<a href="http://stevenbird.net/">Steven Bird</a> (Editor, 2001&ndash;2007)</p>
+
+<!--		<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/88x31-42fe130ae66482ef422a8aa0a3896f41.png" /></a> -->
+		<a href="http://creativecommons.org/licenses/by/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/cc4by-6c00ea211acf121a2b231d0c31c54b6c.png" /></a>
+	</div>
+</div>
+
+    </body>
+</html>

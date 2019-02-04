@@ -10,7 +10,9 @@ outputs/data_acl/
 *.exe
 *.o
 *.so
-*.pyc
+*.py[co]
+__pycache__/
+
 
 # LaTeX #
 #########

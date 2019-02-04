@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>
+
+
+      ACL Anthology
+    </title>
+    <link href="https://aclanthology.info/catalog/opensearch.xml" title="ACL Anthology" type="application/opensearchdescription+xml" rel="search"/>
+    <link href="/assets/aclicon-4b361d20024e07166116ed729b9dc696.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/assets/application-df3251187e128df55318b4136dccc705.css" media="screen" rel="stylesheet" />
+    <script src="/assets/application-61ecc8e8991d256e6abe6abf56a78a80.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="beFmi0wT1LpS9JKGd5sWBt9OH2W+OYURnObYvXLiXn4=" name="csrf-token" />
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/flot/excanvas.min-acb26f3790770ef2451a6af29a42b712.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="blacklight-home blacklight-home-index">
+  <div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+ <div class="navbar-inner">
+  <div class="container">
+    <div class="row">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="span3">
+        <a class="brand" href="/">ACL Anthology</a>
+      </div>
+      <div class="span6 clearfix" id="searchbar">
+          <form accept-charset="UTF-8" action="https://aclanthology.info/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+
+      <div class="pull-left">
+        <label for="search_field" class="hide-text">Search in</label>
+        <select class="search_field input-small" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="publish_date">Year</option>
+<option value="venue_name">Venue</option>
+<option value="sig_name">SIG</option></select>
+        <span class="hide-text">for</span>
+      </div>
+       <div class="input-append pull-left">
+        <label for="q" class="hide-text">Search...</label>
+         <input class="search_q q" id="q" name="q" placeholder="Search..." type="text" />
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text">Search</span>
+          <i class="icon-search icon-white"></i>
+        </button>
+
+       </div>
+
+</form>
+      </div>
+
+      <div class="span3 nav-collapse">
+            <div class="util-links-login">
+        <a href="/users/sign_in">Login</a>
+    </div>
+
+
+  <div class="util-links-other">
+      <a href="/bookmarks">Bookmarks</a>
+    |
+    <a href="/search_history">History</a>
+  </div>
+
+        <!--% render :partial=>'shared/facets' %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- /container -->
+  <div id="main-container" class="container">
+            <!-- Top bar -->
+            <div id="search-found" class="row hidden-phone">
+
+            </div>
+            <!-- /Top bar -->
+            <div id="content" class="row">
+                <div class="span12">
+                  <div id="main-flashes">
+                    <div class="flash_messages">
+      <div class="alert alert-info"><P><strong>Jan 2019:</strong>
+
+<P>The <A HREF="/volumes/proceedings-of-the-third-workshop-on-computational-linguistics-for-uralic-languages">Proceedings of the Third Workshop on Computational Linguistics for Uralic Languages</A> has been added to the ACL Anthology.
+</P>
+
+<P>If you wish to submit your presentations or posters of your papers to be archived, please do by <A HREF="http://is.gd/fxDHDp">emailing us a copy at this link.</A></P>
+
+
+         <a class="close" data-dismiss="alert" href="#">&times;</a>
+      </div>
+</div>
+
+                  </div>
+                  <div class="row">
+	<div class="span2">
+		<div id="intro">
+			<h4>Welcome to the ACL Anthology</h4>
+			<p>The ACL Anthology currently hosts 48091 papers on the study of computational linguistics and natural language processing. <a href="http://groups.google.com/group/acl-anthology?hl=en">Subscribe to the mailing list</a> to receive announcements and updates to the Anthology.</p>
+
+<P>Do you love the Anthology? Not an ACL member yet? Please <A HREF="http://www.aclweb.org/portal/user/register">join as an ACL member</A> to help keep the Anthology open for all to use.</P>
+		</div>
+	</div>
+
+	<div class="span10">
+
+
+		<!-- ACL Events -->
+		<table class="table table-index">
+			<thead>
+				<tr>
+					<th>ACL Events</th>
+					<th colspan="10">Present - 2010</th>
+					<th colspan="10">2009 - 2000</th>
+					<th colspan="10">1999 - 1990</th>
+					<th colspan="11">1989 - 1974</th>
+					<!-- <th colspan="10">1989 - 1980</th>
+					<th colspan="1">1979 - 1970</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><a href="/venues/cl">CL</a></th>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/cl-2018">18</a>
+								</td>
+								<td  id=new>
+									<a href="/events/cl-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/cl-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/cl-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/cl-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1998">98</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1997">97</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1996">96</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1995">95</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1994">94</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1993">93</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1992">92</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1991">91</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1990">90</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/cl-1989">89</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1988">88</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1987">87</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1986">86</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1985">85</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1984">84</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1983">83</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1982">82</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1981">81</a>
+								</td>
+								<td  >
+									<a href="/events/cl-1980">80</a>
+								</td>
+								<td >
+									<a href="/events/cl-1979">79-74</a>
+								</td>
+				</tr>
+				<tr>
+					<th><a href="/venues/tacl">TACL</a></th>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/tacl-2018">18</a>
+								</td>
+								<td  >
+									<a href="/events/tacl-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/tacl-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/tacl-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/tacl-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/tacl-2013">13</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/acl">ACL</a></th>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/acl-2018">18</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/acl-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/acl-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/acl-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1998">98</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1997">97</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1996">96</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1995">95</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1994">94</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1993">93</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1992">92</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1991">91</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1990">90</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/acl-1989">89</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1988">88</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1987">87</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1986">86</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1985">85</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1984">84</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1983">83</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1982">82</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1981">81</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1980">80</a>
+								</td>
+								<td  >
+									<a href="/events/acl-1979">79</a>
+								</td>
+				</tr>
+				<tr>
+					<th><a href="/venues/eacl">EACL</a></th>
+							<td class=first_col></td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-2017">17</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-2014">14</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-2012">12</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td class=first_col >
+									<a href="/events/eacl-2009">09</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-2006">06</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-2003">03</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+								<td class=first_col >
+									<a href="/events/eacl-1999">99</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1997">97</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1995">95</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1993">93</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1991">91</a>
+								</td>
+							<td ></td>
+								<td class=first_col >
+									<a href="/events/eacl-1989">89</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1987">87</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1985">85</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/eacl-1983">83</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/naacl">NAACL</a></th>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/naacl-2018">18</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/naacl-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/naacl-2015">15</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/naacl-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/naacl-2012">12</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/naacl-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/naacl-2009">09</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/naacl-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/naacl-2006">06</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/naacl-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/naacl-2003">03</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/naacl-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/naacl-2000">00</a>
+								</td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/semeval">*SEMEVAL</a></th>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/semeval-2018">18</a>
+								</td>
+								<td  >
+									<a href="/events/semeval-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/semeval-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/semeval-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/semeval-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/semeval-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/semeval-2012">12</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/semeval-2010">10</a>
+								</td>
+							<td class=first_col></td>
+							<td ></td>
+								<td  >
+									<a href="/events/semeval-2007">07</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/semeval-2004">04</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/semeval-2001">01</a>
+								</td>
+							<td ></td>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/semeval-1998">98</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/anlp">ANLP</a></th>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/anlp-2000">00</a>
+								</td>
+							<td class=first_col></td>
+							<td ></td>
+								<td  >
+									<a href="/events/anlp-1997">97</a>
+								</td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/anlp-1994">94</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/anlp-1992">92</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/anlp-1988">88</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+								<td  >
+									<a href="/events/anlp-1983">83</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/emnlp">EMNLP</a></th>
+							<td class=first_col></td>
+								<td  id=new>
+									<a href="/events/emnlp-2018">18</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/emnlp-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/emnlp-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-1998">98</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-1997">97</a>
+								</td>
+								<td  >
+									<a href="/events/emnlp-1996">96</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/conll">CONLL</a></th>
+							<td class=first_col></td>
+								<td  >
+									<a href="/events/conll-2018">18</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/conll-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/conll-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/conll-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/conll-1998">98</a>
+								</td>
+								<td  >
+									<a href="/events/conll-1997">97</a>
+								</td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td class=first_col></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+							<td ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/ws">WS</a></th>
+								<td class=first_col id=new>
+									<a href="/events/ws-2019">19</a>
+								</td>
+								<td  id=new>
+									<a href="/events/ws-2018">18</a>
+								</td>
+								<td  id=new>
+									<a href="/events/ws-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/ws-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/ws-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/ws-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1998">98</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1997">97</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1996">96</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1995">95</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1994">94</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1993">93</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/ws-1991">91</a>
+								</td>
+								<td  >
+									<a href="/events/ws-1990">90</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/ws-1989">89</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/ws-1987">87</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/ws-1985">85</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/ws-1983">83</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/ws-1981">81</a>
+								</td>
+							<td ></td>
+								<td  >
+									<a href="/events/ws-1979">79</a>
+								</td>
+				</tr>
+
+				<!-- SIGs -->
+				<tr>
+					<th>SIGs</th>
+					<td colspan="39" class="first_col">
+							<a href="/sigs/sigann">ANN</a> |
+							<a href="/sigs/sigbiomed">BIOMED</a> |
+							<a href="/sigs/sigdat">DAT</a> |
+							<a href="/sigs/sigdial">DIAL</a> |
+							<a href="/sigs/sigfsm">FSM</a> |
+							<a href="/sigs/siggen">GEN</a> |
+							<a href="/sigs/sighan">HAN</a> |
+							<a href="/sigs/sighum">HUM</a> |
+							<a href="/sigs/siglex">LEX</a> |
+							<a href="/sigs/sigmedia">MEDIA</a> |
+							<a href="/sigs/sigmol">MOL</a> |
+							<a href="/sigs/sigmt">MT</a> |
+							<a href="/sigs/signll">NLL</a> |
+							<a href="/sigs/sigparse">PARSE</a> |
+							<a href="/sigs/sigmorphon">MORPHON</a> |
+							<a href="/sigs/sigslav">SLAV</a> |
+							<a href="/sigs/sigsem">SEM</a> |
+							<a href="/sigs/semitic">SEMITIC</a> |
+							<a href="/sigs/sigslpat">SLPAT</a> |
+							<a href="/sigs/sigur">UR</a> |
+							<a href="/sigs/sigwac">WAC</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- Non-ACL Events -->
+		<table class="table table-index">
+			<thead>
+				<tr>
+					<th>Non-ACL Events</th>
+					<th colspan="10">Present - 2010</th>
+					<th colspan="10">2009 - 2000</th>
+					<th colspan="10">1999 - 1990</th>
+					<th colspan="6">1989 - 1980</th>
+					<th colspan="6">1979 - 1965</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><a href="/venues/coling">COLING</a></th>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/coling-2018">18</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2016">16</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2014">14</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2012">12</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2010">10</a>
+								</td>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/coling-2008">08</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2006">06</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2004">04</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2002">02</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-2000">00</a>
+								</td>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/coling-1998">98</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-1996">96</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-1994">94</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-1992">92</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-1990">90</a>
+								</td>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/coling-1988">88</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-1986">86</a>
+								</td>
+								<td  >
+									<a href="/events/coling-1982">82</a>
+								</td>
+								<td  >
+									<a href="/events/coling-1980">80</a>
+								</td>
+							<td class=first_col ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/coling-1973">73</a>
+								</td>
+								<td  >
+									<a href="/events/coling-1969">69</a>
+								</td>
+								<td  >
+									<a href="/events/coling-1967">67</a>
+								</td>
+								<td  >
+									<a href="/events/coling-1965">65</a>
+								</td>
+				</tr>
+				<tr>
+					<th><a href="/venues/hlt">HLT</a></th>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/hlt-2018">18</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/hlt-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2015">15</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/hlt-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2012">12</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/hlt-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/hlt-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-2003">03</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/hlt-2001">01</a>
+								</td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/hlt-1994">94</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-1993">93</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-1992">92</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-1991">91</a>
+								</td>
+								<td  >
+									<a href="/events/hlt-1990">90</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/hlt-1989">89</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/hlt-1986">86</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/ijcnlp">IJCNLP</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ijcnlp-2017">17</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ijcnlp-2015">15</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ijcnlp-2013">13</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ijcnlp-2011">11</a>
+								</td>
+							<td  ></td>
+								<td class=first_col >
+									<a href="/events/ijcnlp-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/ijcnlp-2008">08</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ijcnlp-2005">05</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/lrec">LREC</a></th>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/lrec-2018">18</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2014">14</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2012">12</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2010">10</a>
+								</td>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/lrec-2008">08</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2006">06</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2004">04</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2002">02</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/lrec-2000">00</a>
+								</td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/paclic">PACLIC</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/paclic-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/paclic-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/paclic-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-1998">98</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/paclic-1996">96</a>
+								</td>
+								<td  >
+									<a href="/events/paclic-1995">95</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/rocling-ijclclp">ROCLING/IJCLCLP</a></th>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2018">18</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/rocling-ijclclp-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2003">03</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2002">02</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2001">01</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-2000">00</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/rocling-ijclclp-1999">99</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1998">98</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1997">97</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1996">96</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1995">95</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1994">94</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1993">93</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1992">92</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1991">91</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1990">90</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/rocling-ijclclp-1989">89</a>
+								</td>
+								<td  >
+									<a href="/events/rocling-ijclclp-1988">88</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/tinlap">TINLAP</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/tinlap-1987">87</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+								<td class=first_col >
+									<a href="/events/tinlap-1978">78</a>
+								</td>
+								<td  >
+									<a href="/events/tinlap-1975">75</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/alta">ALTA</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/alta-2017">17</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2016">16</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2015">15</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2012">12</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2011">11</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2010">10</a>
+								</td>
+								<td class=first_col >
+									<a href="/events/alta-2009">09</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2008">08</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2007">07</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2006">06</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2005">05</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2004">04</a>
+								</td>
+								<td  >
+									<a href="/events/alta-2003">03</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/ranlp">RANLP</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+								<td  id=new>
+									<a href="/events/ranlp-2017">17</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ranlp-2015">15</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ranlp-2013">13</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/ranlp-2011">11</a>
+								</td>
+							<td  ></td>
+								<td class=first_col >
+									<a href="/events/ranlp-2009">09</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/jep-taln-recital">JEP/TALN/RECITAL</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/jep-taln-recital-2014">14</a>
+								</td>
+								<td  >
+									<a href="/events/jep-taln-recital-2013">13</a>
+								</td>
+								<td  >
+									<a href="/events/jep-taln-recital-2012">12</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/muc">MUC</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/muc-1998">98</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/muc-1995">95</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/muc-1993">93</a>
+								</td>
+								<td  >
+									<a href="/events/muc-1992">92</a>
+								</td>
+								<td  >
+									<a href="/events/muc-1991">91</a>
+								</td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+				<tr>
+					<th><a href="/venues/tipster">TIPSTER</a></th>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+								<td  >
+									<a href="/events/tipster-1998">98</a>
+								</td>
+							<td  ></td>
+								<td  >
+									<a href="/events/tipster-1996">96</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+								<td  >
+									<a href="/events/tipster-1993">93</a>
+								</td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td class=first_col ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+							<td  ></td>
+				</tr>
+			</tbody>
+		</table>
+		<!--  End caching -->
+	</div>
+</div>
+
+
+                </div>
+            </div>
+</div>
+
+
+<div class="container">
+	<hr>
+	<div id ="footer" class="span12">
+		<p>ACL materials are Copyright &#169; 1963-2018 ACL; other materials are copyrighted by their respective copyright holders.  Materials prior to 2016 here are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 International License</a>. Permission is granted to make copies for the purposes of teaching and research.  Materials published in or after 2016 are licensed on a <A HREF="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</A>.</p>
+
+		<p style="text-align: center"><a href="/credits">Credits</a> |
+      <a href="/volunteer">Volunteer</a> |
+      <a href="/contributors">Contributors</a> |
+      <a href="/corrections">Corrections</a> |
+      <a href="http://bit.ly/aclAnthologyQ">Ingestion Queue</a> |
+      <a href="https://github.com/acl-org/acl-anthology/issues/">Issues</a> |
+      <a href="/faq">FAQ</a>
+		</p>
+
+		<p><a href="http://mjpost.github.io">Matt Post</a> (Editor, 2019&ndash;) /
+		<a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> (Editor, 2008&ndash;2018) /
+		<a href="http://stevenbird.net/">Steven Bird</a> (Editor, 2001&ndash;2007)</p>
+
+<!--		<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/88x31-42fe130ae66482ef422a8aa0a3896f41.png" /></a> -->
+		<a href="http://creativecommons.org/licenses/by/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/cc4by-6c00ea211acf121a2b231d0c31c54b6c.png" /></a>
+	</div>
+</div>
+
+    </body>
+</html>
