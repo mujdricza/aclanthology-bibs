@@ -52,7 +52,7 @@ optional arguments:
   -y YEAR               optional argument for downloading bibfiles for one
                         particular year; format: yyyy
   -Y YEARS              optional argument for downloading bibfiles for a range
-                        of years; format: 'yyyy-yyyy'
+                        of years; format: yyyy-yyyy
   -a VENUE_ACRONYM      optional argument for downloading bibfiles for one
                         particular venue; use the acronym, e.g. acl or ACL
                         (case-insensitive)
@@ -61,7 +61,7 @@ optional arguments:
                         by space within apostrophs, e.g. 'acl cl tacl'
   -i VENUE_IDLETTER     optional argument for downloading bibfiles for one
                         particular venue; use the letter identifying the
-                        venue, e.g. 'P' for ACL
+                        venue, e.g. P for ACL
   -I VENUE_IDLETTERS    optional argument for downloading bibfiles for more
                         than one venues, format: list the letters separated by
                         space within apostrophs, e.g. 'P J Q'

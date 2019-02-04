@@ -558,7 +558,7 @@ def load_argument_parser(print_help=False):
         parser.add_argument('-y', dest="year", type=int, default=None,
             help="optional argument for downloading bibfiles for one particular year; format: yyyy")
         parser.add_argument('-Y', dest="years", default=None,
-            help="optional argument for downloading bibfiles for a range of years; format: 'yyyy-yyyy'")
+            help="optional argument for downloading bibfiles for a range of years; format: yyyy-yyyy")
         
         parser.add_argument('-a', dest="venue_acronym", type=str, default=None,
             help="optional argument for downloading bibfiles for one particular venue; use the acronym, e.g. acl or ACL (case-insensitive)")
@@ -566,7 +566,7 @@ def load_argument_parser(print_help=False):
             help="optional argument for downloading bibfiles for more than one venues, format: list the acronyms separated by space within apostrophs, e.g. 'acl cl tacl'")
         
         parser.add_argument('-i', dest="venue_idletter", type=str, default=None,
-            help="optional argument for downloading bibfiles for one particular venue; use the letter identifying the venue, e.g. 'P' for ACL")
+            help="optional argument for downloading bibfiles for one particular venue; use the letter identifying the venue, e.g. P for ACL")
         parser.add_argument('-I', dest="venue_idletters", default=None,
             help="optional argument for downloading bibfiles for more than one venues, format: list the letters separated by space within apostrophs, e.g. 'P J Q'")
         
