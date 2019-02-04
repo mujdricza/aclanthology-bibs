@@ -542,16 +542,16 @@ def load_argument_parser(print_help=False):
     
         parser.add_argument(
             '-o', dest="output_path", type=str, required=True,
-            help='required argument: path for the downloaded bib files -- it will be reused if already existing')
+            help='required argument: path for the downloaded bib files -- it will be reused if already existing; The individual bib-files will be saved in a subfolder of the given output_path called bibs/.')
         parser.add_argument(
             '-f', dest="do_keep_overview_files", type=str, default="True",
-            help='whether to keep intermediate overview files (if True (default): keep them in a subfolder, else they will be deleted at the end of the process)')
+            help='whether to keep intermediate overview files (if True (default): keep them in a subfolder called volume-overviews/, else they will be deleted as soon as possible)')
         parser.add_argument(
             '-l', dest="log_file", type=str, default="download.log",
-            help='name for the log-file; default: download.log')
+            help='name for the log-file; default: download.log; The file will be saved in the current output_path, thus, give only the pure file name for the log-file.')
         
         parser.add_argument('-c', dest="concatenated_file", type=str, default=None,
-            help='name for an (optional) output file concatenating all the downloaded bib-files into a common one; the file will be saved into the path given by the positional argument -o --output_path')
+            help='name for an (optional) output file concatenating all the downloaded bib-files into a common one; the file will be saved into the output_path')
         parser.add_argument('-p', dest="last_venue_page", default=None,
             help='optional argument (use only if needed, e.g. debugging): it gives the last relevant page of the venue overview -- if not set (default), just all pages listing venues will be read')
         
@@ -604,7 +604,7 @@ if __name__ == "__main__":
     logfile = args.log_file
     logpath = output_path
     os.makedirs(os.path.realpath(logpath), exist_ok=True)
-    logger.addHandler(logging.FileHandler(logfile, "w"))
+    logger.addHandler(logging.FileHandler(logpath+logfile, "w"))
     
     logger.log(logging.DEBUG, f"Recognized command line arguments: {args}")
     

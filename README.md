@@ -17,8 +17,14 @@ Use at least **python 3.6** .
 
 ## Use
 
+Navigate to the python script `aclanthology_bibfiles_downloader.py`.
 ```
-dyn191:src eva$ python aclanthology_bibfiles_downloader.py -h
+$ cd /path/to_the/aclanthology-bibs/src/
+```
+
+Usage mesage:
+```
+$ python aclanthology_bibfiles_downloader.py -h
 usage: aclanthology_bibfiles_downloader.py [-h] -o OUTPUT_PATH
                                            [-f DO_KEEP_OVERVIEW_FILES]
                                            [-l LOG_FILE]
@@ -35,16 +41,20 @@ https://aclanthology.info/
 optional arguments:
   -h, --help            show this help message and exit
   -o OUTPUT_PATH        required argument: path for the downloaded bib files
-                        -- it will be reused if already existing
+                        -- it will be reused if already existing; The
+                        individual bib-files will be saved in a subfolder of
+                        the given output_path called bibs/.
   -f DO_KEEP_OVERVIEW_FILES
                         whether to keep intermediate overview files (if True
-                        (default): keep them in a subfolder, else they will be
-                        deleted at the end of the process)
-  -l LOG_FILE           name for the log-file; default: download.log
+                        (default): keep them in a subfolder called volume-
+                        overviews/, else they will be deleted as soon as
+                        possible)
+  -l LOG_FILE           name for the log-file; default: download.log; The file
+                        will be saved in the current output_path, thus, give
+                        only the pure file name for the log-file.
   -c CONCATENATED_FILE  name for an (optional) output file concatenating all
                         the downloaded bib-files into a common one; the file
-                        will be saved into the path given by the positional
-                        argument -o --output_path
+                        will be saved into the output_path
   -p LAST_VENUE_PAGE    optional argument (use only if needed, e.g.
                         debugging): it gives the last relevant page of the
                         venue overview -- if not set (default), just all pages
@@ -76,9 +86,9 @@ Extracts the bib files for all ACL conferences (with url starting letter 'P') in
 
 
 ```
-$python3.6 aclanthology_bibfiles_downloader.py -o ../outputs/bibs_acl+tacl_2010-2018/  -I 'P Q' -Y 2010-2018
+$python3.6 aclanthology_bibfiles_downloader.py -o ../outputs/bibs_acl+tacl_2010-2018/  -I 'P Q' -Y 2010-2018 -l acl+tacl_2010-2018.log
 ```
-Extracts the bib files for ACL and TACL conferences (with url starting letter 'P' and 'Q') form the years 2010 to 2018 (inclusive) into the output subfolder `../outputs/bibs_acl+tacl_2010-2018/bibs/`.
+Extracts the bib files for ACL and TACL conferences (with url starting letter 'P' and 'Q') from the years 2010 to 2018 (inclusive) into the output subfolder `../outputs/bibs_acl+tacl_2010-2018/bibs/`, the log file will be written into `../outputs/bibs_acl+tacl_2010-2018/acl+tacl_2010-2018.log`.
 
 
 ## Contact
