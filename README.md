@@ -22,7 +22,7 @@ Navigate to the python script `aclanthology_bibfiles_downloader.py`.
 $ cd /path/to_the/aclanthology-bibs/src/
 ```
 
-Usage mesage:
+Usage message:
 ```
 $ python aclanthology_bibfiles_downloader.py -h
 usage: aclanthology_bibfiles_downloader.py [-h] -o OUTPUT_PATH
