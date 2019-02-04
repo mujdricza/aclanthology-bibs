@@ -67,8 +67,6 @@ optional arguments:
                         space within apostrophs, e.g. 'P J Q'
 ```
 
-(Details see also in code. If you only want to download the first _n_ pages, adjust the variable _last_page_ in the code.)
-
 E.g.
 
 ```
