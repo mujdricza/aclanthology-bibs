@@ -1,4 +1,5 @@
-This folder is the default container for the output folders and files.
+This folder could be a container for the output folders and files.
 
-If not customized (e.g. via command line argument), the bib files will be downloaded into a subfolder _data_acl_.
+Note that an output folder name is the only required command line parameter.
+
 

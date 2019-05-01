@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>
+      
+      
+      ACL Anthology
+    </title>
+    <link href="https://aclanthology.coli.uni-saarland.de/catalog/opensearch.xml" title="ACL Anthology" type="application/opensearchdescription+xml" rel="search"/>
+    <link href="/assets/aclicon-4b361d20024e07166116ed729b9dc696.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/assets/application-df3251187e128df55318b4136dccc705.css" media="screen" rel="stylesheet" />
+    <script src="/assets/application-61ecc8e8991d256e6abe6abf56a78a80.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="Wy0EUCyOJfPXlr1SX0Fwwy1HgUg8xiiuNichzjRGJrs=" name="csrf-token" />
+     
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/flot/excanvas.min-acb26f3790770ef2451a6af29a42b712.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="blacklight-volumes blacklight-volumes-index">
+  <div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+ <div class="navbar-inner">
+  <div class="container">
+    <div class="row">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="span3">
+        <a class="brand" href="/">ACL Anthology</a>
+      </div>
+      <div class="span6 clearfix" id="searchbar">         
+          <form accept-charset="UTF-8" action="https://aclanthology.coli.uni-saarland.de/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+     
+
+      <div class="pull-left">
+        <label for="search_field" class="hide-text">Search in</label>
+        <select class="search_field input-small" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="publish_date">Year</option>
+<option value="venue_name">Venue</option>
+<option value="sig_name">SIG</option></select>
+        <span class="hide-text">for</span>
+      </div>
+       <div class="input-append pull-left">
+        <label for="q" class="hide-text">Search...</label>
+         <input class="search_q q" id="q" name="q" placeholder="Search..." type="text" />
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text">Search</span>
+          <i class="icon-search icon-white"></i>
+        </button>
+
+       </div>
+
+</form>
+      </div>
+
+      <div class="span3 nav-collapse">
+            <div class="util-links-login">
+        <a href="/users/sign_in">Login</a>
+    </div>
+
+
+  <div class="util-links-other">
+      <a href="/bookmarks">Bookmarks</a>
+    |
+    <a href="/search_history">History</a>
+  </div>
+
+        <!--% render :partial=>'shared/facets' %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- /container -->
+  <div id="main-container" class="container">
+            <!-- Top bar -->
+            <div id="search-found" class="row hidden-phone">
+              
+            </div>
+            <!-- /Top bar -->
+            <div id="content" class="row">
+                <div class="span12">
+                  <div id="main-flashes">
+                    <div class="flash_messages">
+</div>
+
+                  </div>
+                  
+<div class="page-header">
+  <h1>Volumes</h1>
+</div>
+
+  <div class="pagination">
+    <ul>
+      <li>
+  <a href="/volumes">&laquo; First</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=7" rel="prev">&lt; Previous</a>
+</li>
+
+          <li class="disabled">
+  <a href="#">...</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=4">4</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=5">5</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=6">6</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=7" rel="prev">7</a>
+</li>
+
+          <li class="active">
+  <a href="#">8</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=9" rel="next">9</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=10">10</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=11">11</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=12">12</a>
+</li>
+
+          <li class="disabled">
+  <a href="#">...</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=9" rel="next">Next &gt;</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=31">Last &raquo;</a>
+</li>
+
+    </ul>
+  </div>
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Anthology</th>
+      <th>Title</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Address</th>
+      <th>URL</th>
+      <!-- <th>SIG</th>
+      <th>Venue</th> -->
+      <!-- <th>Actions</th> -->
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>O07-6</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-12-number-4-december-2007-special-issue-on-speech-and-language-processing-for-taiwanese-minnan-hakka-and-mandarin">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 12, Number 4, December 2007: Special Issue on Speech and Language Processing for Taiwanese Minnan, Hakka, and Mandarin</a></td>
+        <td>December</td>
+        <td>2007</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O07-6">http://aclweb.org/anthology/O07-6</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-12-number-4-december-2007-special-issue-on-speech-and-language-processing-for-taiwanese-minnan-hakka-and-mandarin"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-12-number-4-december-2007-special-issue-on-speech-and-language-processing-for-taiwanese-minnan-hakka-and-mandarin/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-12-number-4-december-2007-special-issue-on-speech-and-language-processing-for-taiwanese-minnan-hakka-and-mandarin" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O08-1</td>
+        <td><a href="/volumes/proceedings-of-the-20th-conference-on-computational-linguistics-and-speech-processing">Proceedings of the 20th Conference on Computational Linguistics and Speech Processing </a></td>
+        <td>September</td>
+        <td>2008</td>
+        <td>Taipei, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O08-1">http://aclweb.org/anthology/O08-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-20th-conference-on-computational-linguistics-and-speech-processing"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-20th-conference-on-computational-linguistics-and-speech-processing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-20th-conference-on-computational-linguistics-and-speech-processing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O08-2</td>
+        <td><a href="/volumes/rocling-2008-poster-papers">ROCLING 2008 Poster Papers</a></td>
+        <td>September</td>
+        <td>2008</td>
+        <td>Taipei, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O08-2">http://aclweb.org/anthology/O08-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/rocling-2008-poster-papers"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/rocling-2008-poster-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/rocling-2008-poster-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O08-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-1-march-2008-special-issue-on-cross-lingual-information-retrieval-and-question-answering">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 13, Number 1, March 2008: Special Issue on Cross-Lingual Information Retrieval and Question Answering</a></td>
+        <td>March</td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O08-3">http://aclweb.org/anthology/O08-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-1-march-2008-special-issue-on-cross-lingual-information-retrieval-and-question-answering"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-1-march-2008-special-issue-on-cross-lingual-information-retrieval-and-question-answering/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-1-march-2008-special-issue-on-cross-lingual-information-retrieval-and-question-answering" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O08-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-2-june-2008">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 13, Number 2, June 2008</a></td>
+        <td>June</td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O08-4">http://aclweb.org/anthology/O08-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-2-june-2008"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-2-june-2008/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-2-june-2008" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O08-5</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-3-september-2008-special-issue-on-selected-papers-from-rocling-xix">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 13, Number 3, September 2008: Special Issue on Selected Papers from ROCLING XIX</a></td>
+        <td>September</td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O08-5">http://aclweb.org/anthology/O08-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-3-september-2008-special-issue-on-selected-papers-from-rocling-xix"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-3-september-2008-special-issue-on-selected-papers-from-rocling-xix/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-3-september-2008-special-issue-on-selected-papers-from-rocling-xix" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O08-6</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-4-december-2008">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 13, Number 4, December 2008</a></td>
+        <td>December</td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O08-6">http://aclweb.org/anthology/O08-6</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-4-december-2008"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-4-december-2008/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-13-number-4-december-2008" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O09-1</td>
+        <td><a href="/volumes/proceedings-of-the-21st-conference-on-computational-linguistics-and-speech-processing">Proceedings of the 21st Conference on Computational Linguistics and Speech Processing </a></td>
+        <td>September</td>
+        <td>2009</td>
+        <td>Taichung, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O09-1">http://aclweb.org/anthology/O09-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-21st-conference-on-computational-linguistics-and-speech-processing"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-21st-conference-on-computational-linguistics-and-speech-processing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-21st-conference-on-computational-linguistics-and-speech-processing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O09-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-1-march-2009">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 14, Number 1, March 2009</a></td>
+        <td>March</td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O09-3">http://aclweb.org/anthology/O09-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-1-march-2009"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-1-march-2009/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-1-march-2009" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O09-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-2-june-2009-special-issue-on-computer-assisted-language-learning">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 14, Number 2, June 2009-Special Issue on Computer Assisted Language Learning</a></td>
+        <td>June</td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O09-4">http://aclweb.org/anthology/O09-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-2-june-2009-special-issue-on-computer-assisted-language-learning"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-2-june-2009-special-issue-on-computer-assisted-language-learning/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-2-june-2009-special-issue-on-computer-assisted-language-learning" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O09-5</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-3-september-2009">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 14, Number 3, September 2009</a></td>
+        <td>September</td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O09-5">http://aclweb.org/anthology/O09-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-3-september-2009"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-3-september-2009/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-3-september-2009" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O09-6</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-4-december-2009">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 14, Number 4, December 2009</a></td>
+        <td>December</td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O09-6">http://aclweb.org/anthology/O09-6</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-4-december-2009"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-4-december-2009/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-14-number-4-december-2009" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O10-1</td>
+        <td><a href="/volumes/proceedings-of-the-22nd-conference-on-computational-linguistics-and-speech-processing-rocling-2010">Proceedings of the 22nd Conference on Computational Linguistics and Speech Processing (ROCLING 2010)</a></td>
+        <td>September</td>
+        <td>2010</td>
+        <td>Nantou, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O10-1">http://aclweb.org/anthology/O10-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-22nd-conference-on-computational-linguistics-and-speech-processing-rocling-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-22nd-conference-on-computational-linguistics-and-speech-processing-rocling-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-22nd-conference-on-computational-linguistics-and-speech-processing-rocling-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O10-2</td>
+        <td><a href="/volumes/rocling-2010-poster-papers">ROCLING 2010 Poster Papers</a></td>
+        <td>September</td>
+        <td>2010</td>
+        <td>Nantou, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O10-2">http://aclweb.org/anthology/O10-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/rocling-2010-poster-papers"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/rocling-2010-poster-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/rocling-2010-poster-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O10-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-1-march-2010">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 15, Number 1, March 2010</a></td>
+        <td>March</td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O10-3">http://aclweb.org/anthology/O10-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-1-march-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-1-march-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-1-march-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O10-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-2-june-2010">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 15, Number 2, June 2010</a></td>
+        <td>June</td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O10-4">http://aclweb.org/anthology/O10-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-2-june-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-2-june-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-2-june-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O10-5</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-3-4-september-december-2010">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 15, Number 3-4, September/December 2010</a></td>
+        <td>September/December</td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O10-5">http://aclweb.org/anthology/O10-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-3-4-september-december-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-3-4-september-december-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-15-number-3-4-september-december-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O11-1</td>
+        <td><a href="/volumes/proceedings-of-the-23rd-conference-on-computational-linguistics-and-speech-processing-rocling-2011">Proceedings of the 23rd Conference on Computational Linguistics and Speech Processing (ROCLING 2011)</a></td>
+        <td>September</td>
+        <td>2011</td>
+        <td>Taipei, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O11-1">http://aclweb.org/anthology/O11-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-23rd-conference-on-computational-linguistics-and-speech-processing-rocling-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-23rd-conference-on-computational-linguistics-and-speech-processing-rocling-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-23rd-conference-on-computational-linguistics-and-speech-processing-rocling-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O11-2</td>
+        <td><a href="/volumes/rocling-2011-poster-papers">ROCLING 2011 Poster Papers</a></td>
+        <td>September</td>
+        <td>2011</td>
+        <td>Taipei, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O11-2">http://aclweb.org/anthology/O11-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/rocling-2011-poster-papers"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/rocling-2011-poster-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/rocling-2011-poster-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O11-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-1-2-march-june-2011">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 16, Number 1-2, March/June 2011</a></td>
+        <td>March/June</td>
+        <td>2011</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O11-3">http://aclweb.org/anthology/O11-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-1-2-march-june-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-1-2-march-june-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-1-2-march-june-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O11-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-3-4-september-december-2011">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 16, Number 3-4, September/December 2011</a></td>
+        <td>September/December</td>
+        <td>2011</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O11-4">http://aclweb.org/anthology/O11-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-3-4-september-december-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-3-4-september-december-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-16-number-3-4-september-december-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O12-1</td>
+        <td><a href="/volumes/proceedings-of-the-24th-conference-on-computational-linguistics-and-speech-processing-rocling-2012">Proceedings of the 24th Conference on Computational Linguistics and Speech Processing (ROCLING 2012)</a></td>
+        <td>September</td>
+        <td>2012</td>
+        <td>Chung-Li, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O12-1">http://aclweb.org/anthology/O12-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-24th-conference-on-computational-linguistics-and-speech-processing-rocling-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-24th-conference-on-computational-linguistics-and-speech-processing-rocling-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-24th-conference-on-computational-linguistics-and-speech-processing-rocling-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O12-2</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-1-march-2012">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 17, Number 1, March 2012</a></td>
+        <td>March</td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O12-2">http://aclweb.org/anthology/O12-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-1-march-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-1-march-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-1-march-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O12-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-2-june-2012-specia-issue-on-selected-papers-from-rocling-xxiii">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 17, Number 2, June 2012-Specia Issue on Selected Papers from ROCLING XXIII</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O12-3">http://aclweb.org/anthology/O12-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-2-june-2012-specia-issue-on-selected-papers-from-rocling-xxiii"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-2-june-2012-specia-issue-on-selected-papers-from-rocling-xxiii/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-2-june-2012-specia-issue-on-selected-papers-from-rocling-xxiii" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O12-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-3-september-2012">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 17, Number 3, September 2012</a></td>
+        <td>September</td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O12-4">http://aclweb.org/anthology/O12-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-3-september-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-3-september-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-3-september-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O12-5</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-4-december-2012-special-issue-on-selected-papers-from-rocling-xxiv">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 17, Number 4, December 2012-Special Issue on Selected Papers from ROCLING XXIV</a></td>
+        <td>December</td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O12-5">http://aclweb.org/anthology/O12-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-4-december-2012-special-issue-on-selected-papers-from-rocling-xxiv"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-4-december-2012-special-issue-on-selected-papers-from-rocling-xxiv/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-17-number-4-december-2012-special-issue-on-selected-papers-from-rocling-xxiv" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O13-1</td>
+        <td><a href="/volumes/proceedings-of-the-25th-conference-on-computational-linguistics-and-speech-processing-rocling-2013">Proceedings of the 25th Conference on Computational Linguistics and Speech Processing (ROCLING 2013)</a></td>
+        <td>October</td>
+        <td>2013</td>
+        <td>Kaohsiung, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O13-1">http://aclweb.org/anthology/O13-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-25th-conference-on-computational-linguistics-and-speech-processing-rocling-2013"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-25th-conference-on-computational-linguistics-and-speech-processing-rocling-2013/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-25th-conference-on-computational-linguistics-and-speech-processing-rocling-2013" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O13-2</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-1-march-2013">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 18, Number 1, March 2013</a></td>
+        <td>March</td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O13-2">http://aclweb.org/anthology/O13-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-1-march-2013"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-1-march-2013/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-1-march-2013" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O13-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-2-june-2013-special-issue-on-chinese-lexical-resources-theories-and-applications">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 18, Number 2, June 2013-Special Issue on Chinese Lexical Resources: Theories and Applications</a></td>
+        <td>June</td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O13-3">http://aclweb.org/anthology/O13-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-2-june-2013-special-issue-on-chinese-lexical-resources-theories-and-applications"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-2-june-2013-special-issue-on-chinese-lexical-resources-theories-and-applications/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-2-june-2013-special-issue-on-chinese-lexical-resources-theories-and-applications" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O13-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-3-september-2013-special-issue-on-processing-lexical-tones-in-natural-speech">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 18, Number 3, September 2013-Special Issue on Processing Lexical Tones in Natural Speech</a></td>
+        <td>September</td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O13-4">http://aclweb.org/anthology/O13-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-3-september-2013-special-issue-on-processing-lexical-tones-in-natural-speech"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-3-september-2013-special-issue-on-processing-lexical-tones-in-natural-speech/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-3-september-2013-special-issue-on-processing-lexical-tones-in-natural-speech" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O13-5</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-4-december-2013-special-issue-on-selected-papers-from-rocling-xxv">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 18, Number 4, December 2013-Special Issue on Selected Papers from ROCLING XXV</a></td>
+        <td>December</td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O13-5">http://aclweb.org/anthology/O13-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-4-december-2013-special-issue-on-selected-papers-from-rocling-xxv"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-4-december-2013-special-issue-on-selected-papers-from-rocling-xxv/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-18-number-4-december-2013-special-issue-on-selected-papers-from-rocling-xxv" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O14-1</td>
+        <td><a href="/volumes/proceedings-of-the-26th-conference-on-computational-linguistics-and-speech-processing-rocling-2014">Proceedings of the 26th Conference on Computational Linguistics and Speech Processing (ROCLING 2014)</a></td>
+        <td>October</td>
+        <td>2014</td>
+        <td>Jhongli, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O14-1">http://aclweb.org/anthology/O14-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-26th-conference-on-computational-linguistics-and-speech-processing-rocling-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-26th-conference-on-computational-linguistics-and-speech-processing-rocling-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-26th-conference-on-computational-linguistics-and-speech-processing-rocling-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O14-2</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-1-march-2014">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 19, Number 1, March 2014</a></td>
+        <td>March</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O14-2">http://aclweb.org/anthology/O14-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-1-march-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-1-march-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-1-march-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O14-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-2-june-2014">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 19, Number 2, June 2014</a></td>
+        <td>June</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O14-3">http://aclweb.org/anthology/O14-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-2-june-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-2-june-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-2-june-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O14-4</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-3-september-2014">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 19, Number 3, September 2014</a></td>
+        <td>September</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O14-4">http://aclweb.org/anthology/O14-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-3-september-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-3-september-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-3-september-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O14-5</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-4-december-2014-special-issue-on-selected-papers-from-rocling-xxvi">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 19, Number 4, December 2014 - Special Issue on Selected Papers from ROCLING XXVI</a></td>
+        <td>December</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O14-5">http://aclweb.org/anthology/O14-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-4-december-2014-special-issue-on-selected-papers-from-rocling-xxvi"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-4-december-2014-special-issue-on-selected-papers-from-rocling-xxvi/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-19-number-4-december-2014-special-issue-on-selected-papers-from-rocling-xxvi" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O15-1</td>
+        <td><a href="/volumes/proceedings-of-the-27th-conference-on-computational-linguistics-and-speech-processing-rocling-2015">Proceedings of the 27th Conference on Computational Linguistics and Speech Processing (ROCLING 2015)</a></td>
+        <td>October</td>
+        <td>2015</td>
+        <td>Hsinchu, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O15-1">http://aclweb.org/anthology/O15-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-27th-conference-on-computational-linguistics-and-speech-processing-rocling-2015"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-27th-conference-on-computational-linguistics-and-speech-processing-rocling-2015/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-27th-conference-on-computational-linguistics-and-speech-processing-rocling-2015" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O15-2</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-1-june-2015-special-issue-on-chinese-as-a-foreign-language">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 20, Number 1, June 2015-Special Issue on Chinese as a Foreign Language</a></td>
+        <td>June</td>
+        <td>2015</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O15-2">http://aclweb.org/anthology/O15-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-1-june-2015-special-issue-on-chinese-as-a-foreign-language"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-1-june-2015-special-issue-on-chinese-as-a-foreign-language/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-1-june-2015-special-issue-on-chinese-as-a-foreign-language" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O15-3</td>
+        <td><a href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-2-december-2015-special-issue-on-selected-papers-from-rocling-xxvii">International Journal of Computational Linguistics &amp; Chinese Language Processing, Volume 20, Number 2, December 2015 - Special Issue on Selected Papers from ROCLING XXVII</a></td>
+        <td>December</td>
+        <td>2015</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/O15-3">http://aclweb.org/anthology/O15-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-2-december-2015-special-issue-on-selected-papers-from-rocling-xxvii"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-2-december-2015-special-issue-on-selected-papers-from-rocling-xxvii/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/international-journal-of-computational-linguistics-chinese-language-processing-volume-20-number-2-december-2015-special-issue-on-selected-papers-from-rocling-xxvii" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O88-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-i-computational-linguistics-conference-i">Proceedings of Rocling I Computational Linguistics Conference I </a></td>
+        <td>October</td>
+        <td>1988</td>
+        <td>Nantou, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O88-1">http://aclweb.org/anthology/O88-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-i-computational-linguistics-conference-i"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-i-computational-linguistics-conference-i/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-i-computational-linguistics-conference-i" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O89-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-ii-computational-linguistics-conference-ii">Proceedings of Rocling II Computational Linguistics Conference II </a></td>
+        <td>September</td>
+        <td>1989</td>
+        <td>Nantou, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O89-1">http://aclweb.org/anthology/O89-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-ii-computational-linguistics-conference-ii"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-ii-computational-linguistics-conference-ii/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-ii-computational-linguistics-conference-ii" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O90-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-iii-computational-linguistics-conference-iii">Proceedings of Rocling III Computational Linguistics Conference III </a></td>
+        <td>September</td>
+        <td>1990</td>
+        <td>Taipei, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O90-1">http://aclweb.org/anthology/O90-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-iii-computational-linguistics-conference-iii"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-iii-computational-linguistics-conference-iii/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-iii-computational-linguistics-conference-iii" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O91-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-iv-computational-linguistics-conference-iv">Proceedings of Rocling IV Computational Linguistics Conference IV </a></td>
+        <td>August</td>
+        <td>1991</td>
+        <td>Pingtung, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O91-1">http://aclweb.org/anthology/O91-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-iv-computational-linguistics-conference-iv"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-iv-computational-linguistics-conference-iv/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-iv-computational-linguistics-conference-iv" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O92-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-v-computational-linguistics-conference-v">Proceedings of Rocling V Computational Linguistics Conference V </a></td>
+        <td>September</td>
+        <td>1992</td>
+        <td>Taipei, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O92-1">http://aclweb.org/anthology/O92-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-v-computational-linguistics-conference-v"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-v-computational-linguistics-conference-v/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-v-computational-linguistics-conference-v" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O93-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-vi-computational-linguistics-conference-vi">Proceedings of Rocling VI Computational Linguistics Conference VI </a></td>
+        <td>September</td>
+        <td>1993</td>
+        <td>Nantou, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O93-1">http://aclweb.org/anthology/O93-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-vi-computational-linguistics-conference-vi"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-vi-computational-linguistics-conference-vi/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-vi-computational-linguistics-conference-vi" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O93-2</td>
+        <td><a href="/volumes/rocling-1993-short-papers"> ROCLING 1993 Short Papers</a></td>
+        <td>September</td>
+        <td>1993</td>
+        <td>Nantou, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O93-2">http://aclweb.org/anthology/O93-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/rocling-1993-short-papers"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/rocling-1993-short-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/rocling-1993-short-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O94-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-vii-computational-linguistics-conference-vii">Proceedings of Rocling VII Computational Linguistics Conference VII </a></td>
+        <td>August</td>
+        <td>1994</td>
+        <td>Hsinchu, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O94-1">http://aclweb.org/anthology/O94-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-vii-computational-linguistics-conference-vii"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-vii-computational-linguistics-conference-vii/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-vii-computational-linguistics-conference-vii" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O94-2</td>
+        <td><a href="/volumes/rocling-1994-poster-papers">ROCLING 1994 Poster Papers</a></td>
+        <td>August</td>
+        <td>1994</td>
+        <td>Hsinchu, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O94-2">http://aclweb.org/anthology/O94-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/rocling-1994-poster-papers"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/rocling-1994-poster-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/rocling-1994-poster-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>P10-5</td>
+        <td><a href="/volumes/tutorial-abstracts-of-acl-2010">Tutorial Abstracts of ACL 2010</a></td>
+        <td>July</td>
+        <td>2010</td>
+        <td>Uppsala, Sweden</td>
+        <td><a href="http://aclweb.org/anthology/P10-5">http://aclweb.org/anthology/P10-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/tutorial-abstracts-of-acl-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/tutorial-abstracts-of-acl-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/tutorial-abstracts-of-acl-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>O95-1</td>
+        <td><a href="/volumes/proceedings-of-rocling-viii-computational-linguistics-conference-viii">Proceedings of Rocling VIII Computational Linguistics Conference VIII </a></td>
+        <td>August</td>
+        <td>1995</td>
+        <td>Taoyuan, Taiwan</td>
+        <td><a href="http://aclweb.org/anthology/O95-1">http://aclweb.org/anthology/O95-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-rocling-viii-computational-linguistics-conference-viii"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-rocling-viii-computational-linguistics-conference-viii/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-rocling-viii-computational-linguistics-conference-viii" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+  </tbody>
+</table>
+<!-- 
+<a class="btn btn-primary" href="/volumes/new">New</a> -->
+
+                </div>    
+            </div> 
+</div>
+
+
+<div class="container">
+	<hr>
+	<div id ="footer" class="span12">
+		<p>ACL materials are Copyright &#169; 1963-2018 ACL; other materials are copyrighted by their respective copyright holders.  Materials prior to 2016 here are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 International License</a>. Permission is granted to make copies for the purposes of teaching and research.  Materials published in or after 2016 are licensed on a <A HREF="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</A>.</p>
+
+		<p style="text-align: center"><a href="/credits">Credits</a> | 
+		  <a href="/contributors">Contributors</a> | 
+		  <a href="/corrections">Corrections</a> | 
+                  <A HREF="http://bit.ly/aclAnthologyQ">Ingestion Queue</A> | 
+                  <A HREF="https://github.com/WING-NUS/acl/issues">Issues</A> | 
+		  <a href="/faq">FAQ</a> 
+		</p>
+		
+		<p><a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> (Editor, 2008-) / 
+		<a href="http://stevenbird.net/">Steven Bird</a> (Editor, 2001-2007)</p>
+
+<!--		<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/88x31-42fe130ae66482ef422a8aa0a3896f41.png" /></a> -->
+		<a href="http://creativecommons.org/licenses/by/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/cc4by-6c00ea211acf121a2b231d0c31c54b6c.png" /></a> 
+	</div>
+</div>
+
+    </body>
+</html>

@@ -117,7 +117,7 @@ def extract_volume_urls(
     pattern_volume = href_pattern
     
     # no restrictions --> simple extraction of all volumes
-    if restrictions is None:
+    if restrictions is None or not restrictions:
         logger.log(logging.DEBUG, f"No restriction -- take all volumes.")
         for line in tbodylines:
             if href_string in line:
@@ -534,8 +534,9 @@ def load_argument_parser(print_help=False):
     """
     
     parser = argparse.ArgumentParser(
-        description=f'downloads bib files for the journals/proceedings of ACL anthology from {URL.ROOT.value}')
-    
+        description=f'downloads bib files for the journals/proceedings of ACL anthology from {URL.ROOT.value}.',
+        epilog=f'Minimal use: python3.6 aclanthology_bibfiles_downloader.py -o <output_path>')
+        
     if print_help:
         parser.print_help()
     else:

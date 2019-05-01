@@ -1,0 +1,215 @@
+Extract names of volume urls from https://aclanthology.coli.uni-saarland.de/volumes.
+restriction dict: {'years': 2018}
+download bib files for all pages of the URL=https://aclanthology.coli.uni-saarland.de/volumes
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=0
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=1
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=2
+Restrict download to specific year.
+--> extracted 4 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=3
+Restrict download to specific year.
+--> extracted 2 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=4
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=5
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=6
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=7
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=8
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=9
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=10
+Restrict download to specific year.
+--> extracted 2 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=11
+Restrict download to specific year.
+--> extracted 5 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=12
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=13
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=14
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=15
+Restrict download to specific year.
+--> extracted 22 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=16
+Restrict download to specific year.
+--> extracted 2 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=17
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=18
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=19
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=20
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=21
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=22
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=23
+Restrict download to specific year.
+--> extracted 9 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=24
+Restrict download to specific year.
+--> extracted 14 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=25
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=26
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=27
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=28
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=29
+Restrict download to specific year.
+--> extracted 0 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=30
+Restrict download to specific year.
+--> extracted 6 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=31
+Restrict download to specific year.
+--> extracted 2 volume_urls
+downloaded url: https://aclanthology.coli.uni-saarland.de/volumes?page=32
+Empty table in file '../outputs/out_2018_exp/volume-overviews/page32.html'
+(No more volumes detected, break searching process.)
+
+=> Extracted 68 volume urls.
+
+Download the bib file for volumes.
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2018-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies-volume-1-long-papers (1/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2018-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies-volume-2-short-papers (2/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2018-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies-volume-3-industry-papers (3/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2018-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-student-research-workshop (4/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2018-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-demonstrations (5/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2018-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-tutorial-abstracts (6/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/computational-linguistics-volume-44-issue-1-april-2018 (7/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/computational-linguistics-volume-44-issue-2-june-2018 (8/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-27th-international-conference-on-computational-linguistics (9/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-27th-international-conference-on-computational-linguistics-system-demonstrations (10/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-27th-international-conference-on-computational-linguistics-tutorial-abstracts (11/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-8th-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2018 (12/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-fourth-international-workshop-on-computational-linguistics-of-uralic-languages (13/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-society-for-computation-in-linguistics-scil-2018 (14/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-thirteenth-workshop-on-innovative-use-of-nlp-for-building-educational-applications (15/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-fifth-workshop-on-computational-linguistics-and-clinical-psychology-from-keyboard-to-clinic (16/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-computational-models-of-reference-anaphora-and-coreference (17/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-second-acl-workshop-on-ethics-in-natural-language-processing (18/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-figurative-language-processing (19/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-generalization-in-the-age-of-deep-learning (20/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-second-workshop-on-computational-modeling-of-people-s-opinions-personality-and-emotions-in-social-media (21/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-second-workshop-on-subword-character-level-models (22/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-computational-semantics-beyond-events-and-roles (23/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-international-workshop-on-spatial-language-understanding (24/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-storytelling (25/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-second-workshop-on-stylistic-variation (26/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-twelfth-workshop-on-graph-based-methods-for-natural-language-processing-textgraphs-12 (27/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-1-research-papers (28/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-2-user-papers (29/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-amta-2018-workshop-on-the-role-of-authoritative-standards-in-the-mt-environment (30/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-amta-2018-workshop-on-translation-quality-estimation-and-automatic-post-editing (31/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-amta-2018-workshop-on-technologies-for-mt-of-low-resource-languages-loresmt-2018 (32/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-bionlp-2018-workshop (33/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-seventh-named-entities-workshop (34/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-workshop-for-nlp-open-source-software-nlp-oss (35/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-machine-reading-for-question-answering (36/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2nd-workshop-on-neural-machine-translation-and-generation (37/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-eight-workshop-on-cognitive-aspects-of-computational-language-learning-and-processing (38/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-the-relevance-of-linguistic-structure-in-neural-architectures-for-nlp (39/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-third-workshop-on-representation-learning-for-nlp (40/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-economics-and-natural-language-processing (41/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-third-workshop-on-computational-approaches-to-linguistic-code-switching (42/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-grand-challenge-and-workshop-on-human-multimodal-language-challenge-hml (43/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-deep-learning-approaches-for-low-resource-nlp (44/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-sixth-international-workshop-on-natural-language-processing-for-social-media (45/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-multilingual-surface-realisation (46/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-5th-workshop-on-natural-language-processing-techniques-for-educational-applications (47/68)
+	Error -> skip
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-linguistic-resources-for-natural-language-processing (48/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-fifth-workshop-on-nlp-for-similar-languages-varieties-and-dialects-vardial-2018 (49/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-third-workshop-on-semantic-deep-learning (50/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-international-workshop-on-language-cognition-and-computational-models (51/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-natural-language-processing-for-internet-freedom (52/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-events-and-stories-in-the-news-2018 (53/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-trolling-aggression-and-cyberbullying-trac-2018 (54/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-second-joint-sighum-workshop-on-computational-linguistics-for-cultural-heritage-social-sciences-humanities-and-literature (55/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-linguistic-complexity-and-natural-language-processing (56/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-14th-joint-acl-iso-workshop-on-interoperable-semantic-annotation (57/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-computational-modeling-of-polysynthetic-languages (58/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-joint-workshop-on-linguistic-annotation-multiword-expressions-and-constructions-law-mwe-cxg-2018 (59/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-19th-annual-sigdial-meeting-on-discourse-and-dialogue (60/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/transactions-of-the-association-for-computational-linguistics-volume-6 (61/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-56th-annual-meeting-of-the-association-for-computational-linguistics-volume-1-long-papers (62/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-56th-annual-meeting-of-the-association-for-computational-linguistics-volume-2-short-papers (63/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-acl-2018-student-research-workshop (64/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-acl-2018-system-demonstrations (65/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-acl-2018-tutorial-abstracts (66/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-12th-international-workshop-on-semantic-evaluation (67/68)
+- export bib from https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-seventh-joint-conference-on-lexical-and-computational-semantics (68/68)
+
+!!! There are 19 not downloaded bib entries:
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-fourth-international-workshop-on-computational-linguistics-of-uralic-languages
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-1-research-papers
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-2-user-papers
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-amta-2018-workshop-on-the-role-of-authoritative-standards-in-the-mt-environment
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-amta-2018-workshop-on-technologies-for-mt-of-low-resource-languages-loresmt-2018
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-bionlp-2018-workshop
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-seventh-named-entities-workshop
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-workshop-for-nlp-open-source-software-nlp-oss
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-machine-reading-for-question-answering
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-2nd-workshop-on-neural-machine-translation-and-generation
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-eight-workshop-on-cognitive-aspects-of-computational-language-learning-and-processing
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-the-relevance-of-linguistic-structure-in-neural-architectures-for-nlp
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-economics-and-natural-language-processing
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-third-workshop-on-computational-approaches-to-linguistic-code-switching
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-grand-challenge-and-workshop-on-human-multimodal-language-challenge-hml
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-workshop-on-deep-learning-approaches-for-low-resource-nlp
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-sixth-international-workshop-on-natural-language-processing-for-social-media
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-first-workshop-on-multilingual-surface-realisation
+- https://aclanthology.coli.uni-saarland.de/volumes/proceedings-of-the-5th-workshop-on-natural-language-processing-techniques-for-educational-applications
+(DONE)

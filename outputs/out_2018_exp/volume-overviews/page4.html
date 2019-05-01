@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>
+      
+      
+      ACL Anthology
+    </title>
+    <link href="https://aclanthology.coli.uni-saarland.de/catalog/opensearch.xml" title="ACL Anthology" type="application/opensearchdescription+xml" rel="search"/>
+    <link href="/assets/aclicon-4b361d20024e07166116ed729b9dc696.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/assets/application-df3251187e128df55318b4136dccc705.css" media="screen" rel="stylesheet" />
+    <script src="/assets/application-61ecc8e8991d256e6abe6abf56a78a80.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="FgFwgV9pB5tKifuEaO3GJJmIwgVYUjt4so+++8uQnRU=" name="csrf-token" />
+     
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/flot/excanvas.min-acb26f3790770ef2451a6af29a42b712.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="blacklight-volumes blacklight-volumes-index">
+  <div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+ <div class="navbar-inner">
+  <div class="container">
+    <div class="row">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="span3">
+        <a class="brand" href="/">ACL Anthology</a>
+      </div>
+      <div class="span6 clearfix" id="searchbar">         
+          <form accept-charset="UTF-8" action="https://aclanthology.coli.uni-saarland.de/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+     
+
+      <div class="pull-left">
+        <label for="search_field" class="hide-text">Search in</label>
+        <select class="search_field input-small" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="publish_date">Year</option>
+<option value="venue_name">Venue</option>
+<option value="sig_name">SIG</option></select>
+        <span class="hide-text">for</span>
+      </div>
+       <div class="input-append pull-left">
+        <label for="q" class="hide-text">Search...</label>
+         <input class="search_q q" id="q" name="q" placeholder="Search..." type="text" />
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text">Search</span>
+          <i class="icon-search icon-white"></i>
+        </button>
+
+       </div>
+
+</form>
+      </div>
+
+      <div class="span3 nav-collapse">
+            <div class="util-links-login">
+        <a href="/users/sign_in">Login</a>
+    </div>
+
+
+  <div class="util-links-other">
+      <a href="/bookmarks">Bookmarks</a>
+    |
+    <a href="/search_history">History</a>
+  </div>
+
+        <!--% render :partial=>'shared/facets' %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- /container -->
+  <div id="main-container" class="container">
+            <!-- Top bar -->
+            <div id="search-found" class="row hidden-phone">
+              
+            </div>
+            <!-- /Top bar -->
+            <div id="content" class="row">
+                <div class="span12">
+                  <div id="main-flashes">
+                    <div class="flash_messages">
+</div>
+
+                  </div>
+                  
+<div class="page-header">
+  <h1>Volumes</h1>
+</div>
+
+  <div class="pagination">
+    <ul>
+      <li>
+  <a href="/volumes">&laquo; First</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=3" rel="prev">&lt; Previous</a>
+</li>
+
+          <li class="">
+  <a href="/volumes">1</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=2">2</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=3" rel="prev">3</a>
+</li>
+
+          <li class="active">
+  <a href="#">4</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=5" rel="next">5</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=6">6</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=7">7</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=8">8</a>
+</li>
+
+          <li class="disabled">
+  <a href="#">...</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=5" rel="next">Next &gt;</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=31">Last &raquo;</a>
+</li>
+
+    </ul>
+  </div>
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Anthology</th>
+      <th>Title</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Address</th>
+      <th>URL</th>
+      <!-- <th>SIG</th>
+      <th>Venue</th> -->
+      <!-- <th>Actions</th> -->
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>J08-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-34-number-2-june-2008-special-issue-on-semantic-role-labeling">Computational Linguistics, Volume 34, Number 2, June 2008 - Special Issue on Semantic Role Labeling</a></td>
+        <td></td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J08-2">http://aclweb.org/anthology/J08-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-34-number-2-june-2008-special-issue-on-semantic-role-labeling"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-34-number-2-june-2008-special-issue-on-semantic-role-labeling/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-34-number-2-june-2008-special-issue-on-semantic-role-labeling" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J08-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-34-number-3-september-2008">Computational Linguistics, Volume 34, Number 3, September 2008</a></td>
+        <td></td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J08-3">http://aclweb.org/anthology/J08-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-34-number-3-september-2008"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-34-number-3-september-2008/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-34-number-3-september-2008" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J08-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-34-number-4-december-2008">Computational Linguistics, Volume 34, Number 4, December 2008</a></td>
+        <td></td>
+        <td>2008</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J08-4">http://aclweb.org/anthology/J08-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-34-number-4-december-2008"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-34-number-4-december-2008/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-34-number-4-december-2008" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J09-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-35-number-1-march-2009">Computational Linguistics, Volume 35, Number 1, March 2009</a></td>
+        <td></td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J09-1">http://aclweb.org/anthology/J09-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-35-number-1-march-2009"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-35-number-1-march-2009/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-35-number-1-march-2009" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J09-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-35-number-2-june-2009-special-issue-on-prepositions">Computational Linguistics, Volume 35, Number 2, June 2009 - Special Issue on Prepositions</a></td>
+        <td></td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J09-2">http://aclweb.org/anthology/J09-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-35-number-2-june-2009-special-issue-on-prepositions"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-35-number-2-june-2009-special-issue-on-prepositions/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-35-number-2-june-2009-special-issue-on-prepositions" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J09-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-35-number-3-september-2009">Computational Linguistics, Volume 35, Number 3, September 2009</a></td>
+        <td></td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J09-3">http://aclweb.org/anthology/J09-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-35-number-3-september-2009"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-35-number-3-september-2009/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-35-number-3-september-2009" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J09-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-35-number-4-december-2009">Computational Linguistics, Volume 35, Number 4, December 2009</a></td>
+        <td></td>
+        <td>2009</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J09-4">http://aclweb.org/anthology/J09-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-35-number-4-december-2009"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-35-number-4-december-2009/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-35-number-4-december-2009" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J10-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-36-number-1-march-2010">Computational Linguistics, Volume 36, Number 1, March 2010</a></td>
+        <td></td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J10-1">http://aclweb.org/anthology/J10-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-36-number-1-march-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-36-number-1-march-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-36-number-1-march-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J10-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-36-number-2-june-2010">Computational Linguistics, Volume 36, Number 2, June 2010</a></td>
+        <td></td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J10-2">http://aclweb.org/anthology/J10-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-36-number-2-june-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-36-number-2-june-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-36-number-2-june-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J10-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-36-issue-3-september-2010">Computational Linguistics, Volume 36, Issue 3 - September 2010</a></td>
+        <td></td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J10-3">http://aclweb.org/anthology/J10-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-36-issue-3-september-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-36-issue-3-september-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-36-issue-3-september-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J10-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-36-issue-4-december-2010">Computational Linguistics, Volume 36, Issue 4 - December 2010</a></td>
+        <td></td>
+        <td>2010</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J10-4">http://aclweb.org/anthology/J10-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-36-issue-4-december-2010"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-36-issue-4-december-2010/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-36-issue-4-december-2010" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J11-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-37-issue-1-march-2011">Computational Linguistics, Volume 37, Issue 1 - March 2011</a></td>
+        <td></td>
+        <td>2011</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J11-1">http://aclweb.org/anthology/J11-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-37-issue-1-march-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-37-issue-1-march-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-37-issue-1-march-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J11-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-37-issue-2-june-2011">Computational Linguistics, Volume 37, Issue 2 - June 2011</a></td>
+        <td></td>
+        <td>2011</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J11-2">http://aclweb.org/anthology/J11-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-37-issue-2-june-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-37-issue-2-june-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-37-issue-2-june-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J11-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-37-issue-3-september-2011">Computational Linguistics, Volume 37, Issue 3 - September 2011</a></td>
+        <td></td>
+        <td>2011</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J11-3">http://aclweb.org/anthology/J11-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-37-issue-3-september-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-37-issue-3-september-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-37-issue-3-september-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J11-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-37-issue-4-december-2011">Computational Linguistics, Volume 37, Issue 4 - December 2011</a></td>
+        <td></td>
+        <td>2011</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J11-4">http://aclweb.org/anthology/J11-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-37-issue-4-december-2011"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-37-issue-4-december-2011/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-37-issue-4-december-2011" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J12-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-38-issue-1-march-2012">Computational Linguistics, Volume 38, Issue 1 - March 2012</a></td>
+        <td></td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J12-1">http://aclweb.org/anthology/J12-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-38-issue-1-march-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-38-issue-1-march-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-38-issue-1-march-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J12-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-38-issue-2-june-2012">Computational Linguistics, Volume 38, Issue 2 - June 2012</a></td>
+        <td></td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J12-2">http://aclweb.org/anthology/J12-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-38-issue-2-june-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-38-issue-2-june-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-38-issue-2-june-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J12-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-38-issue-3-september-2012">Computational Linguistics, Volume 38, Issue 3 - September 2012</a></td>
+        <td></td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J12-3">http://aclweb.org/anthology/J12-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-38-issue-3-september-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-38-issue-3-september-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-38-issue-3-september-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J12-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-38-issue-4-december-2012">Computational Linguistics, Volume 38, Issue 4 - December 2012</a></td>
+        <td></td>
+        <td>2012</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J12-4">http://aclweb.org/anthology/J12-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-38-issue-4-december-2012"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-38-issue-4-december-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-38-issue-4-december-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J13-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-39-issue-1-march-2013">Computational Linguistics, Volume 39, Issue 1 - March 2013</a></td>
+        <td></td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J13-1">http://aclweb.org/anthology/J13-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-39-issue-1-march-2013"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-39-issue-1-march-2013/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-39-issue-1-march-2013" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J13-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-39-issue-2-june-2013">Computational Linguistics, Volume 39, Issue 2 - June 2013</a></td>
+        <td></td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J13-2">http://aclweb.org/anthology/J13-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-39-issue-2-june-2013"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-39-issue-2-june-2013/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-39-issue-2-june-2013" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J13-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-39-issue-3-september-2013">Computational Linguistics, Volume 39, Issue 3 - September 2013</a></td>
+        <td></td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J13-3">http://aclweb.org/anthology/J13-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-39-issue-3-september-2013"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-39-issue-3-september-2013/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-39-issue-3-september-2013" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J13-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-39-issue-4-december-2013">Computational Linguistics, Volume 39, Issue 4 - December 2013</a></td>
+        <td></td>
+        <td>2013</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J13-4">http://aclweb.org/anthology/J13-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-39-issue-4-december-2013"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-39-issue-4-december-2013/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-39-issue-4-december-2013" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J14-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-40-issue-1-march-2014">Computational Linguistics, Volume 40, Issue 1 - March 2014</a></td>
+        <td>March</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J14-1">http://aclweb.org/anthology/J14-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-40-issue-1-march-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-40-issue-1-march-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-40-issue-1-march-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J14-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-40-issue-2-june-2014">Computational Linguistics, Volume 40, Issue 2 - June 2014</a></td>
+        <td>June</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J14-2">http://aclweb.org/anthology/J14-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-40-issue-2-june-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-40-issue-2-june-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-40-issue-2-june-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J14-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-40-issue-3-september-2014">Computational Linguistics, Volume 40, Issue 3 - September 2014</a></td>
+        <td>September</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J14-3">http://aclweb.org/anthology/J14-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-40-issue-3-september-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-40-issue-3-september-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-40-issue-3-september-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J14-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-40-issue-4-december-2014">Computational Linguistics, Volume 40, Issue 4 - December 2014</a></td>
+        <td>December</td>
+        <td>2014</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J14-4">http://aclweb.org/anthology/J14-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-40-issue-4-december-2014"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-40-issue-4-december-2014/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-40-issue-4-december-2014" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J15-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-41-issue-1-march-2015">Computational Linguistics, Volume 41, Issue 1 - March 2015</a></td>
+        <td>March</td>
+        <td>2015</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J15-1">http://aclweb.org/anthology/J15-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-41-issue-1-march-2015"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-41-issue-1-march-2015/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-41-issue-1-march-2015" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J15-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-41-issue-2-june-2015">Computational Linguistics, Volume 41, Issue 2 - June 2015</a></td>
+        <td>June</td>
+        <td>2015</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J15-2">http://aclweb.org/anthology/J15-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-41-issue-2-june-2015"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-41-issue-2-june-2015/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-41-issue-2-june-2015" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J15-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-41-issue-3-september-2015">Computational Linguistics, Volume 41, Issue 3 - September 2015</a></td>
+        <td>September</td>
+        <td>2015</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J15-3">http://aclweb.org/anthology/J15-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-41-issue-3-september-2015"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-41-issue-3-september-2015/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-41-issue-3-september-2015" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J15-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-41-issue-4-december-2015">Computational Linguistics, Volume 41, Issue 4 - December 2015</a></td>
+        <td>December</td>
+        <td>2015</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J15-4">http://aclweb.org/anthology/J15-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-41-issue-4-december-2015"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-41-issue-4-december-2015/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-41-issue-4-december-2015" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J16-1</td>
+        <td><a href="/volumes/computational-linguistics-volume-42-issue-1-march-2016">Computational Linguistics, Volume 42, Issue 1 - March 2016</a></td>
+        <td>March</td>
+        <td>2016</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J16-1">http://aclweb.org/anthology/J16-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-42-issue-1-march-2016"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-42-issue-1-march-2016/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-42-issue-1-march-2016" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J16-2</td>
+        <td><a href="/volumes/computational-linguistics-volume-42-issue-2-june-2016">Computational Linguistics, Volume 42, Issue 2 - June 2016</a></td>
+        <td></td>
+        <td>2016</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J16-2">http://aclweb.org/anthology/J16-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-42-issue-2-june-2016"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-42-issue-2-june-2016/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-42-issue-2-june-2016" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J16-3</td>
+        <td><a href="/volumes/computational-linguistics-volume-42-issue-3-september-2016">Computational Linguistics, Volume 42, Issue 3 - September 2016</a></td>
+        <td>September</td>
+        <td>2016</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J16-3">http://aclweb.org/anthology/J16-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-42-issue-3-september-2016"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-42-issue-3-september-2016/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-42-issue-3-september-2016" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J16-4</td>
+        <td><a href="/volumes/computational-linguistics-volume-42-issue-4-december-2016">Computational Linguistics, Volume 42, Issue 4 - December 2016</a></td>
+        <td>December</td>
+        <td>2016</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J16-4">http://aclweb.org/anthology/J16-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-volume-42-issue-4-december-2016"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-volume-42-issue-4-december-2016/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-volume-42-issue-4-december-2016" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J79-1</td>
+        <td><a href="/volumes/acl-microfiche-series-1-83-including-computational-linguistics-1974-1979">ACL Microfiche Series 1-83, including Computational Linguistics (1974-1979)</a></td>
+        <td></td>
+        <td>1979</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J79-1">http://aclweb.org/anthology/J79-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/acl-microfiche-series-1-83-including-computational-linguistics-1974-1979"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/acl-microfiche-series-1-83-including-computational-linguistics-1974-1979/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/acl-microfiche-series-1-83-including-computational-linguistics-1974-1979" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J80-1</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-6-number-1-january-march-1980">American Journal of Computational Linguistics, Volume 6, Number 1, January-March 1980</a></td>
+        <td></td>
+        <td>1980</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J80-1">http://aclweb.org/anthology/J80-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-1-january-march-1980"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-1-january-march-1980/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-1-january-march-1980" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J80-2</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-6-number-2-april-june-1980">American Journal of Computational Linguistics, Volume 6, Number 2, April-June 1980</a></td>
+        <td></td>
+        <td>1980</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J80-2">http://aclweb.org/anthology/J80-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-2-april-june-1980"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-2-april-june-1980/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-2-april-june-1980" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J80-3</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-6-number-3-4-july-december-1980">American Journal of Computational Linguistics, Volume 6, Number 3-4, July-December 1980</a></td>
+        <td></td>
+        <td>1980</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J80-3">http://aclweb.org/anthology/J80-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-3-4-july-december-1980"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-3-4-july-december-1980/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-6-number-3-4-july-december-1980" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J81-1</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-7-number-1-january-march-1981">American Journal of Computational Linguistics, Volume 7, Number 1, January-March 1981</a></td>
+        <td></td>
+        <td>1981</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J81-1">http://aclweb.org/anthology/J81-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-1-january-march-1981"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-1-january-march-1981/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-1-january-march-1981" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J81-2</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-7-number-2-april-june-1981">American Journal of Computational Linguistics, Volume 7, Number 2, April-June 1981</a></td>
+        <td></td>
+        <td>1981</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J81-2">http://aclweb.org/anthology/J81-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-2-april-june-1981"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-2-april-june-1981/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-2-april-june-1981" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J81-3</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-7-number-3-july-september-1981">American Journal of Computational Linguistics, Volume 7, Number 3, July-September 1981</a></td>
+        <td></td>
+        <td>1981</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J81-3">http://aclweb.org/anthology/J81-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-3-july-september-1981"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-3-july-september-1981/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-3-july-september-1981" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J81-4</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-7-number-4-october-december-1981">American Journal of Computational Linguistics, Volume 7, Number 4, October-December 1981</a></td>
+        <td></td>
+        <td>1981</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J81-4">http://aclweb.org/anthology/J81-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-4-october-december-1981"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-4-october-december-1981/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-7-number-4-october-december-1981" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J82-1</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-8-number-1-january-march-1982">American Journal of Computational Linguistics, Volume 8, Number 1, January-March 1982 </a></td>
+        <td></td>
+        <td>1982</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J82-1">http://aclweb.org/anthology/J82-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-1-january-march-1982"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-1-january-march-1982/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-1-january-march-1982" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J82-2</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-8-number-2-april-june-1982">American Journal of Computational Linguistics, Volume 8, Number 2, April-June 1982 </a></td>
+        <td></td>
+        <td>1982</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J82-2">http://aclweb.org/anthology/J82-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-2-april-june-1982"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-2-april-june-1982/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-2-april-june-1982" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J82-3</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-8-number-3-4-july-december-1982">American Journal of Computational Linguistics, Volume 8, Number 3-4, July-December 1982 </a></td>
+        <td></td>
+        <td>1982</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J82-3">http://aclweb.org/anthology/J82-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-3-4-july-december-1982"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-3-4-july-december-1982/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-8-number-3-4-july-december-1982" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J83-1</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-9-number-1-january-march-1983">American Journal of Computational Linguistics, Volume 9, Number 1, January-March 1983</a></td>
+        <td></td>
+        <td>1983</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J83-1">http://aclweb.org/anthology/J83-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-1-january-march-1983"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-1-january-march-1983/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-1-january-march-1983" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J83-2</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-9-number-2-april-june-1983">American Journal of Computational Linguistics, Volume 9, Number 2, April-June 1983</a></td>
+        <td></td>
+        <td>1983</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J83-2">http://aclweb.org/anthology/J83-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-2-april-june-1983"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-2-april-june-1983/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-2-april-june-1983" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J83-3</td>
+        <td><a href="/volumes/american-journal-of-computational-linguistics-volume-9-number-3-4-july-december-1983">American Journal of Computational Linguistics, Volume 9, Number 3-4, July-December 1983</a></td>
+        <td></td>
+        <td>1983</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J83-3">http://aclweb.org/anthology/J83-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-3-4-july-december-1983"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-3-4-july-december-1983/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/american-journal-of-computational-linguistics-volume-9-number-3-4-july-december-1983" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>J84-1</td>
+        <td><a href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-10-number1-january-march-1984">Computational Linguistics. Formerly the American Journal of Computational Linguistics, Volume 10, Number1, January-March 1984</a></td>
+        <td></td>
+        <td>1984</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/J84-1">http://aclweb.org/anthology/J84-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-10-number1-january-march-1984"><span class="translation_missing" title="translation missing: en.helpers.links.view">View</span></a>
+          <a class="btn btn-mini" href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-10-number1-january-march-1984/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-10-number1-january-march-1984" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+  </tbody>
+</table>
+<!-- 
+<a class="btn btn-primary" href="/volumes/new">New</a> -->
+
+                </div>    
+            </div> 
+</div>
+
+
+<div class="container">
+	<hr>
+	<div id ="footer" class="span12">
+		<p>ACL materials are Copyright &#169; 1963-2018 ACL; other materials are copyrighted by their respective copyright holders.  Materials prior to 2016 here are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 International License</a>. Permission is granted to make copies for the purposes of teaching and research.  Materials published in or after 2016 are licensed on a <A HREF="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</A>.</p>
+
+		<p style="text-align: center"><a href="/credits">Credits</a> | 
+		  <a href="/contributors">Contributors</a> | 
+		  <a href="/corrections">Corrections</a> | 
+                  <A HREF="http://bit.ly/aclAnthologyQ">Ingestion Queue</A> | 
+                  <A HREF="https://github.com/WING-NUS/acl/issues">Issues</A> | 
+		  <a href="/faq">FAQ</a> 
+		</p>
+		
+		<p><a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> (Editor, 2008-) / 
+		<a href="http://stevenbird.net/">Steven Bird</a> (Editor, 2001-2007)</p>
+
+<!--		<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/88x31-42fe130ae66482ef422a8aa0a3896f41.png" /></a> -->
+		<a href="http://creativecommons.org/licenses/by/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/cc4by-6c00ea211acf121a2b231d0c31c54b6c.png" /></a> 
+	</div>
+</div>
+
+    </body>
+</html>

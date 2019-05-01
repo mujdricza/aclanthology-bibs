@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>
+      
+      
+      ACL Anthology
+    </title>
+    <link href="https://aclanthology.info/catalog/opensearch.xml" title="ACL Anthology" type="application/opensearchdescription+xml" rel="search"/>
+    <link href="/assets/aclicon-4b361d20024e07166116ed729b9dc696.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/assets/application-df3251187e128df55318b4136dccc705.css" media="screen" rel="stylesheet" />
+    <script src="/assets/application-61ecc8e8991d256e6abe6abf56a78a80.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="N8WdksWDgbuhVwr3LvlyQ602o88+RaLFo+5wQYChVWE=" name="csrf-token" />
+     
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/assets/flot/excanvas.min-acb26f3790770ef2451a6af29a42b712.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="blacklight-volumes blacklight-volumes-index">
+  <div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+ <div class="navbar-inner">
+  <div class="container">
+    <div class="row">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="span3">
+        <a class="brand" href="/">ACL Anthology</a>
+      </div>
+      <div class="span6 clearfix" id="searchbar">         
+          <form accept-charset="UTF-8" action="https://aclanthology.info/catalog" class="search-query-form form-inline clearfix" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+     
+
+      <div class="pull-left">
+        <label for="search_field" class="hide-text">Search in</label>
+        <select class="search_field input-small" id="search_field" name="search_field" title="Targeted search options"><option value="all_fields">All Fields</option>
+<option value="title">Title</option>
+<option value="author">Author</option>
+<option value="publish_date">Year</option>
+<option value="venue_name">Venue</option>
+<option value="sig_name">SIG</option></select>
+        <span class="hide-text">for</span>
+      </div>
+       <div class="input-append pull-left">
+        <label for="q" class="hide-text">Search...</label>
+         <input class="search_q q" id="q" name="q" placeholder="Search..." type="text" />
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text">Search</span>
+          <i class="icon-search icon-white"></i>
+        </button>
+
+       </div>
+
+</form>
+      </div>
+
+      <div class="span3 nav-collapse">
+            <div class="util-links-login">
+        <a href="/users/sign_in">Login</a>
+    </div>
+
+
+  <div class="util-links-other">
+      <a href="/bookmarks">Bookmarks</a>
+    |
+    <a href="/search_history">History</a>
+  </div>
+
+        <!--% render :partial=>'shared/facets' %>-->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+  <div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- /container -->
+  <div id="main-container" class="container">
+            <!-- Top bar -->
+            <div id="search-found" class="row hidden-phone">
+              
+            </div>
+            <!-- /Top bar -->
+            <div id="content" class="row">
+                <div class="span12">
+                  <div id="main-flashes">
+                    <div class="flash_messages">
+</div>
+
+                  </div>
+                  
+<div class="page-header">
+  <h1>Volumes</h1>
+</div>
+
+  <div class="pagination">
+    <ul>
+      <li>
+  <a href="/volumes">&laquo; First</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=26" rel="prev">&lt; Previous</a>
+</li>
+
+          <li class="disabled">
+  <a href="#">...</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=23">23</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=24">24</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=25">25</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=26" rel="prev">26</a>
+</li>
+
+          <li class="active">
+  <a href="#">27</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=28" rel="next">28</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=29">29</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=30">30</a>
+</li>
+
+          <li class="">
+  <a href="/volumes?page=31">31</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=28" rel="next">Next &gt;</a>
+</li>
+
+      <li>
+  <a href="/volumes?page=31">Last &raquo;</a>
+</li>
+
+    </ul>
+  </div>
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Anthology</th>
+      <th>Title</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Address</th>
+      <th>URL</th>
+      <!-- <th>SIG</th>
+      <th>Venue</th> -->
+      <!-- <th>Actions</th> -->
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>W03-08</td>
+        <td><a href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-software-engineering-and-architecture-of-language-technology-systems-sealts">Proceedings of the HLT-NAACL 2003 Workshop on Software Engineering and Architecture of Language Technology Systems (SEALTS)</a></td>
+        <td></td>
+        <td>2003</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W03-08">http://aclweb.org/anthology/W03-08</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-software-engineering-and-architecture-of-language-technology-systems-sealts">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-software-engineering-and-architecture-of-language-technology-systems-sealts/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-software-engineering-and-architecture-of-language-technology-systems-sealts" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W03-09</td>
+        <td><a href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-text-meaning">Proceedings of the HLT-NAACL 2003 Workshop on Text Meaning</a></td>
+        <td></td>
+        <td>2003</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W03-09">http://aclweb.org/anthology/W03-09</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-text-meaning">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-text-meaning/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-hlt-naacl-2003-workshop-on-text-meaning" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W03-10</td>
+        <td><a href="/volumes/proceedings-of-the-2003-conference-on-empirical-methods-in-natural-language-processing">Proceedings of the 2003 Conference on Empirical Methods in Natural Language Processing</a></td>
+        <td></td>
+        <td>2003</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W03-10">http://aclweb.org/anthology/W03-10</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-2003-conference-on-empirical-methods-in-natural-language-processing">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-2003-conference-on-empirical-methods-in-natural-language-processing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-2003-conference-on-empirical-methods-in-natural-language-processing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N09-1</td>
+        <td><a href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics">Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics</a></td>
+        <td>June</td>
+        <td>2009</td>
+        <td>Boulder, Colorado</td>
+        <td><a href="http://aclweb.org/anthology/N09-1">http://aclweb.org/anthology/N09-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N09-2</td>
+        <td><a href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-short-papers">Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics, Companion Volume: Short Papers</a></td>
+        <td>June</td>
+        <td>2009</td>
+        <td>Boulder, Colorado</td>
+        <td><a href="http://aclweb.org/anthology/N09-2">http://aclweb.org/anthology/N09-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-short-papers">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-short-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-short-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N09-3</td>
+        <td><a href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-student-research-workshop-and-doctoral-consortium">Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics, Companion Volume: Student Research Workshop and Doctoral Consortium</a></td>
+        <td>June</td>
+        <td>2009</td>
+        <td>Boulder, Colorado</td>
+        <td><a href="http://aclweb.org/anthology/N09-3">http://aclweb.org/anthology/N09-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-student-research-workshop-and-doctoral-consortium">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-student-research-workshop-and-doctoral-consortium/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-student-research-workshop-and-doctoral-consortium" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N09-4</td>
+        <td><a href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-tutorial-abstracts">Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics, Companion Volume: Tutorial Abstracts</a></td>
+        <td>May</td>
+        <td>2009</td>
+        <td>Boulder, Colorado</td>
+        <td><a href="http://aclweb.org/anthology/N09-4">http://aclweb.org/anthology/N09-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-tutorial-abstracts">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-tutorial-abstracts/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-tutorial-abstracts" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N09-5</td>
+        <td><a href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-demonstration-session">Proceedings of Human Language Technologies: The 2009 Annual Conference of the North American Chapter of the Association for Computational Linguistics, Companion Volume: Demonstration Session</a></td>
+        <td>June</td>
+        <td>2009</td>
+        <td>Boulder, Colorado</td>
+        <td><a href="http://aclweb.org/anthology/N09-5">http://aclweb.org/anthology/N09-5</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-demonstration-session">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-demonstration-session/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-human-language-technologies-the-2009-annual-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-companion-volume-demonstration-session" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N12-1</td>
+        <td><a href="/volumes/proceedings-of-the-2012-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies">Proceedings of the 2012 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/N12-1">http://aclweb.org/anthology/N12-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-2012-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-2012-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-2012-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N12-2</td>
+        <td><a href="/volumes/proceedings-of-the-naacl-hlt-2012-student-research-workshop">Proceedings of the NAACL HLT 2012 Student Research Workshop</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/N12-2">http://aclweb.org/anthology/N12-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-naacl-hlt-2012-student-research-workshop">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-naacl-hlt-2012-student-research-workshop/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-naacl-hlt-2012-student-research-workshop" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N12-3</td>
+        <td><a href="/volumes/proceedings-of-the-demonstration-session-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies">Proceedings of the Demonstration Session at the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/N12-3">http://aclweb.org/anthology/N12-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-demonstration-session-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-demonstration-session-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-demonstration-session-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>N12-4</td>
+        <td><a href="/volumes/tutorial-abstracts-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies">Tutorial Abstracts at the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/N12-4">http://aclweb.org/anthology/N12-4</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/tutorial-abstracts-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/tutorial-abstracts-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/tutorial-abstracts-at-the-conference-of-the-north-american-chapter-of-the-association-for-computational-linguistics-human-language-technologies" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-09</td>
+        <td><a href="/volumes/proceedings-of-the-workshop-on-computational-models-of-language-acquisition-and-loss">Proceedings of the Workshop on Computational Models of Language Acquisition and Loss</a></td>
+        <td>April</td>
+        <td>2012</td>
+        <td>Avignon, France</td>
+        <td><a href="http://aclweb.org/anthology/W12-09">http://aclweb.org/anthology/W12-09</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-workshop-on-computational-models-of-language-acquisition-and-loss">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-workshop-on-computational-models-of-language-acquisition-and-loss/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-workshop-on-computational-models-of-language-acquisition-and-loss" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-10</td>
+        <td><a href="/volumes/proceedings-of-the-6th-workshop-on-language-technology-for-cultural-heritage-social-sciences-and-humanities">Proceedings of the 6th Workshop on Language Technology for Cultural Heritage, Social Sciences, and Humanities</a></td>
+        <td>April</td>
+        <td>2012</td>
+        <td>Avignon, France</td>
+        <td><a href="http://aclweb.org/anthology/W12-10">http://aclweb.org/anthology/W12-10</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-6th-workshop-on-language-technology-for-cultural-heritage-social-sciences-and-humanities">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-6th-workshop-on-language-technology-for-cultural-heritage-social-sciences-and-humanities/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-6th-workshop-on-language-technology-for-cultural-heritage-social-sciences-and-humanities" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-11</td>
+        <td><a href="/volumes/jep-taln-recital-2012-workshop-deft-2012-defi-fouille-de-textes-deft-2012-workshop-text-mining-challenge">JEP-TALN-RECITAL 2012, Workshop DEFT 2012: DÉfi Fouille de Textes (DEFT 2012 Workshop: Text Mining Challenge)</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Grenoble, France</td>
+        <td><a href="http://aclweb.org/anthology/W12-11">http://aclweb.org/anthology/W12-11</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/jep-taln-recital-2012-workshop-deft-2012-defi-fouille-de-textes-deft-2012-workshop-text-mining-challenge">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/jep-taln-recital-2012-workshop-deft-2012-defi-fouille-de-textes-deft-2012-workshop-text-mining-challenge/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/jep-taln-recital-2012-workshop-deft-2012-defi-fouille-de-textes-deft-2012-workshop-text-mining-challenge" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-12</td>
+        <td><a href="/volumes/jep-taln-recital-2012-workshop-degels-2012-defi-geste-langue-des-signes-degels-2012-gestures-and-sign-language-challenge">JEP-TALN-RECITAL 2012, Workshop DEGELS 2012: Défi GEste Langue des Signes (DEGELS 2012: Gestures and Sign Language Challenge)</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Grenoble, France</td>
+        <td><a href="http://aclweb.org/anthology/W12-12">http://aclweb.org/anthology/W12-12</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/jep-taln-recital-2012-workshop-degels-2012-defi-geste-langue-des-signes-degels-2012-gestures-and-sign-language-challenge">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/jep-taln-recital-2012-workshop-degels-2012-defi-geste-langue-des-signes-degels-2012-gestures-and-sign-language-challenge/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/jep-taln-recital-2012-workshop-degels-2012-defi-geste-langue-des-signes-degels-2012-gestures-and-sign-language-challenge" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-13</td>
+        <td><a href="/volumes/jep-taln-recital-2012-workshop-talaf-2012-traitement-automatique-des-langues-africaines-talaf-2012-african-language-processing">JEP-TALN-RECITAL 2012, Workshop TALAf 2012: Traitement Automatique des Langues Africaines (TALAf 2012: African Language Processing)</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Grenoble, France</td>
+        <td><a href="http://aclweb.org/anthology/W12-13">http://aclweb.org/anthology/W12-13</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/jep-taln-recital-2012-workshop-talaf-2012-traitement-automatique-des-langues-africaines-talaf-2012-african-language-processing">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/jep-taln-recital-2012-workshop-talaf-2012-traitement-automatique-des-langues-africaines-talaf-2012-african-language-processing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/jep-taln-recital-2012-workshop-talaf-2012-traitement-automatique-des-langues-africaines-talaf-2012-african-language-processing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-14</td>
+        <td><a href="/volumes/jep-taln-recital-2012-workshop-iladi-2012-interactions-langagieres-pour-personnes-agees-dans-les-habitats-intelligents-iladi-2012-language-interaction-for-elderly-in-smart-homes">JEP-TALN-RECITAL 2012, Workshop ILADI 2012: Interactions Langagières pour personnes Agées Dans les habitats Intelligents (ILADI 2012: Language Interaction for Elderly in Smart Homes)</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Grenoble, France</td>
+        <td><a href="http://aclweb.org/anthology/W12-14">http://aclweb.org/anthology/W12-14</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/jep-taln-recital-2012-workshop-iladi-2012-interactions-langagieres-pour-personnes-agees-dans-les-habitats-intelligents-iladi-2012-language-interaction-for-elderly-in-smart-homes">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/jep-taln-recital-2012-workshop-iladi-2012-interactions-langagieres-pour-personnes-agees-dans-les-habitats-intelligents-iladi-2012-language-interaction-for-elderly-in-smart-homes/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/jep-taln-recital-2012-workshop-iladi-2012-interactions-langagieres-pour-personnes-agees-dans-les-habitats-intelligents-iladi-2012-language-interaction-for-elderly-in-smart-homes" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-15</td>
+        <td><a href="/volumes/inlg-2012-proceedings-of-the-seventh-international-natural-language-generation-conference">INLG 2012 Proceedings of the Seventh International Natural Language Generation Conference</a></td>
+        <td>May</td>
+        <td>2012</td>
+        <td>Utica, IL</td>
+        <td><a href="http://aclweb.org/anthology/W12-15">http://aclweb.org/anthology/W12-15</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/inlg-2012-proceedings-of-the-seventh-international-natural-language-generation-conference">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/inlg-2012-proceedings-of-the-seventh-international-natural-language-generation-conference/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/inlg-2012-proceedings-of-the-seventh-international-natural-language-generation-conference" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-16</td>
+        <td><a href="/volumes/proceedings-of-the-13th-annual-meeting-of-the-special-interest-group-on-discourse-and-dialogue">Proceedings of the 13th Annual Meeting of the Special Interest Group on Discourse and Dialogue</a></td>
+        <td>July</td>
+        <td>2012</td>
+        <td>Seoul, South Korea</td>
+        <td><a href="http://aclweb.org/anthology/W12-16">http://aclweb.org/anthology/W12-16</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-13th-annual-meeting-of-the-special-interest-group-on-discourse-and-dialogue">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-13th-annual-meeting-of-the-special-interest-group-on-discourse-and-dialogue/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-13th-annual-meeting-of-the-special-interest-group-on-discourse-and-dialogue" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>L18-1</td>
+        <td><a href="/volumes/proceedings-of-the-eleventh-international-conference-on-language-resources-and-evaluation-lrec-2018">Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC-2018)</a></td>
+        <td>May</td>
+        <td>2018</td>
+        <td>Miyazaki, Japan</td>
+        <td><a href="http://aclweb.org/anthology/L18-1">http://aclweb.org/anthology/L18-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-eleventh-international-conference-on-language-resources-and-evaluation-lrec-2018">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-eleventh-international-conference-on-language-resources-and-evaluation-lrec-2018/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-eleventh-international-conference-on-language-resources-and-evaluation-lrec-2018" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W77-01</td>
+        <td><a href="/volumes/proceedings-of-the-1st-nordic-conference-of-computational-linguistics-nodalida-1977">Proceedings of the 1st Nordic Conference of Computational Linguistics (NODALIDA 1977)</a></td>
+        <td>October</td>
+        <td>1977</td>
+        <td>Gothenburg, Sweden</td>
+        <td><a href="http://aclweb.org/anthology/W77-01">http://aclweb.org/anthology/W77-01</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-1st-nordic-conference-of-computational-linguistics-nodalida-1977">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-1st-nordic-conference-of-computational-linguistics-nodalida-1977/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-1st-nordic-conference-of-computational-linguistics-nodalida-1977" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-17</td>
+        <td><a href="/volumes/proceedings-of-the-3rd-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2012">Proceedings of the 3rd Workshop on Cognitive Modeling and Computational Linguistics (CMCL 2012)</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-17">http://aclweb.org/anthology/W12-17</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-3rd-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2012">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-3rd-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-3rd-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-18</td>
+        <td><a href="/volumes/naacl-hlt-workshop-on-future-directions-and-needs-in-the-spoken-dialog-community-tools-and-data-sdctd-2012">NAACL-HLT Workshop on Future directions and needs in the Spoken Dialog Community: Tools and Data (SDCTD 2012)</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-18">http://aclweb.org/anthology/W12-18</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/naacl-hlt-workshop-on-future-directions-and-needs-in-the-spoken-dialog-community-tools-and-data-sdctd-2012">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/naacl-hlt-workshop-on-future-directions-and-needs-in-the-spoken-dialog-community-tools-and-data-sdctd-2012/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/naacl-hlt-workshop-on-future-directions-and-needs-in-the-spoken-dialog-community-tools-and-data-sdctd-2012" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-19</td>
+        <td><a href="/volumes/proceedings-of-the-naacl-hlt-workshop-on-the-induction-of-linguistic-structure">Proceedings of the NAACL-HLT Workshop on the Induction of Linguistic Structure</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-19">http://aclweb.org/anthology/W12-19</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-naacl-hlt-workshop-on-the-induction-of-linguistic-structure">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-naacl-hlt-workshop-on-the-induction-of-linguistic-structure/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-naacl-hlt-workshop-on-the-induction-of-linguistic-structure" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-20</td>
+        <td><a href="/volumes/proceedings-of-the-seventh-workshop-on-building-educational-applications-using-nlp">Proceedings of the Seventh Workshop on Building Educational Applications Using NLP</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-20">http://aclweb.org/anthology/W12-20</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-seventh-workshop-on-building-educational-applications-using-nlp">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-seventh-workshop-on-building-educational-applications-using-nlp/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-seventh-workshop-on-building-educational-applications-using-nlp" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-21</td>
+        <td><a href="/volumes/proceedings-of-the-second-workshop-on-language-in-social-media">Proceedings of the Second Workshop on Language in Social Media</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-21">http://aclweb.org/anthology/W12-21</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-second-workshop-on-language-in-social-media">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-second-workshop-on-language-in-social-media/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-second-workshop-on-language-in-social-media" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-16</td>
+        <td><a href="/volumes/proceedings-of-the-second-workshop-on-stylistic-variation">Proceedings of the Second Workshop on Stylistic Variation</a></td>
+        <td>June</td>
+        <td>2018</td>
+        <td>New Orleans</td>
+        <td><a href="http://aclweb.org/anthology/W18-16">http://aclweb.org/anthology/W18-16</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-second-workshop-on-stylistic-variation">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-second-workshop-on-stylistic-variation/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-second-workshop-on-stylistic-variation" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-17</td>
+        <td><a href="/volumes/proceedings-of-the-twelfth-workshop-on-graph-based-methods-for-natural-language-processing-textgraphs-12">
+       Proceedings of the Twelfth Workshop on Graph-Based Methods for Natural
+       Language Processing (TextGraphs-12)
+     </a></td>
+        <td>June</td>
+        <td>2018</td>
+        <td>New Orleans, Louisiana, USA</td>
+        <td><a href="http://aclweb.org/anthology/W18-17">http://aclweb.org/anthology/W18-17</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-twelfth-workshop-on-graph-based-methods-for-natural-language-processing-textgraphs-12">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-twelfth-workshop-on-graph-based-methods-for-natural-language-processing-textgraphs-12/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-twelfth-workshop-on-graph-based-methods-for-natural-language-processing-textgraphs-12" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-18</td>
+        <td><a href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-1-research-papers">Proceedings of the 13th Conference of the Association for Machine Translation in the Americas (Volume 1: Research Papers)</a></td>
+        <td></td>
+        <td>2018</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W18-18">http://aclweb.org/anthology/W18-18</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-1-research-papers">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-1-research-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-1-research-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-19</td>
+        <td><a href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-2-user-papers">Proceedings of the 13th Conference of the Association for Machine Translation in the Americas (Volume 2: User Papers)</a></td>
+        <td></td>
+        <td>2018</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W18-19">http://aclweb.org/anthology/W18-19</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-2-user-papers">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-2-user-papers/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-13th-conference-of-the-association-for-machine-translation-in-the-americas-volume-2-user-papers" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-20</td>
+        <td><a href="/volumes/proceedings-of-the-amta-2018-workshop-on-the-role-of-authoritative-standards-in-the-mt-environment">Proceedings of the AMTA 2018 Workshop on The Role of Authoritative Standards in the MT Environment</a></td>
+        <td></td>
+        <td>2018</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W18-20">http://aclweb.org/anthology/W18-20</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-amta-2018-workshop-on-the-role-of-authoritative-standards-in-the-mt-environment">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-amta-2018-workshop-on-the-role-of-authoritative-standards-in-the-mt-environment/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-amta-2018-workshop-on-the-role-of-authoritative-standards-in-the-mt-environment" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-21</td>
+        <td><a href="/volumes/proceedings-of-the-amta-2018-workshop-on-translation-quality-estimation-and-automatic-post-editing">Proceedings of the AMTA 2018 Workshop on Translation Quality Estimation and Automatic Post-Editing</a></td>
+        <td></td>
+        <td>2018</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W18-21">http://aclweb.org/anthology/W18-21</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-amta-2018-workshop-on-translation-quality-estimation-and-automatic-post-editing">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-amta-2018-workshop-on-translation-quality-estimation-and-automatic-post-editing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-amta-2018-workshop-on-translation-quality-estimation-and-automatic-post-editing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-22</td>
+        <td><a href="/volumes/proceedings-of-the-amta-2018-workshop-on-technologies-for-mt-of-low-resource-languages-loresmt-2018">Proceedings of the AMTA 2018 Workshop on Technologies for MT of Low Resource Languages (LoResMT 2018) </a></td>
+        <td></td>
+        <td>2018</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W18-22">http://aclweb.org/anthology/W18-22</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-amta-2018-workshop-on-technologies-for-mt-of-low-resource-languages-loresmt-2018">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-amta-2018-workshop-on-technologies-for-mt-of-low-resource-languages-loresmt-2018/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-amta-2018-workshop-on-technologies-for-mt-of-low-resource-languages-loresmt-2018" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-23</td>
+        <td><a href="/volumes/proceedings-of-the-bionlp-2018-workshop">Proceedings of the BioNLP 2018 workshop</a></td>
+        <td>July</td>
+        <td>2018</td>
+        <td>Melbourne, Australia</td>
+        <td><a href="http://aclweb.org/anthology/W18-23">http://aclweb.org/anthology/W18-23</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-bionlp-2018-workshop">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-bionlp-2018-workshop/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-bionlp-2018-workshop" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-24</td>
+        <td><a href="/volumes/proceedings-of-the-seventh-named-entities-workshop">Proceedings of the Seventh Named Entities Workshop</a></td>
+        <td>July</td>
+        <td>2018</td>
+        <td>Melbourne, Australia</td>
+        <td><a href="http://aclweb.org/anthology/W18-24">http://aclweb.org/anthology/W18-24</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-seventh-named-entities-workshop">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-seventh-named-entities-workshop/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-seventh-named-entities-workshop" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>K17-1</td>
+        <td><a href="/volumes/proceedings-of-the-21st-conference-on-computational-natural-language-learning-conll-2017">
+      Proceedings of the 21st Conference on Computational Natural Language
+      Learning (CoNLL 2017)
+    </a></td>
+        <td>August</td>
+        <td>2017</td>
+        <td>Vancouver, Canada</td>
+        <td><a href="http://aclweb.org/anthology/K17-1">http://aclweb.org/anthology/K17-1</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-21st-conference-on-computational-natural-language-learning-conll-2017">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-21st-conference-on-computational-natural-language-learning-conll-2017/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-21st-conference-on-computational-natural-language-learning-conll-2017" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>K17-2</td>
+        <td><a href="/volumes/proceedings-of-the-conll-sigmorphon-2017-shared-task-universal-morphological-reinflection">
+      Proceedings of the CoNLL SIGMORPHON 2017 Shared Task: Universal
+      Morphological Reinflection
+    </a></td>
+        <td>August</td>
+        <td>2017</td>
+        <td>Vancouver</td>
+        <td><a href="http://aclweb.org/anthology/K17-2">http://aclweb.org/anthology/K17-2</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-conll-sigmorphon-2017-shared-task-universal-morphological-reinflection">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-conll-sigmorphon-2017-shared-task-universal-morphological-reinflection/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-conll-sigmorphon-2017-shared-task-universal-morphological-reinflection" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>K17-3</td>
+        <td><a href="/volumes/proceedings-of-the-conll-2017-shared-task-multilingual-parsing-from-raw-text-to-universal-dependencies">
+      Proceedings of the CoNLL 2017 Shared Task: Multilingual Parsing from Raw
+      Text to Universal Dependencies
+    </a></td>
+        <td>August</td>
+        <td>2017</td>
+        <td>Vancouver, Canada</td>
+        <td><a href="http://aclweb.org/anthology/K17-3">http://aclweb.org/anthology/K17-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-conll-2017-shared-task-multilingual-parsing-from-raw-text-to-universal-dependencies">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-conll-2017-shared-task-multilingual-parsing-from-raw-text-to-universal-dependencies/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-conll-2017-shared-task-multilingual-parsing-from-raw-text-to-universal-dependencies" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>K18-3</td>
+        <td><a href="/volumes/proceedings-of-the-conll-sigmorphon-2018-shared-task-universal-morphological-reinflection">Proceedings of the CoNLL SIGMORPHON 2018 Shared Task: Universal Morphological Reinflection</a></td>
+        <td>October</td>
+        <td>2018</td>
+        <td>Brussels</td>
+        <td><a href="http://aclweb.org/anthology/K18-3">http://aclweb.org/anthology/K18-3</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-conll-sigmorphon-2018-shared-task-universal-morphological-reinflection">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-conll-sigmorphon-2018-shared-task-universal-morphological-reinflection/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-conll-sigmorphon-2018-shared-task-universal-morphological-reinflection" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-22</td>
+        <td><a href="/volumes/proceedings-of-the-first-workshop-on-predicting-and-improving-text-readability-for-target-reader-populations">Proceedings of the First Workshop on Predicting and Improving Text Readability for target reader populations</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-22">http://aclweb.org/anthology/W12-22</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-first-workshop-on-predicting-and-improving-text-readability-for-target-reader-populations">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-first-workshop-on-predicting-and-improving-text-readability-for-target-reader-populations/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-first-workshop-on-predicting-and-improving-text-readability-for-target-reader-populations" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-23</td>
+        <td><a href="/volumes/proceedings-of-the-twelfth-meeting-of-the-special-interest-group-on-computational-morphology-and-phonology">Proceedings of the Twelfth Meeting of the Special Interest Group on Computational Morphology and Phonology</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-23">http://aclweb.org/anthology/W12-23</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-twelfth-meeting-of-the-special-interest-group-on-computational-morphology-and-phonology">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-twelfth-meeting-of-the-special-interest-group-on-computational-morphology-and-phonology/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-twelfth-meeting-of-the-special-interest-group-on-computational-morphology-and-phonology" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W12-24</td>
+        <td><a href="/volumes/bionlp-proceedings-of-the-2012-workshop-on-biomedical-natural-language-processing">BioNLP: Proceedings of the 2012 Workshop on Biomedical Natural Language Processing</a></td>
+        <td>June</td>
+        <td>2012</td>
+        <td>Montrèal, Canada</td>
+        <td><a href="http://aclweb.org/anthology/W12-24">http://aclweb.org/anthology/W12-24</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/bionlp-proceedings-of-the-2012-workshop-on-biomedical-natural-language-processing">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/bionlp-proceedings-of-the-2012-workshop-on-biomedical-natural-language-processing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/bionlp-proceedings-of-the-2012-workshop-on-biomedical-natural-language-processing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-01</td>
+        <td><a href="/volumes/proceedings-of-the-8th-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2018">
+      Proceedings of the 8th Workshop on Cognitive Modeling and Computational
+      Linguistics (CMCL 2018)
+    </a></td>
+        <td>January</td>
+        <td>2018</td>
+        <td>Salt Lake City, Utah</td>
+        <td><a href="http://aclweb.org/anthology/W18-01">http://aclweb.org/anthology/W18-01</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-8th-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2018">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-8th-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2018/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-8th-workshop-on-cognitive-modeling-and-computational-linguistics-cmcl-2018" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-02</td>
+        <td><a href="/volumes/proceedings-of-the-fourth-international-workshop-on-computational-linguistics-of-uralic-languages">
+      Proceedings of the Fourth International Workshop on Computational
+      Linguistics of Uralic Languages
+    </a></td>
+        <td>January</td>
+        <td>2018</td>
+        <td>Helsinki, Finland</td>
+        <td><a href="http://aclweb.org/anthology/W18-02">http://aclweb.org/anthology/W18-02</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-fourth-international-workshop-on-computational-linguistics-of-uralic-languages">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-fourth-international-workshop-on-computational-linguistics-of-uralic-languages/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-fourth-international-workshop-on-computational-linguistics-of-uralic-languages" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-03</td>
+        <td><a href="/volumes/proceedings-of-the-society-for-computation-in-linguistics-scil-2018">Proceedings of the Society for Computation in Linguistics (SCiL) 2018</a></td>
+        <td></td>
+        <td>2018</td>
+        <td></td>
+        <td><a href="http://aclweb.org/anthology/W18-03">http://aclweb.org/anthology/W18-03</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-society-for-computation-in-linguistics-scil-2018">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-society-for-computation-in-linguistics-scil-2018/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-society-for-computation-in-linguistics-scil-2018" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-05</td>
+        <td><a href="/volumes/proceedings-of-the-thirteenth-workshop-on-innovative-use-of-nlp-for-building-educational-applications">
+      Proceedings of the Thirteenth Workshop on Innovative Use of NLP for
+      Building Educational Applications
+    </a></td>
+        <td>June</td>
+        <td>2018</td>
+        <td>New Orleans, Louisiana</td>
+        <td><a href="http://aclweb.org/anthology/W18-05">http://aclweb.org/anthology/W18-05</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-thirteenth-workshop-on-innovative-use-of-nlp-for-building-educational-applications">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-thirteenth-workshop-on-innovative-use-of-nlp-for-building-educational-applications/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-thirteenth-workshop-on-innovative-use-of-nlp-for-building-educational-applications" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-06</td>
+        <td><a href="/volumes/proceedings-of-the-fifth-workshop-on-computational-linguistics-and-clinical-psychology-from-keyboard-to-clinic">
+      Proceedings of the Fifth Workshop on Computational Linguistics and
+      Clinical Psychology: From Keyboard to Clinic
+    </a></td>
+        <td>June</td>
+        <td>2018</td>
+        <td>New Orleans, LA</td>
+        <td><a href="http://aclweb.org/anthology/W18-06">http://aclweb.org/anthology/W18-06</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-fifth-workshop-on-computational-linguistics-and-clinical-psychology-from-keyboard-to-clinic">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-fifth-workshop-on-computational-linguistics-and-clinical-psychology-from-keyboard-to-clinic/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-fifth-workshop-on-computational-linguistics-and-clinical-psychology-from-keyboard-to-clinic" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-07</td>
+        <td><a href="/volumes/proceedings-of-the-first-workshop-on-computational-models-of-reference-anaphora-and-coreference">
+       Proceedings of the First Workshop on Computational Models of Reference,
+       Anaphora and Coreference
+     </a></td>
+        <td>June</td>
+        <td>2018</td>
+        <td>New Orleans, Louisiana</td>
+        <td><a href="http://aclweb.org/anthology/W18-07">http://aclweb.org/anthology/W18-07</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-first-workshop-on-computational-models-of-reference-anaphora-and-coreference">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-first-workshop-on-computational-models-of-reference-anaphora-and-coreference/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-first-workshop-on-computational-models-of-reference-anaphora-and-coreference" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+      <tr>
+        <td>W18-08</td>
+        <td><a href="/volumes/proceedings-of-the-second-acl-workshop-on-ethics-in-natural-language-processing">Proceedings of the Second ACL Workshop on Ethics in Natural Language Processing</a></td>
+        <td>June</td>
+        <td>2018</td>
+        <td>New Orleans, Louisiana, USA</td>
+        <td><a href="http://aclweb.org/anthology/W18-08">http://aclweb.org/anthology/W18-08</a></td>
+<!-- , :target => "_blank" -->
+        <!--  -->
+        <!-- <td>
+          <a class="btn btn-mini btn-primary" href="/volumes/proceedings-of-the-second-acl-workshop-on-ethics-in-natural-language-processing">translation missing: en.helpers.links.view</a>
+          <a class="btn btn-mini" href="/volumes/proceedings-of-the-second-acl-workshop-on-ethics-in-natural-language-processing/edit">Edit</a>
+          <a class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" href="/volumes/proceedings-of-the-second-acl-workshop-on-ethics-in-natural-language-processing" rel="nofollow">Delete</a>
+        </td> -->
+      </tr>
+  </tbody>
+</table>
+<!-- 
+<a class="btn btn-primary" href="/volumes/new">New</a> -->
+
+                </div>    
+            </div> 
+</div>
+
+
+<div class="container">
+	<hr>
+	<div id ="footer" class="span12">
+		<p>ACL materials are Copyright &#169; 1963-2018 ACL; other materials are copyrighted by their respective copyright holders.  Materials prior to 2016 here are licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 International License</a>. Permission is granted to make copies for the purposes of teaching and research.  Materials published in or after 2016 are licensed on a <A HREF="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</A>.</p>
+
+		<p style="text-align: center"><a href="/credits">Credits</a> | 
+      <a href="/volunteer">Volunteer</a> | 
+      <a href="/contributors">Contributors</a> | 
+      <a href="/corrections">Corrections</a> | 
+      <a href="http://bit.ly/aclAnthologyQ">Ingestion Queue</a> |
+      <a href="https://github.com/acl-org/acl-anthology/issues/">Issues</a> | 
+      <a href="/faq">FAQ</a> 
+		</p>
+
+		<p><a href="http://mjpost.github.io">Matt Post</a> (Editor, 2019&ndash;) / 
+		<a href="http://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> (Editor, 2008&ndash;2018) / 
+		<a href="http://stevenbird.net/">Steven Bird</a> (Editor, 2001&ndash;2007)</p>
+
+<!--		<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/88x31-42fe130ae66482ef422a8aa0a3896f41.png" /></a> -->
+		<a href="http://creativecommons.org/licenses/by/4.0/" id="cc_icon" rel="license"><img alt="Creative Commons License" border="0" src="/assets/cc4by-6c00ea211acf121a2b231d0c31c54b6c.png" /></a>
+	</div>
+</div>
+
+    </body>
+</html>
