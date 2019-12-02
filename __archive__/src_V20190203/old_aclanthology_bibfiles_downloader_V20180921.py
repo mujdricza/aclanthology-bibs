@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.6
 
 """
+NOTE: Use the newer version 201902xx!
+
 This script downloads the summarized bib files for all the ACL-anthology volumes available.
  - shared URL for the anthology: https://aclanthology.coli.uni-saarland.de/
  - URL to the list of volumes: https://aclanthology.coli.uni-saarland.de/volumes/

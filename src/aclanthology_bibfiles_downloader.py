@@ -1,10 +1,11 @@
 #!/usr/bin/env python3.6 or newer
 
 """
+
 This script downloads the summarized bib files for all the ACL-anthology volumes available.
 Entry points:
- - shared URL for the anthology:    https://aclanthology.info/
- - URL to the list of volumes:      https://aclanthology.info/volumes/
+ - shared URL for the anthology:    https://www.aclweb.org/anthology/
+ - URL to the list of volumes:      https://www.aclweb.org/anthology/volumes/
 
 Aim:
 The bib-files can be imported into a reference management software (e.g. JabRef).
@@ -16,22 +17,20 @@ Options:
 - Select a particular year (-y) or a year range (-Y).
 - Select a particular journal/proceeding (-a, -i) or a list of journals/proceedings (-A, -I).
 - Concatenate all bib-files into one file additionally (-c).
-- Keep the overview files temporarily downloaded (-f).
+- Keep the overview files which will be temporarily downloaded during the extraction process (-f).
 - Give another logging file name than 'download.log' (-l).
-- (Search for only some of the volume-pages (-p).)
-- TODO: Post-processing option: Reformat the bib-entries:
-  * Generate a key more readable for me with pattern: <AUTHOR(S)>[Etal]_<YEAR>_<TITLEWORDS>-<ABBREV>_<ID>
-  * Replace apostroph template with brace template, additionally, escape title information in doubled braces.
 
 
 Author: emm (mujdricza@cl.uni-heidelberg.de)
-Last Version: 20190203 (previous versions: 20180921, 20180524, ...)
+Last Version: 20191201 (previous versions: 20190203, 20180921, 20180524, ...)
 
 Licence: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
 
 TODO:
-- post-processing
+- post-processing: Reformat the bib-entries:
+  * Generate a key more readable for me with pattern: <AUTHOR(S)>[Etal]_<YEAR>_<TITLEWORDS>-<ABBREV>_<ID>
+  * Replace apostroph template with brace template, additionally, escape title information in doubled braces.
 - update some of the DocStrings with new examples
 
 FIXME:
@@ -46,6 +45,9 @@ import re
 import sys
 import urllib.request
 import logging
+from lxml import etree, html
+from shutil import copy as shutil_copy
+
 
     
 # local imports
@@ -55,6 +57,7 @@ from utils import URL
 from utils import LOCAL
 from utils import RESTRICTIONS
 from utils import ACRONYM2LETTER_DICT
+from utils import BIB
 
 
 def extract_volume_urls(
@@ -69,150 +72,178 @@ def extract_volume_urls(
     
     Example input and output:
     
-    input_html: https://aclanthology.coli.uni-saarland.de/volumes?page=5
-    in the html file find parts like: <td><a href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-12-number-1-january-march-1986">
-    then extract: https://aclanthology.coli.uni-saarland.de/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-12-number-1-january-march-1986
+    input_html: https://www.aclweb.org/anthology/volumes/
+        (Note that all conferences are listed on one page)
+    in the html file find parts like:
+    <li><a href=/anthology/volumes/S12-1/>*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a></li>
+    then extract:
+    https://www.aclweb.org/anthology/volumes/anthology/volumes/S12-1/
     
-    e.g. a whole line with all information about the given volume:
-    <tbody>
-      <tr>
-        <td>J84-2</td>
-        <td><a href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-10-number-2-april-june-1984">Computational Linguistics. Formerly the American Journal of Computational Linguistics, Volume 10, Number 2, April-June 1984</a></td>
-        <td></td>
-        <td>1984</td>
-        <td></td>
-        <td><a href="http://aclweb.org/anthology/J84-2">http://aclweb.org/anthology/J84-2</a></td>
-        ...
-      </tr>
-      ...
-     </tbody>
-    
+    The html file contains all conferences in a list within the tag main:
+    ... <div id=main-container class=container><main aria-role=main><h2 id=title>List of all volumes</h2><hr><ul><li><a href=/anthology/volumes/S12-1/>*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a></li><li><a href=/anthology/volumes/E03-1/>10th Conference of the European Chapter of the Association for Computational Linguistics</a></li><li> ... </main></div> ...
     """
     
     file = open(local_fn_volumeoverview_html) # one page of the volume overviews
     lines = file.readlines()
     file.close()
     
-    # take the tbody part (assumption: there is only one table with tbody)
-    tbodylines = []
+    #NOTE that the newer files are squeezed into a few lines --> break them up into multiple lines
+    lines = prettify_lines(lines)
+    
+    # take the "main" part (assumption: there is only one tag with the name "main")
+    mainlines = []
     is_relevant_part = False
     for line in lines:
         line = line.strip()
-        if not is_relevant_part:
-            if line == HTML.TBODY_OPENING.value:
+        if is_relevant_part is False:
+            if line.startswith(HTML.MAIN_OPENING_BEGIN.value):
                 is_relevant_part = True
         else:
-            if line == HTML.TBODY_CLOSING.value:
+            if line == HTML.MAIN_CLOSING.value:
                 break  # break since no further info is relevant
-            tbodylines.append(line)
-
+            if line.startswith(HTML.A_HREF_STRING.value):
+                mainlines.append(line)
     
-    # if no content --> break the process
-    if len(tbodylines) < 1:
-        volume_urls = None
-        logger.log(logging.DEBUG, f"Empty table in file '{local_fn_volumeoverview_html}'")
-        return volume_urls
     
     volume_urls = []
     pattern_volume = href_pattern
     
+    #first, extract all possible volume URLs
+    for line in mainlines:
+        if href_string in line:
+            match = pattern_volume.search(line)
+            if match is not None:
+                #value of the href attribute -- part of an url
+                vol = match.group(href_group)
+                
+                # extend it to the whole target url with the volume
+                vol = target_url_stem + vol
+                
+                volume_urls.append(vol)
+            else:
+                if "volumes" in line:
+                    msg = f"Not extracted volume URL from '{href_string}' in line '{line}' by pattern '{pattern_volume}'."
+                    raise ValueError(msg)
+    
+    #print(f">> all volume_urls: {len(volume_urls)}")
+    
     # no restrictions --> simple extraction of all volumes
+    relevant_volume_urls = []
     if restrictions is None or not restrictions:
         logger.log(logging.DEBUG, f"No restriction -- take all volumes.")
-        for line in tbodylines:
-            if href_string in line:
-                match = pattern_volume.search(line)
-                if match is not None:
-                    #value of the href attribute -- part of an url
-                    vol = match.group(href_group)
-                    
-                    # extend it to the whole target url with the volume
-                    vol = target_url_stem + vol
-                    
-                    volume_urls.append(vol)
+        relevant_volume_urls = volume_urls
     
     else:
         logger.log(logging.INFO, f"Restrict download to specific year and/or venue: {restrictions}")
     
-        # take only the relevant part of the html site:
-        is_tr = False
-        td_counter = 0
-        tmp_vol = None
         dropped_due_to_restrictions = False
         
-        for line in tbodylines:
-            #take the second td for volume url name, and the forth td for year information
+        for tmp_vol in volume_urls:
+            match = HTML.VENUEID_PATTERN.value.search(line)
             
-            if line == HTML.TR_OPENING.value:
-                is_tr = True
-                td_counter = 0
-                dropped_due_to_restrictions = False
-                tmp_vol = None
-            elif line == HTML.TR_CLOSING.value:
-                is_tr = False
-                if tmp_vol is not None and not dropped_due_to_restrictions:
-                    volume_urls.append(tmp_vol)
-                    tmp_vol = None
+            if match is not None:
+                venue_id, venue_year = __extract_current_venue_and_year(tmp_vol)
+            else:
+                msg = f"Venue id and year could not be extracted from the URL '{tmp_vol}' by the pattern '{HTML.VENUEID_PATTERN.value}"
+                raise ValueError(msg)
             
-            elif is_tr:
-                if line.startswith(HTML.TD_OPENING.value):
-                    td_counter += 1
-                    
-                    if td_counter == 2 and not dropped_due_to_restrictions: # volume name
-                    
-                        match = pattern_volume.search(line)
-                        if match is not None:
-                            # value of the href attribute -- part of an url
-                            vol = match.group(href_group)
+            if __has_year_restrictions(restrictions):
+                if not __is_relevant_year(venue_year, restrictions):
+                    dropped_due_to_restrictions = True
+            if dropped_due_to_restrictions is False and __has_venue_restrictions(restrictions):
+                if not __is_relevant_venue(venue_id, restrictions):
+                    dropped_due_to_restrictions = True
+            
+            if dropped_due_to_restrictions is False:
+                relevant_volume_urls.append(tmp_vol)
+            
+            # reset variable
+            dropped_due_to_restrictions = False
+            
+    return relevant_volume_urls # filled with urls, or empty
+
+
+def prettify_lines(lines):
+    """
+    Break up html lines with multiple tags into multiple lines using the package etree.
+    NOTE that the representation of the attribute values will be normalised, thus all values are quoted!
     
-                            # extend it to the whole target url with the volume
-                            tmp_vol = target_url_stem + vol
+    E.g. ... <main aria-role=main><h2 id=title>List of all volumes</h2><hr><ul><li><a href=/anthology/volumes/S12-1/>*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a></li><li> ...
     
-                    elif tmp_vol is not None and \
-                        td_counter == 4 and \
-                        __has_year_restrictions(restrictions): # volume year
-                        
-                        match = HTML.TD_PATTERN.value.search(line)
-                        if match is not None:
-                            year_str = match.group(HTML.TD_INFO_GROUP.value)
-                            year = int(year_str)
-                            
-                            if not __is_relevant_year(year, restrictions):
-                                tmp_vol = None
-                        else:
-                            msg = f"Not recognized year information in line:\n{line}"
-                            raise ValueError(msg)
+    break into:
+      <main aria-role="main">
+        <h2 id="title">List of all volumes</h2>
+        <hr/>
+        <ul>
+          <li>
+            <a href="/anthology/volumes/S12-1/">*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a>
+          </li>
+          <li>
+    
+    respective return list:
+    [..., '      <main aria-role="main">', '        <h2 id="title">List of all volumes</h2>', '        <hr/>', '        <ul>', '          <li>', '            <a href="/anthology/volumes/S12-1/">*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a>', '          </li>', '          <li>', ... ]
+
+    :param lines: lines of a html file
+    :return: lines of the html file with one tag per line
+    """
+    
+    document_root = html.fromstring(FORMAT.NL.value.join(lines))
+    pretty_document = etree.tostring(document_root, encoding='unicode', pretty_print=True)
+    pretty_lines_notyetgood = pretty_document.split(FORMAT.NL.value)
+    
+    # data = "\n".join(lines)
+    #
+    # soup = bs(data,features="lxml")                #make BeautifulSoup
+    # prettyHTML=soup.prettify()   #prettify the html
+    #
+    # print(prettyHTML)
+    
+    pretty_lines = []
+    closed_tag = False
+    idx_begin = 0
+    idx_end = 0
+    line = "".join(pretty_lines_notyetgood)
+    #for line in lines:
+    for idx, ch in enumerate(line):
+        if (line[idx] == "<" and line[idx+1] != "/"):
+            part = line[idx_begin:idx]
+            if part.strip():
+                pretty_lines.append(part)
+                #print(f">>> part: {part}")
+            idx_begin = idx
+            idx_end = idx_begin
+        elif idx > 0 and line[idx-1] == ">":
+            next_not_space = None
+            for nch in line[idx:]:
+                if nch.strip():
+                    next_not_space = nch
+                    break
                     
-                    elif td_counter == 1 and \
-                        __has_venue_restrictions(restrictions):
-                        
-                        match = HTML.TD_PATTERN.value.search(line)
-                        if match is not None:
-                            venue_id, venue_year = __extract_current_venue_and_year(match.group(HTML.TD_INFO_GROUP.value))
-                            if not __is_relevant_venue(venue_id, restrictions):
-                                tmp_vol = None
-                                dropped_due_to_restrictions = True
-                            elif not __is_relevant_year(venue_year, restrictions):
-                                tmp_vol = None
-                                dropped_due_to_restrictions = True
-
-                            else:
-                                dropped_due_to_restrictions = False
-                        else:
-                            msg = f"Not recognized venue information in line:\n{line}"
-                            raise ValueError(msg)
-                else:
-                    pass # nothing to do
-                    
-    return volume_urls # filled with urls, or empty (or previously set to None and returned for the case the website is empty)
+            if next_not_space == "<":
+                part = line[idx_begin:idx]
+                if part.strip():
+                    pretty_lines.append(part)
+                    #print(f">>> part: {part}")
+                idx_begin = idx
+                idx_end = idx_begin
+                
+        
+        idx_end = idx
+        
+    if idx_begin < len(line):
+        part = line[idx_begin:]
+        if part.strip():
+            pretty_lines.append(part)
+            #print(f">>> part: {part}")
+    
+    return pretty_lines
 
 
-
+__HAS_YEAR_RESTRICTIONS = None
 def __has_year_restrictions(restriction_dict=None):
     
-    __HAS_YEAR_RESTRICTIONS = None
+    global __HAS_YEAR_RESTRICTIONS
     if __HAS_YEAR_RESTRICTIONS is None:
-        
         if restriction_dict is None:
             __HAS_YEAR_RESTRICTIONS = False
         else:
@@ -224,6 +255,7 @@ def __has_year_restrictions(restriction_dict=None):
                 __HAS_YEAR_RESTRICTIONS = True
     
     return __HAS_YEAR_RESTRICTIONS
+
 
 def __is_relevant_year(current_year, restriction_dict=None):
     
@@ -242,9 +274,10 @@ def __is_relevant_year(current_year, restriction_dict=None):
         msg = f"Not handled year restrictions: {years}"
         raise NotImplementedError(msg)
 
-
-def __has_venue_restrictions(restriction_dict=None): #TODO
-    __HAS_VENUE_RESTRICTIONS = None
+__HAS_VENUE_RESTRICTIONS = None
+def __has_venue_restrictions(restriction_dict=None):
+    
+    global __HAS_VENUE_RESTRICTIONS
     if __HAS_VENUE_RESTRICTIONS is None:
         if restriction_dict is None:
             __HAS_VENUE_RESTRICTIONS = False
@@ -255,7 +288,7 @@ def __has_venue_restrictions(restriction_dict=None): #TODO
                 __HAS_VENUE_RESTRICTIONS = False
             else:
                 __HAS_VENUE_RESTRICTIONS = True
-    
+
     return __HAS_VENUE_RESTRICTIONS
     
     
@@ -278,7 +311,7 @@ def __is_relevant_venue(current_venue_id, restriction_dict=None):
 
 
 def __extract_current_venue_and_year(raw_volume_string):
-    """e.g. A00-1"""
+    """input e.g. A00-1"""
     
     id = None
     year = None
@@ -316,23 +349,19 @@ def __extract_year_from_shortyear(shortyear_str):
 def extract_volume_overviews(
     output_path,
     output_temp_fn=None,
-    url_stem=HTML.VOLUME_URL_STEM.value,
-    pagination_mark=HTML.PAGINATION_STRING.value,
-    last_page=None,
+    url_stem=HTML.VOLUME_URL_STEM_CLOSED.value,
     restrictions=None):
-    """Extracts the urls for the ACL volumes from the ACL Anthology overview pages.
+    """Extracts the urls for the ACL volumes from the ACL Anthology volume website.
     
     The overview pages are downloaded in a temporary file which will be deleted as soon as not used any more.
     
     Example for the relevant html lines in one of the overview pages:
-        <td><a href="/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-12-number-1-january-march-1986">
+        <a href="/anthology/volumes/S12-1/">*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a>'
     From this line, the following url will be extracted:
-        https://aclanthology.coli.uni-saarland.de/volumes/computational-linguistics-formerly-the-american-journal-of-computational-linguistics-volume-12-number-1-january-march-1986
+        https://www.aclweb.org/anthology/volumes/S12-1/index.html
+    
     On this url, the whole volume is listed, and the bib file for the volume.
     """
-    
-    if last_page == 0:
-        sys.exit("(No pages requested, done.)")
     
     local_fn = output_temp_fn # if filled: only a temporary file; if None: the file will be kept permanently
     
@@ -340,51 +369,24 @@ def extract_volume_overviews(
         os.makedirs(output_path, exist_ok=True)
         output_path = __normalize_path_end(output_path)
     
-    list_of_volume_urls = []
     
-    step = 1
-    current_page_idx = 0
-    has_next_page = __has_next_page(last_page, current_page_idx)
-    pn = last_page if last_page is not None else "all"
-    s = "" if last_page == 1 else "s"
-    logger.log(logging.INFO, f"Download bib files for {pn} page{s} of the URL={url_stem}")
+    if output_temp_fn is None:
+        local_fn = output_path + "volumes" + HTML.EXTENSION_HTML.value
+        
+    download_url = url_stem + HTML.INDEXHTML.value
+    local_fn_ov_retrieved, headers = urllib.request.urlretrieve(download_url, filename=local_fn)
+    logger.log(logging.INFO, f"Downloaded url: '{download_url}' into '{local_fn_ov_retrieved}'.")
     
-    while has_next_page:
-        if output_temp_fn is None:
-            local_fn = output_path + LOCAL.PAGE.value + str(current_page_idx) + HTML.EXTENSION_HTML.value
-            
-        download_url = url_stem + pagination_mark + str(current_page_idx)
-        local_fn_ov_retrieved, headers = urllib.request.urlretrieve(download_url, filename=local_fn)
-        logger.log(logging.INFO, f"Downloaded url: {download_url}")
-        
-        volume_urls = extract_volume_urls(local_fn_ov_retrieved, restrictions=restrictions)
-        if volume_urls is None:
-            logger.log(logging.INFO, f"(No more volumes detected, break searching process.)")
-            has_next_page = False
-            break
-        else:
-            logger.log(logging.INFO, f"--> extracted {len(volume_urls)} volume_urls")
-            list_of_volume_urls.extend(volume_urls)
-        
-            
-        current_page_idx += step
-        has_next_page = __has_next_page(last_page, current_page_idx)
+    volume_urls = extract_volume_urls(local_fn_ov_retrieved, restrictions=restrictions)
+    logger.log(logging.INFO, f"-> Found {len(volume_urls)} relevant volume URLs.")
+    
     
     if output_temp_fn is not None:
         os.remove(local_fn)
         logger.log(logging.INFO, f"(Local file {local_fn} removed.)")
     
-    return list_of_volume_urls
+    return volume_urls
 
-
-def __has_next_page(last_nr, current_idx):
-    
-    if last_nr is None:
-        return True
-    if last_nr > current_idx: #Note that we use last page number, but current page index
-        return True
-    return False
-    
     
 def __normalize_path_end(path):
     return path if path.endswith(FORMAT.SLASH.value) else path + FORMAT.SLASH.value
@@ -392,6 +394,8 @@ def __normalize_path_end(path):
 
 def download_volume_bib(volume_url, bib_extension=".bib", output_folder="./"):
     os.makedirs(output_folder, exist_ok=True)
+    
+    volume_url = volume_url[:-1] if volume_url.endswith(FORMAT.SLASH.value) else volume_url
     
     bib_url = volume_url + bib_extension
     bib_fn = bib_url.split("/")[-1] #get the last splitpart=filename
@@ -462,27 +466,122 @@ def __raiseKeyError(msg):
     raise KeyError(msg)
 
 
-def main_download_acl_bibs(output_path, keep_overviews, concatenated_filename=None, restrictions=None, input_url_stem=HTML.VOLUME_URL_STEM.value, last_page=None):
+def reformat_bib(bib_filename, overwrite=False):
+    """
+    Simple reformatting of the bib entries in the input file.
+    The function overwrites the file with the reformatted content.
+    
+    Currently, the following changes are made:
+    - quoted values will be replaced with curly bracketed ones
+    - title values will be additionally enclosed in double curly brackets
+    TODO:
+    - Generate keys like Author_year_Title_Id
+    
+    :param bibfile: file with bib entries
+    :return: None
+    """
+    
+    with open(bib_filename) as f:
+        lines = f.readlines()
+        
+    if overwrite is False:
+        path, name = FORMAT.SLASH.value.join(bib_filename.split(FORMAT.SLASH.value)[:-1]), bib_filename.split(FORMAT.SLASH.value)[-1]
+        orig_bib_filename = path + FORMAT.SLASH.value + FORMAT.UNDERSCORE.value + name
+        copied_filename = shutil_copy(bib_filename, orig_bib_filename)
+        
+    reformatted_lines = []
+    prev_attribute = None
+    for line in lines:
+        line = line.rstrip()
+        #print("LINE: " + line)
+        
+        matched = False
+        
+        #matching a line with the whole attribute-value pair
+        match = BIB.ATTRIBUTEVALUE_PATTERN.value.match(line)
+        if match is not None:
+            attribute = match.group(BIB.ATTRIBUTE_GROUP.value)
+            value = match.group(BIB.VALUE_GROUP.value)
+            value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
+            #print(f"\tattribute:   '{attribute}'")
+            #print(f"\tvalue:       '{value}'")
+            #print(f"\tvalue wq:    '{value_with_quotes}'")
+            value_with_braces = BIB.BRACE_OPENING.value + value + BIB.BRACE_CLOSING.value
+            if attribute == BIB.TITLE.value:
+                value_with_braces = BIB.BRACE_OPENING.value + value_with_braces + BIB.BRACE_CLOSING.value
+            reformatted_line = line.replace(value_with_quotes, value_with_braces)
+            reformatted_lines.append(reformatted_line)
+            #print(f"\treform (all): '{reformatted_line}'")
+            matched = True
+        
+        if matched is False:
+            
+            # is it a line starting with an attribute-value pattern?
+            match = BIB.ATTRIBUTEVALUE_BEGIN_PATTERN.value.match(line)
+            if match is not None:
+                attribute = match.group(BIB.ATTRIBUTE_GROUP.value)
+                prev_attribute = attribute
+                value = match.group(BIB.VALUE_GROUP.value)
+                value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
+                #print(f"\tattribute:   '{attribute}'")
+                #print(f"\tvalue:       '{value}'")
+                #print(f"\tvalue wq:    '{value_with_quotes}'")
+                value_with_braces = BIB.BRACE_OPENING.value + value
+                if attribute == BIB.TITLE.value:
+                    value_with_braces = BIB.BRACE_OPENING.value + value_with_braces
+                reformatted_line = line.replace(value_with_quotes, value_with_braces)
+                reformatted_lines.append(reformatted_line)
+                #print(f"\treform (beg): '{reformatted_line}'")
+                matched = True
+            
+            
+        if matched is False:
+            # is it a line ending with a value pattern?
+            match = BIB.ATTRIBUTEVALUE_END_PATTERN.value.match(line)
+            if match is not None:
+                value = match.group(BIB.VALUE_GROUP.value)
+                value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
+                #print(f"\tattribute:   '{prev_attribute}'")
+                #print(f"\tvalue:       '{value}'")
+                #print(f"\tvalue wq:    '{value_with_quotes}'")
+                value_with_braces = value + BIB.BRACE_CLOSING.value
+                if attribute == BIB.TITLE.value:
+                    value_with_braces = value_with_braces + BIB.BRACE_CLOSING.value
+                reformatted_line = line.replace(value_with_quotes, value_with_braces)
+                reformatted_lines.append(reformatted_line)
+                #print(f"\treform (end): '{reformatted_line}'")
+                matched = True
+                prev_attribute = None
+                
+        if matched is False:
+            # all other lines
+            reformatted_lines.append(line)
+            #print(f"\toriginal:    '{line}'")
+    
+    with open(bib_filename, "w") as f:
+        for line in reformatted_lines:
+            f.write(line + FORMAT.NL.value)
+     
+
+def main_download_acl_bibs(output_path, delete_overviews, reformat_bibs, concatenated_filename=None, restrictions=None, input_url_stem=HTML.VOLUME_URL_STEM_CLOSED.value):
     """Main function."""
     
     logger.log(logging.INFO,  f"Extract names of volume urls from {input_url_stem}.")
     
     os.makedirs(output_path, exist_ok=True)
     
-    temp_ovfn = output_path + LOCAL.TMP_FILENAME.value if keep_overviews == False else None
+    temp_ovfn = output_path + LOCAL.TMP_FILENAME.value if delete_overviews is True else None
     
     if not restrictions:
-        logger.log(logging.INFO, f"no restrictions")
+        logger.log(logging.INFO, f"No restrictions")
     else:
-        logger.log(logging.INFO, f"restriction dict: {restrictions}")
+        logger.log(logging.INFO, f"Restriction dict: {restrictions}")
     
     
     list_of_volume_urls = extract_volume_overviews(
-        output_path = output_path + LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEWS.value,
-        output_temp_fn = temp_ovfn, #if None: all the files will be downloaded and kept
+        output_path = output_path + LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value,
+        output_temp_fn = temp_ovfn, #if None: all the files will be  kept after download
         url_stem = input_url_stem,
-        pagination_mark = HTML.PAGINATION_STRING.value,
-        last_page = last_page, # None for automatic detection; HTML.LAST_PAGE.value or a custom number for a given amount of pages to download
         restrictions = restrictions
     )
     
@@ -493,7 +592,7 @@ def main_download_acl_bibs(output_path, keep_overviews, concatenated_filename=No
     problematic_bibs = []
     downloaded_bibs = []
     for idx, volume_url in enumerate(list_of_volume_urls):
-        logger.log(logging.INFO, f"- export bib from {volume_url} ({idx+1}/{urllen})")
+        logger.log(logging.INFO, f"- export volume bib for {volume_url} ({idx+1}/{urllen})")
         
         try:
             local_bib_filename = download_volume_bib(
@@ -510,6 +609,12 @@ def main_download_acl_bibs(output_path, keep_overviews, concatenated_filename=No
         logger.log(logging.INFO, f"\n!!! There are {len(problematic_bibs)} not downloaded bib files:")
         for problematic_bib in problematic_bibs:
             logger.log(logging.INFO, f"- {problematic_bib}")
+    
+    if reformat_bibs is True:
+        for bibfile in downloaded_bibs:
+            print("bib: " + bibfile)
+            
+            reformat_bib(bibfile, overwrite=False)
     
     if concatenated_filename is not None:
         allbib = output_path + concatenated_filename
@@ -535,7 +640,7 @@ def load_argument_parser(print_help=False):
     
     parser = argparse.ArgumentParser(
         description=f'downloads bib files for the journals/proceedings of ACL anthology from {URL.ROOT.value}.',
-        epilog=f'Minimal use: python3.6 aclanthology_bibfiles_downloader.py -o <output_path>')
+        epilog=f'Minimal use: python3.6 aclanthology_bibfiles_downloader.py -o <output_path>\n--> Extract all bib files into <output_path>/bibs/.')
         
     if print_help:
         parser.print_help()
@@ -545,16 +650,14 @@ def load_argument_parser(print_help=False):
             '-o', dest="output_path", type=str, required=True,
             help='required argument: path for the downloaded bib files -- it will be reused if already existing; The individual bib-files will be saved in a subfolder of the given output_path called bibs/.')
         parser.add_argument(
-            '-f', dest="do_keep_overview_files", type=str, default="True",
-            help='whether to keep intermediate overview files (if True (default): keep them in a subfolder called volume-overviews/, else they will be deleted as soon as possible)')
+            '-d', dest="delete_overview_files", type=str, default="False",
+            help='whether to keep the intermediate overview file (if False (default): keep it in a subfolder called "' + LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value + '", else they will be deleted as soon as possible)')
         parser.add_argument(
             '-l', dest="log_file", type=str, default="download.log",
             help='name for the log-file; default: download.log; The file will be saved in the current output_path, thus, give only the pure file name for the log-file.')
         
         parser.add_argument('-c', dest="concatenated_file", type=str, default=None,
             help='name for an (optional) output file concatenating all the downloaded bib-files into a common one; the file will be saved into the output_path')
-        parser.add_argument('-p', dest="last_venue_page", default=None,
-            help='optional argument (use only if needed, e.g. debugging): it gives the last relevant page of the venue overview -- if not set (default), just all pages listing venues will be read')
         
         parser.add_argument('-y', dest="year", type=int, default=None,
             help="optional argument for downloading bibfiles for one particular year; format: yyyy")
@@ -571,15 +674,21 @@ def load_argument_parser(print_help=False):
         parser.add_argument('-I', dest="venue_idletters", default=None,
             help="optional argument for downloading bibfiles for more than one venues, format: list the letters separated by space within apostrophs, e.g. 'P J Q'")
         
+        parser.add_argument('-f', dest="reformat_bibs", type=str, default="False",
+            help="optional argument for additional formatting of the bib-entries. If False (default), no reformatting is done. Otherwise, the quoted values will be replaced with curly braces, the title with doubled curly braces. See code for more details.")
+        
     return parser
 
+logger = logging.getLogger("biblogger")
 
 if __name__ == "__main__":
-
+    
+    assert sys.version_info >= (3, 6), "Use Python 3.6 or later"
     
     #LOG
-    logger = logging.getLogger("biblogger")
+    #logger = logging.getLogger("biblogger")
     #logger.setLevel(logging.DEBUG)
+    
     logger.setLevel(logging.INFO)
     logger.addHandler(logging.StreamHandler())
     
@@ -595,12 +704,12 @@ if __name__ == "__main__":
     output_path = args.output_path  # new files
     output_path = __normalize_path_end(output_path)
     
-    do_keep_overview_files = args.do_keep_overview_files
-    do_keep_overview_files = False if do_keep_overview_files == "False" else True
+    delete_overview_files = args.delete_overview_files
+    delete_overview_files = False if delete_overview_files == "False" else True
     
     concatenated_filename = args.concatenated_file
-    
-    last_page = args.last_venue_page
+    reformat_bibs = args.reformat_bibs
+    reformat_bibs = False if reformat_bibs == "False" else True
     
     logfile = args.log_file
     logpath = output_path
@@ -628,16 +737,16 @@ if __name__ == "__main__":
             msg_restriction_years = f"Downloading bibs from the following year(s): {restrictions_dict[RESTRICTIONS.YEARS.value]}"
         if RESTRICTIONS.VENUES.value in restrictions_dict:
             msg_restriction_venues = f"Downloading bibs from the venue(s) with url-letter(s): {restrictions_dict[RESTRICTIONS.VENUES.value]}"
-
-    msg_keepov = f"The overview files will be saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEWS.value}'" if do_keep_overview_files else f"Temporary files will be removed at the end of the downloading process."
-    msg_concat = f"Output bib-files will be concatenated and saved in '{output_path}{LOCAL.OUTPUT_CONCATENATED_FILENAME.value}' additionally to the files in subfolder '{LOCAL.OUTPUT_SUBFOLDER_BIBS.value}'." if concatenated_filename else f"Output bib-files are saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_BIBS.value}'."
-    msg_lastpage = f"Searching for relevant bibs on all venue-pages." if last_page is None else  f"Searching for relevant bibs on the first venue-page only." if last_page == '1' else f"Searching for relevant bibs on the first {last_page} venue-pages."
-    msg = f"{msg_output}\n- {msg_restriction_years}\n- {msg_restriction_venues}\n- {msg_concat}\n- {msg_lastpage}\n- {msg_keepov}\n\n"
+    
+    msg_reformat = "Reformatting bib entries." if reformat_bibs is True else "Keeping bib entries as downloaded."
+    msg_concat = f"Output bib-files will be concatenated and saved in '{output_path}{concatenated_filename}' additionally to the files in subfolder '{LOCAL.OUTPUT_SUBFOLDER_BIBS.value}'." if concatenated_filename else f"Output bib-files are saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_BIBS.value}'."
+    msg_keepov = f"Temporary files will be removed at the end of the downloading process." if delete_overview_files else f"The overview files will be saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value}'"
+    msg = f"{msg_output}\n- {msg_restriction_years}\n- {msg_restriction_venues}\n- {msg_reformat}\n- {msg_concat}\n- {msg_keepov}\n\n"
     
     logger.log(logging.INFO, msg)
     
     #RUN DOWNLOAD PROCESS
-    main_download_acl_bibs(output_path, keep_overviews=do_keep_overview_files, concatenated_filename=concatenated_filename, restrictions=restrictions_dict, last_page=last_page)
+    main_download_acl_bibs(output_path, delete_overviews=delete_overview_files, reformat_bibs=reformat_bibs, concatenated_filename=concatenated_filename, restrictions=restrictions_dict)
     
     logger.log(logging.INFO, "(DONE)")
 
