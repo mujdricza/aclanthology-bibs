@@ -22,18 +22,21 @@ Options:
 
 
 Author: emm (mujdricza@cl.uni-heidelberg.de)
-Last Version: 20191201 (previous versions: 20190203, 20180921, 20180524, ...)
+Last Version: 20191209 (previous versions: 20191201, 20190203, 20180921, 20180524, ...)
 
 Licence: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
 
+DONE:
+- post-processing: Reformat the bib-entries:
+  * Replace apostroph template with brace template, additionally, escape title information in doubled braces.
 TODO:
 - post-processing: Reformat the bib-entries:
   * Generate a key more readable for me with pattern: <AUTHOR(S)>[Etal]_<YEAR>_<TITLEWORDS>-<ABBREV>_<ID>
-  * Replace apostroph template with brace template, additionally, escape title information in doubled braces.
+    NOTE that it is possible to reformat the keys, too, see the function reformat_bib() and its calls (not really documented yet).
 - update some of the DocStrings with new examples
 
-FIXME:
+NOTE:
 - The conferences with url-identifying letter "W" are not differenciable! -- concerning all SIGs! (See utils.py / LETTER2ACRONYM_DICT and ACRONYM2LETTER_DICT)
 
 """
@@ -466,7 +469,7 @@ def __raiseKeyError(msg):
     raise KeyError(msg)
 
 
-def reformat_bib(bib_filename, overwrite=False):
+def reformat_bib(bib_filename, output_bib_filename, reformat_entry_key_emm=False):
     """
     Simple reformatting of the bib entries in the input file.
     The function overwrites the file with the reformatted content.
@@ -474,8 +477,13 @@ def reformat_bib(bib_filename, overwrite=False):
     Currently, the following changes are made:
     - quoted values will be replaced with curly bracketed ones
     - title values will be additionally enclosed in double curly brackets
-    TODO:
-    - Generate keys like Author_year_Title_Id
+    If reformat_entry_key_emm is set to True:
+    - Reformat keys like Author_year_Title_Id
+      Original --> Target
+      nurminen-2019-decision --> Nurminen_2019_Decision_W19-7204
+      pezzelle-fernandez-2019-big --> PezzelleFernandez_2019_Big_D19-6403
+      ono-etal-2019-hybrid --> OnoEtal_2019_Hybrid_W19-7201
+      emnlp-2019-beyond --> EMNLP_2019_beyond_D19-6400 (@proceedings)
     
     :param bibfile: file with bib entries
     :return: None
@@ -484,15 +492,64 @@ def reformat_bib(bib_filename, overwrite=False):
     with open(bib_filename) as f:
         lines = f.readlines()
         
-    if overwrite is False:
-        path, name = FORMAT.SLASH.value.join(bib_filename.split(FORMAT.SLASH.value)[:-1]), bib_filename.split(FORMAT.SLASH.value)[-1]
-        orig_bib_filename = path + FORMAT.SLASH.value + FORMAT.UNDERSCORE.value + name
-        copied_filename = shutil_copy(bib_filename, orig_bib_filename)
+    # if overwrite is False:
+    #     path, name = FORMAT.SLASH.value.join(bib_filename.split(FORMAT.SLASH.value)[:-1]), bib_filename.split(FORMAT.SLASH.value)[-1]
+    #     orig_bib_filename = path + FORMAT.SLASH.value + FORMAT.UNDERSCORE.value + name
+    #     copied_filename = shutil_copy(bib_filename, orig_bib_filename)
+    
+    # list of list for list of entry-lines
+    entries_for_reformat = __get_entries(lines)
+    
+    #print(f"{len(entries_for_reformat)} entries collected")
+    
+    reformatted_lines = [] # flat list of lines
+    
+    
+    for entry_lines in entries_for_reformat:
+        reformatted_entry_lines = __reformat_entry(entry_lines, reformat_entry_key_emm=reformat_entry_key_emm)
         
-    reformatted_lines = []
-    prev_attribute = None
-    for line in lines:
+        reformatted_lines.extend(reformatted_entry_lines)
+        reformatted_lines.append("") # separator line between two entries
+    
+    
+    with open(output_bib_filename, "w") as f:
+        for line in reformatted_lines:
+            f.write(line + FORMAT.NL.value)
+
+def __get_entries(lines_of_bib_file):
+    entries = []
+    
+    current_entry = []
+    for line in lines_of_bib_file:
         line = line.rstrip()
+        
+        if not line: # empty line
+            continue
+        
+        # take all the entries, also comment entries
+        if line.startswith("@"):
+            # print(f"\tentry begin: '{line}'")
+            
+            if len(current_entry) > 0:
+                entries.append(current_entry)
+                # print(f"\t --> entry: {current_entry}")
+                current_entry = []
+            
+        current_entry.append(line)
+    
+    #last entry
+    if len(current_entry) > 0:
+        entries.append(current_entry)
+        # print(f"\t --> last entry: {current_entry}")
+    return entries
+
+def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
+    
+    reformatted_lines = []
+    
+    prev_attribute = None
+    
+    for line in lines_of_entry: # lines are rstripped already
         #print("LINE: " + line)
         
         matched = False
@@ -503,17 +560,17 @@ def reformat_bib(bib_filename, overwrite=False):
             attribute = match.group(BIB.ATTRIBUTE_GROUP.value)
             value = match.group(BIB.VALUE_GROUP.value)
             value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
-            #print(f"\tattribute:   '{attribute}'")
-            #print(f"\tvalue:       '{value}'")
-            #print(f"\tvalue wq:    '{value_with_quotes}'")
+            # print(f"\tattribute:   '{attribute}'")
+            # print(f"\tvalue:       '{value}'")
+            # print(f"\tvalue wq:    '{value_with_quotes}'")
             value_with_braces = BIB.BRACE_OPENING.value + value + BIB.BRACE_CLOSING.value
             if attribute == BIB.TITLE.value:
                 value_with_braces = BIB.BRACE_OPENING.value + value_with_braces + BIB.BRACE_CLOSING.value
             reformatted_line = line.replace(value_with_quotes, value_with_braces)
             reformatted_lines.append(reformatted_line)
-            #print(f"\treform (all): '{reformatted_line}'")
+            # print(f"\treform (all): '{reformatted_line}'")
             matched = True
-        
+            
         if matched is False:
             
             # is it a line starting with an attribute-value pattern?
@@ -523,27 +580,27 @@ def reformat_bib(bib_filename, overwrite=False):
                 prev_attribute = attribute
                 value = match.group(BIB.VALUE_GROUP.value)
                 value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
-                #print(f"\tattribute:   '{attribute}'")
-                #print(f"\tvalue:       '{value}'")
-                #print(f"\tvalue wq:    '{value_with_quotes}'")
+                # print(f"\tattribute:   '{attribute}'")
+                # print(f"\tvalue:       '{value}'")
+                # print(f"\tvalue wq:    '{value_with_quotes}'")
                 value_with_braces = BIB.BRACE_OPENING.value + value
                 if attribute == BIB.TITLE.value:
                     value_with_braces = BIB.BRACE_OPENING.value + value_with_braces
                 reformatted_line = line.replace(value_with_quotes, value_with_braces)
                 reformatted_lines.append(reformatted_line)
-                #print(f"\treform (beg): '{reformatted_line}'")
+                # print(f"\treform (beg): '{reformatted_line}'")
                 matched = True
-            
-            
+                
+                
         if matched is False:
             # is it a line ending with a value pattern?
             match = BIB.ATTRIBUTEVALUE_END_PATTERN.value.match(line)
             if match is not None:
                 value = match.group(BIB.VALUE_GROUP.value)
                 value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
-                #print(f"\tattribute:   '{prev_attribute}'")
-                #print(f"\tvalue:       '{value}'")
-                #print(f"\tvalue wq:    '{value_with_quotes}'")
+                # print(f"\tattribute_p: '{prev_attribute}'")
+                # print(f"\tvalue:       '{value}'")
+                # print(f"\tvalue wq:    '{value_with_quotes}'")
                 value_with_braces = value + BIB.BRACE_CLOSING.value
                 if attribute == BIB.TITLE.value:
                     value_with_braces = value_with_braces + BIB.BRACE_CLOSING.value
@@ -552,16 +609,78 @@ def reformat_bib(bib_filename, overwrite=False):
                 #print(f"\treform (end): '{reformatted_line}'")
                 matched = True
                 prev_attribute = None
+        
+        if matched is False:
+            # insert an empty line between two entries
+            match = BIB.ENTRY_BEGIN_PATTERN.value.match(line)
+            if match is not None:
+                #print(f"\tentry begin: '{line}'")
                 
+                reformatted_line = line
+                if reformat_entry_key_emm is True:
+                    # My personal preference
+                    match = BIB.ENTRY_KEY_PATTERN.value.match(line)
+                    if match is not None:
+                        type = match.group(BIB.TYPE_GROUP.value)
+                        key = match.group(BIB.KEY_GROUP.value)
+                        
+                        key_parts = key.split("-")
+                        if len(key_parts) < 3:
+                            msg = f"KEY parts should contain at least 3 elements. It contains {len(key_parts)}: {key_parts}"
+                            raise ValueError(msg)
+                        key_parts = [part.title() for part in key_parts]
+                        if type == "proceedings":
+                            key_parts[0] = key_parts[0].upper()
+                            
+                        if len(key_parts) > 3:
+                            names = "".join(key_parts[:-2])
+                            year = key_parts[-2]
+                            title = key_parts[-1]
+                            
+                            key_parts = [names, year, title]
+                        
+                        reformatted_key = "_".join(key_parts)
+                        reformatted_line = "@" + type + "{" + reformatted_key + ","
+                        #print(f"\treform key line: {reformatted_line}")
+                        
+                    else: # not expected...
+                        raise ValueError
+                
+                reformatted_lines.append(reformatted_line)
+                matched = True
+               
         if matched is False:
             # all other lines
             reformatted_lines.append(line)
             #print(f"\toriginal:    '{line}'")
     
-    with open(bib_filename, "w") as f:
-        for line in reformatted_lines:
-            f.write(line + FORMAT.NL.value)
-     
+    if reformat_entry_key_emm is True:
+        # append the id to the key
+        current_url = __extract_url_from_reformatted_entry(reformatted_lines)
+        
+        if current_url is not None:
+            # e.g. https://www.aclweb.org/anthology/J19-1001
+            id = current_url.split("/")[-1]
+            
+            # assumption: the first item is the entry line
+            key = reformatted_lines[0]
+            
+            reformatted_lines[0] = key[:-1] + "_" + id + ","
+            
+            #print(f"key={key} + id: {reformatted_lines[0]}")
+    
+    return reformatted_lines
+    
+def __extract_url_from_reformatted_entry(reformatted_lines):
+    
+    current_url = None
+    
+    for line in reformatted_lines:
+        line = line.strip()
+        if line.startswith("url = "):
+            current_url = line.split("{")[1].split("}")[0]
+    
+    return current_url
 
 def main_download_acl_bibs(output_path, delete_overviews, reformat_bibs, concatenated_filename=None, restrictions=None, input_url_stem=HTML.VOLUME_URL_STEM_CLOSED.value):
     """Main function."""
@@ -610,24 +729,43 @@ def main_download_acl_bibs(output_path, delete_overviews, reformat_bibs, concate
         for problematic_bib in problematic_bibs:
             logger.log(logging.INFO, f"- {problematic_bib}")
     
+    all_bibfiles = []
     if reformat_bibs is True:
         for bibfile in downloaded_bibs:
-            print("bib: " + bibfile)
             
-            reformat_bib(bibfile, overwrite=False)
+            path, name = FORMAT.SLASH.value.join(bibfile.split(FORMAT.SLASH.value)[:-1]), bibfile.split(FORMAT.SLASH.value)[-1]
+            reformatted_bibfile = path + FORMAT.SLASH.value + name.replace(".bib", "_reformatted.bib")
+            all_bibfiles.append(reformatted_bibfile)
+            #print("bib: " + bibfile)
+            reformat_bib(bibfile, reformatted_bibfile)
+    else:
+        all_bibfiles = downloaded_bibs
     
     if concatenated_filename is not None:
-        allbib = output_path + concatenated_filename
-        logger.log(logging.INFO, f"\nConcatenate {len(downloaded_bibs)} bib-files into '{allbib}'.")
-        with open(allbib, "w") as fout:
-            for local_bib_fn in downloaded_bibs:
-                #print(local_bib_fn)
-                with open(local_bib_fn) as fin:
-                    text = fin.read()
-                    
-                    fout.write(f"\n\n@comment{{BIB-entries from '{local_bib_fn}'.}}\n\n")
-                    fout.write(text)
-                    fout.write("\n")
+        __concatenate_bib_files(all_bibfiles, output_path, concatenated_filename)
+        
+
+def __concatenate_bib_files(list_of_input_bibfilenames, output_path, output_bibfilename):
+    
+    allbib = output_path + output_bibfilename
+    logger.log(logging.INFO, f"\nConcatenate {len(list_of_input_bibfilenames)} bib-files into '{allbib}'.")
+    with open(allbib, "w") as fout:
+        for local_bib_fn in list_of_input_bibfilenames:
+            #print(local_bib_fn)
+            with open(local_bib_fn) as fin:
+                text = fin.read()
+                
+                fout.write(f"\n\n@comment{{BIB-entries from '{local_bib_fn}'.}}\n\n")
+                fout.write(text)
+                fout.write("\n")
+
+def main_reformat_local_bib(input_bib, output_bib):
+    """
+    Reformat an already downloaded bib file.
+    """
+    
+    reformat_bib(input_bib, output_bib, reformat_entry_key_emm=True)
+    
     
     
     
@@ -681,10 +819,8 @@ def load_argument_parser(print_help=False):
 
 logger = logging.getLogger("biblogger")
 
-if __name__ == "__main__":
-    
-    assert sys.version_info >= (3, 6), "Use Python 3.6 or later"
-    
+
+def run_download_acl_bibs():
     #LOG
     #logger = logging.getLogger("biblogger")
     #logger.setLevel(logging.DEBUG)
@@ -751,4 +887,38 @@ if __name__ == "__main__":
     logger.log(logging.INFO, "(DONE)")
 
 
+def run_reformat_local_bib():
+    
+    
+        # ("../outputs/outputs_1960-1969/bibs/C65-1.bib", "../outputs/outputs_1960-1969/bibs/C65-1_reformatted.bib")
+    local_bibs = [
+        ("../outputs/outputs_1960-1969/all_1960-1969.bib", "../outputs/outputs_1960-1969/all_1960-1969_reformatted.bib") ,
+        ("../outputs/outputs_1970-1979/all_1970-1979.bib", "../outputs/outputs_1970-1979/all_1970-1979_reformatted.bib"),
+        ("../outputs/outputs_1980-1989/all_1980-1989.bib", "../outputs/outputs_1980-1989/all_1980-1989_reformatted.bib"),
+        ("../outputs/outputs_1990-1999/all_1990-1999.bib", "../outputs/outputs_1990-1999/all_1990-1999_reformatted.bib"),
+        ("../outputs/outputs_2000-2009/all_2000-2009.bib", "../outputs/outputs_2000-2009/all_2000-2009_reformatted.bib"),
+        ("../outputs/outputs_2010-2019/all_2010-2019.bib", "../outputs/outputs_2010-2019/all_2010-2019_reformatted.bib")
+    ]
+        
+    for bib_in, bib_out in local_bibs:
+        print(f"reformatting bib: '{bib_in}' to '{bib_out}'")
+        main_reformat_local_bib(bib_in, bib_out)
+    
+    #concatenate reformatted files to
+    output_path = "../outputs/"
+    concatenated_bibfile = "all_1960-2019_reformatted.bib"
+    print(f"Concatenate all reformatted bibs to '{output_path+concatenated_bibfile}'")
+    list_of_input_bibfilenames = [item[1] for item in local_bibs]
+    __concatenate_bib_files(list_of_input_bibfilenames, output_path, concatenated_bibfile)
+    
+
+if __name__ == "__main__":
+    
+    assert sys.version_info >= (3, 6), "Use Python 3.6 or later"
+    
+    args = sys.argv
+    if len(args) == 2 and args[1] == "-r":
+        run_reformat_local_bib()
+    else:
+        run_download_acl_bibs()
     

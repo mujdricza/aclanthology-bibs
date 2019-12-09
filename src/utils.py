@@ -4,7 +4,7 @@
 Utils for the acl-bib-downloader.
 
 Author: emm (mujdricza@cl.uni-heidelberg.de)
-Version: 20190203
+Version: 20190209
 
 Licence: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
@@ -81,11 +81,15 @@ class BIB(Enum):
     EQUALS = " = "
     
     ATTRIBUTEVALUE_PATTERN = re.compile("^\s*(?P<attribute>[^\s]+)\s*=\s*(?P<value_with_quotes>\"(?P<value>.*)\"),?$")
-    ATTRIBUTEVALUE_BEGIN_PATTERN = re.compile("^\s*(?P<attribute>[^\s]+)\s*=\s*(?P<value_with_quotes>\"(?P<value>.*)),?$")
+    ATTRIBUTEVALUE_BEGIN_PATTERN = re.compile("^\s*(?P<attribute>[^\s]+)\s*=\s*(?P<value_with_quotes>\"(?P<value>.*[^,]))$")
     ATTRIBUTEVALUE_END_PATTERN = re.compile("^\s*(?P<value_with_quotes>(?P<value>.*)\"),?$")
+    ENTRY_BEGIN_PATTERN = re.compile("^\s*@[^\s]+\s*{.+,$")
+    ENTRY_KEY_PATTERN = re.compile("^@(?P<type>[^\s{]+){(?P<key>[^,]+),$")
     ATTRIBUTE_GROUP = "attribute"
     VALUE_GROUP = "value"
     VALUE_WITH_QUOTES = "value_with_quotes"
+    TYPE_GROUP = "type"
+    KEY_GROUP = "key"
     
 
 

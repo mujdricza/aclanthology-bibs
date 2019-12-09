@@ -105,6 +105,10 @@ me.levelek@gmx.de (e-mail address on github))
 
 ## Verions
 
+- V20191209
+  * augmenting the reformatter
+  * explicit reformatter (see main-part, not yet documented)
+  
 - V20191201
   * renewing code for current ACL-Anthology website
   * small bugfixes
