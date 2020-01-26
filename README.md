@@ -105,6 +105,8 @@ me.levelek@gmx.de (e-mail address on github))
 
 ## Verions
 
+- TODO: handle LREC-bib URLs appropriately. E.g. `http://www.lrec-conf.org/proceedings/lrec2002/pdf/52.pdf` --> extracted key now: `Boas_2002_Bilingual_52.pdf`; required: `Boas_2002_Bilingual_L02-52` or similar
+
 - V20191209
   * augmenting the reformatter
   * explicit reformatter (see main-part, not yet documented)
