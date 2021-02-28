@@ -40,9 +40,11 @@ class HTML(Enum):
     HREF_VOLUMES_PATTERN = re.compile('<a href="/anthology/volumes/(?P<volume>[^"]+)"') # see return value in the function aclanthology_bibfiles_downloader.__prettify_lines()
     HREF_VOLUME_GROUP = "volume"
     
-    VENUEID_PATTERN = re.compile("(?P<id>[A-Z])(?P<year>[0-9][0-9])-[0-9]+") #e.g. A00-1, P18-1, W17-40
+    VENUEID_PATTERN1 = re.compile("(?P<id>[A-Z])(?P<shortyear>[0-9][0-9])-[0-9]+") #e.g. A00-1, P18-1, W17-40
+    VENUEID_PATTERN2 = re.compile("(?P<year>[1-2][0-9]{3})\.(?P<id>[\w\d-]+)") #e.g. 2020.isa-1, 2020.jeptalnrecital-demos
     VENUEID_ID_GROUP = "id"
-    VENUEID_SHORTYEAR_GROUP = "year"
+    VENUEID_SHORTYEAR_GROUP = "shortyear"
+    VENUEID_YEAR_GROUP = "year"
     
     INDEXHTML = "index.html"
     EXTENSION_HTML = ".html"
@@ -626,4 +628,3 @@ def main_extract_acronym2letter_dict(get_local_files=False):
 if __name__ == "__main__":
     #main_extract_acronym2letter_dict(get_local_files=False)
     main_extract_acronym2letter_dict(get_local_files=True)
-    

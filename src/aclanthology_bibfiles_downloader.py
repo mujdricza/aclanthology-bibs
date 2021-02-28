@@ -22,18 +22,12 @@ Options:
 
 
 Author: emm (mujdricza@cl.uni-heidelberg.de)
-Last Version: 20191209 (previous versions: 20191201, 20190203, 20180921, 20180524, ...)
+Last Version: 20210228 (previous versions: 20191209, 20191201, 20190203, 20180921, 20180524, ...)
 
 Licence: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
 
-DONE:
-- post-processing: Reformat the bib-entries:
-  * Replace apostroph template with brace template, additionally, escape title information in doubled braces.
 TODO:
-- post-processing: Reformat the bib-entries:
-  * Generate a key more readable for me with pattern: <AUTHOR(S)>[Etal]_<YEAR>_<TITLEWORDS>-<ABBREV>_<ID>
-    NOTE that it is possible to reformat the keys, too, see the function reformat_bib() and its calls (not really documented yet).
 - update some of the DocStrings with new examples
 
 NOTE:
@@ -42,15 +36,13 @@ NOTE:
 """
 
 import argparse
-from enum import Enum
 import os
-import re
 import sys
 import urllib.request
 import logging
 from lxml import etree, html
-from shutil import copy as shutil_copy
-
+import shutil
+from typing import List
 
     
 # local imports
@@ -69,7 +61,7 @@ def extract_volume_urls(
     href_string=HTML.A_HREF_STRING.value,
     href_pattern=HTML.HREF_VOLUMES_PATTERN.value,
     href_group=HTML.HREF_VOLUME_GROUP.value,
-    restrictions=None # if None --> download all volume urls, else it is a dictionary with restrictive information like relevant year or years, relevant journal or journals
+    restrictions=None  # if None --> download all volume urls, else it is a dictionary with restrictive information like relevant year or years, relevant journal or journals
     ):
     """Extracts the list of websites with the volume overview.
     
@@ -86,11 +78,11 @@ def extract_volume_urls(
     ... <div id=main-container class=container><main aria-role=main><h2 id=title>List of all volumes</h2><hr><ul><li><a href=/anthology/volumes/S12-1/>*SEM 2012: The First Joint Conference on Lexical and Computational Semantics – Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth International Workshop on Semantic Evaluation (SemEval 2012)</a></li><li><a href=/anthology/volumes/E03-1/>10th Conference of the European Chapter of the Association for Computational Linguistics</a></li><li> ... </main></div> ...
     """
     
-    file = open(local_fn_volumeoverview_html) # one page of the volume overviews
+    file = open(local_fn_volumeoverview_html)  # one page of the volume overviews
     lines = file.readlines()
     file.close()
     
-    #NOTE that the newer files are squeezed into a few lines --> break them up into multiple lines
+    # NOTE that the files are squeezed into a few lines --> break them up into multiple lines
     lines = prettify_lines(lines)
     
     # take the "main" part (assumption: there is only one tag with the name "main")
@@ -111,12 +103,12 @@ def extract_volume_urls(
     volume_urls = []
     pattern_volume = href_pattern
     
-    #first, extract all possible volume URLs
+    # first, extract all possible volume URLs
     for line in mainlines:
         if href_string in line:
             match = pattern_volume.search(line)
             if match is not None:
-                #value of the href attribute -- part of an url
+                # value of the href attribute -- part of an url
                 vol = match.group(href_group)
                 
                 # extend it to the whole target url with the volume
@@ -127,8 +119,6 @@ def extract_volume_urls(
                 if "volumes" in line:
                     msg = f"Not extracted volume URL from '{href_string}' in line '{line}' by pattern '{pattern_volume}'."
                     raise ValueError(msg)
-    
-    #print(f">> all volume_urls: {len(volume_urls)}")
     
     # no restrictions --> simple extraction of all volumes
     relevant_volume_urls = []
@@ -142,13 +132,7 @@ def extract_volume_urls(
         dropped_due_to_restrictions = False
         
         for tmp_vol in volume_urls:
-            match = HTML.VENUEID_PATTERN.value.search(line)
-            
-            if match is not None:
-                venue_id, venue_year = __extract_current_venue_and_year(tmp_vol)
-            else:
-                msg = f"Venue id and year could not be extracted from the URL '{tmp_vol}' by the pattern '{HTML.VENUEID_PATTERN.value}"
-                raise ValueError(msg)
+            venue_id, venue_year = __extract_current_venue_and_year(tmp_vol)
             
             if __has_year_restrictions(restrictions):
                 if not __is_relevant_year(venue_year, restrictions):
@@ -194,25 +178,15 @@ def prettify_lines(lines):
     pretty_document = etree.tostring(document_root, encoding='unicode', pretty_print=True)
     pretty_lines_notyetgood = pretty_document.split(FORMAT.NL.value)
     
-    # data = "\n".join(lines)
-    #
-    # soup = bs(data,features="lxml")                #make BeautifulSoup
-    # prettyHTML=soup.prettify()   #prettify the html
-    #
-    # print(prettyHTML)
-    
     pretty_lines = []
-    closed_tag = False
     idx_begin = 0
     idx_end = 0
     line = "".join(pretty_lines_notyetgood)
-    #for line in lines:
     for idx, ch in enumerate(line):
         if (line[idx] == "<" and line[idx+1] != "/"):
             part = line[idx_begin:idx]
             if part.strip():
                 pretty_lines.append(part)
-                #print(f">>> part: {part}")
             idx_begin = idx
             idx_end = idx_begin
         elif idx > 0 and line[idx-1] == ">":
@@ -226,18 +200,14 @@ def prettify_lines(lines):
                 part = line[idx_begin:idx]
                 if part.strip():
                     pretty_lines.append(part)
-                    #print(f">>> part: {part}")
                 idx_begin = idx
                 idx_end = idx_begin
-                
-        
         idx_end = idx
         
     if idx_begin < len(line):
         part = line[idx_begin:]
         if part.strip():
             pretty_lines.append(part)
-            #print(f">>> part: {part}")
     
     return pretty_lines
 
@@ -276,6 +246,7 @@ def __is_relevant_year(current_year, restriction_dict=None):
     else:
         msg = f"Not handled year restrictions: {years}"
         raise NotImplementedError(msg)
+
 
 __HAS_VENUE_RESTRICTIONS = None
 def __has_venue_restrictions(restriction_dict=None):
@@ -319,11 +290,18 @@ def __extract_current_venue_and_year(raw_volume_string):
     id = None
     year = None
     
-    match = HTML.VENUEID_PATTERN.value.search(raw_volume_string)
+    match = HTML.VENUEID_PATTERN1.value.search(raw_volume_string)
     if match is not None:
         id = match.group(HTML.VENUEID_ID_GROUP.value)
         year = __extract_year_from_shortyear(match.group(HTML.VENUEID_SHORTYEAR_GROUP.value))
-    
+    else:
+        match = HTML.VENUEID_PATTERN2.value.search(raw_volume_string)
+        if match is not None:
+            id = match.group(HTML.VENUEID_ID_GROUP.value)
+            year = __extract_year(match.group(HTML.VENUEID_YEAR_GROUP.value))
+        else:
+            id = None
+            year = None
     if id is None or year is None:
         msg = f"Not recognized venue information in raw volume string:\n{raw_volume_string}"
         raise ValueError(msg)
@@ -349,9 +327,13 @@ def __extract_year_from_shortyear(shortyear_str):
     return yyyy
 
 
+def __extract_year(year_str):
+    return int(year_str)
+
+
 def extract_volume_overviews(
     output_path,
-    output_temp_fn=None,
+    keep_output_fn,
     url_stem=HTML.VOLUME_URL_STEM_CLOSED.value,
     restrictions=None):
     """Extracts the urls for the ACL volumes from the ACL Anthology volume website.
@@ -366,16 +348,10 @@ def extract_volume_overviews(
     On this url, the whole volume is listed, and the bib file for the volume.
     """
     
-    local_fn = output_temp_fn # if filled: only a temporary file; if None: the file will be kept permanently
+    os.makedirs(output_path, exist_ok=True)
+    output_path = __normalize_path_end(output_path)
+    local_fn = output_path + "volumes" + HTML.EXTENSION_HTML.value
     
-    if local_fn is None:
-        os.makedirs(output_path, exist_ok=True)
-        output_path = __normalize_path_end(output_path)
-    
-    
-    if output_temp_fn is None:
-        local_fn = output_path + "volumes" + HTML.EXTENSION_HTML.value
-        
     download_url = url_stem + HTML.INDEXHTML.value
     local_fn_ov_retrieved, headers = urllib.request.urlretrieve(download_url, filename=local_fn)
     logger.log(logging.INFO, f"Downloaded url: '{download_url}' into '{local_fn_ov_retrieved}'.")
@@ -383,10 +359,10 @@ def extract_volume_overviews(
     volume_urls = extract_volume_urls(local_fn_ov_retrieved, restrictions=restrictions)
     logger.log(logging.INFO, f"-> Found {len(volume_urls)} relevant volume URLs.")
     
-    
-    if output_temp_fn is not None:
-        os.remove(local_fn)
-        logger.log(logging.INFO, f"(Local file {local_fn} removed.)")
+    if not keep_output_fn:
+        output_dir = os.path.dirname(local_fn)
+        shutil.rmtree(output_dir)
+        logger.log(logging.INFO, f"(Local file(s) in {output_dir} removed.)")
     
     return volume_urls
 
@@ -401,13 +377,12 @@ def download_volume_bib(volume_url, bib_extension=".bib", output_folder="./"):
     volume_url = volume_url[:-1] if volume_url.endswith(FORMAT.SLASH.value) else volume_url
     
     bib_url = volume_url + bib_extension
-    bib_fn = bib_url.split("/")[-1] #get the last splitpart=filename
+    bib_fn = bib_url.split("/")[-1]  # get the last splitpart=filename
     local_bib_fn = output_folder + bib_fn
     
     local_bib_retrieved, headers = urllib.request.urlretrieve(bib_url, local_bib_fn)
     
     return local_bib_retrieved
-
 
 
 def __extract_restrictions(parsed_arguments):
@@ -469,7 +444,7 @@ def __raiseKeyError(msg):
     raise KeyError(msg)
 
 
-def reformat_bib(bib_filename, output_bib_filename, reformat_entry_key_emm=False):
+def reformat_bib(bib_filename, output_bib_filename, reformat_entry_key_emm=True):
     """
     Simple reformatting of the bib entries in the input file.
     The function overwrites the file with the reformatted content.
@@ -492,29 +467,21 @@ def reformat_bib(bib_filename, output_bib_filename, reformat_entry_key_emm=False
     with open(bib_filename) as f:
         lines = f.readlines()
         
-    # if overwrite is False:
-    #     path, name = FORMAT.SLASH.value.join(bib_filename.split(FORMAT.SLASH.value)[:-1]), bib_filename.split(FORMAT.SLASH.value)[-1]
-    #     orig_bib_filename = path + FORMAT.SLASH.value + FORMAT.UNDERSCORE.value + name
-    #     copied_filename = shutil_copy(bib_filename, orig_bib_filename)
-    
     # list of list for list of entry-lines
     entries_for_reformat = __get_entries(lines)
     
-    #print(f"{len(entries_for_reformat)} entries collected")
-    
-    reformatted_lines = [] # flat list of lines
-    
+    reformatted_lines = []  # flat list of lines
     
     for entry_lines in entries_for_reformat:
         reformatted_entry_lines = __reformat_entry(entry_lines, reformat_entry_key_emm=reformat_entry_key_emm)
         
         reformatted_lines.extend(reformatted_entry_lines)
-        reformatted_lines.append("") # separator line between two entries
-    
+        reformatted_lines.append("")  # separator line between two entries
     
     with open(output_bib_filename, "w") as f:
         for line in reformatted_lines:
             f.write(line + FORMAT.NL.value)
+
 
 def __get_entries(lines_of_bib_file):
     entries = []
@@ -523,16 +490,13 @@ def __get_entries(lines_of_bib_file):
     for line in lines_of_bib_file:
         line = line.rstrip()
         
-        if not line: # empty line
+        if not line:  # empty line
             continue
         
         # take all the entries, also comment entries
         if line.startswith("@"):
-            # print(f"\tentry begin: '{line}'")
-            
             if len(current_entry) > 0:
                 entries.append(current_entry)
-                # print(f"\t --> entry: {current_entry}")
                 current_entry = []
             
         current_entry.append(line)
@@ -540,8 +504,8 @@ def __get_entries(lines_of_bib_file):
     #last entry
     if len(current_entry) > 0:
         entries.append(current_entry)
-        # print(f"\t --> last entry: {current_entry}")
     return entries
+
 
 def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
     
@@ -549,9 +513,7 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
     
     prev_attribute = None
     
-    for line in lines_of_entry: # lines are rstripped already
-        #print("LINE: " + line)
-        
+    for line in lines_of_entry:  # lines are rstripped already
         matched = False
         
         #matching a line with the whole attribute-value pair
@@ -560,15 +522,11 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
             attribute = match.group(BIB.ATTRIBUTE_GROUP.value)
             value = match.group(BIB.VALUE_GROUP.value)
             value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
-            # print(f"\tattribute:   '{attribute}'")
-            # print(f"\tvalue:       '{value}'")
-            # print(f"\tvalue wq:    '{value_with_quotes}'")
             value_with_braces = BIB.BRACE_OPENING.value + value + BIB.BRACE_CLOSING.value
             if attribute == BIB.TITLE.value:
                 value_with_braces = BIB.BRACE_OPENING.value + value_with_braces + BIB.BRACE_CLOSING.value
             reformatted_line = line.replace(value_with_quotes, value_with_braces)
             reformatted_lines.append(reformatted_line)
-            # print(f"\treform (all): '{reformatted_line}'")
             matched = True
             
         if matched is False:
@@ -580,17 +538,12 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
                 prev_attribute = attribute
                 value = match.group(BIB.VALUE_GROUP.value)
                 value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
-                # print(f"\tattribute:   '{attribute}'")
-                # print(f"\tvalue:       '{value}'")
-                # print(f"\tvalue wq:    '{value_with_quotes}'")
                 value_with_braces = BIB.BRACE_OPENING.value + value
                 if attribute == BIB.TITLE.value:
                     value_with_braces = BIB.BRACE_OPENING.value + value_with_braces
                 reformatted_line = line.replace(value_with_quotes, value_with_braces)
                 reformatted_lines.append(reformatted_line)
-                # print(f"\treform (beg): '{reformatted_line}'")
                 matched = True
-                
                 
         if matched is False:
             # is it a line ending with a value pattern?
@@ -598,15 +551,11 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
             if match is not None:
                 value = match.group(BIB.VALUE_GROUP.value)
                 value_with_quotes = match.group(BIB.VALUE_WITH_QUOTES.value)
-                # print(f"\tattribute_p: '{prev_attribute}'")
-                # print(f"\tvalue:       '{value}'")
-                # print(f"\tvalue wq:    '{value_with_quotes}'")
                 value_with_braces = value + BIB.BRACE_CLOSING.value
                 if attribute == BIB.TITLE.value:
                     value_with_braces = value_with_braces + BIB.BRACE_CLOSING.value
                 reformatted_line = line.replace(value_with_quotes, value_with_braces)
                 reformatted_lines.append(reformatted_line)
-                #print(f"\treform (end): '{reformatted_line}'")
                 matched = True
                 prev_attribute = None
         
@@ -614,8 +563,6 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
             # insert an empty line between two entries
             match = BIB.ENTRY_BEGIN_PATTERN.value.match(line)
             if match is not None:
-                #print(f"\tentry begin: '{line}'")
-                
                 reformatted_line = line
                 if reformat_entry_key_emm is True:
                     # My personal preference
@@ -641,9 +588,8 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
                         
                         reformatted_key = "_".join(key_parts)
                         reformatted_line = "@" + type + "{" + reformatted_key + ","
-                        #print(f"\treform key line: {reformatted_line}")
                         
-                    else: # not expected...
+                    else:  # not expected...
                         raise ValueError
                 
                 reformatted_lines.append(reformatted_line)
@@ -652,7 +598,6 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
         if matched is False:
             # all other lines
             reformatted_lines.append(line)
-            #print(f"\toriginal:    '{line}'")
     
     if reformat_entry_key_emm is True:
         # append the id to the key
@@ -664,12 +609,10 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
             
             # assumption: the first item is the entry line
             key = reformatted_lines[0]
-            
             reformatted_lines[0] = key[:-1] + "_" + id + ","
-            
-            #print(f"key={key} + id: {reformatted_lines[0]}")
     
     return reformatted_lines
+    
     
 def __extract_url_from_reformatted_entry(reformatted_lines):
     
@@ -682,14 +625,17 @@ def __extract_url_from_reformatted_entry(reformatted_lines):
     
     return current_url
 
-def main_download_acl_bibs(output_path, delete_overviews, reformat_bibs, concatenated_filename=None, restrictions=None, input_url_stem=HTML.VOLUME_URL_STEM_CLOSED.value):
+
+def main_download_acl_bibs(output_path,
+                           keep_overviews,
+                           reformat_bibs,
+                           concatenated_filename=None,
+                           restrictions=None,
+                           input_url_stem=HTML.VOLUME_URL_STEM_CLOSED.value):
     """Main function."""
     
     logger.log(logging.INFO,  f"Extract names of volume urls from {input_url_stem}.")
-    
     os.makedirs(output_path, exist_ok=True)
-    
-    temp_ovfn = output_path + LOCAL.TMP_FILENAME.value if delete_overviews is True else None
     
     if not restrictions:
         logger.log(logging.INFO, f"No restrictions")
@@ -699,7 +645,7 @@ def main_download_acl_bibs(output_path, delete_overviews, reformat_bibs, concate
     
     list_of_volume_urls = extract_volume_overviews(
         output_path = output_path + LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value,
-        output_temp_fn = temp_ovfn, #if None: all the files will be  kept after download
+        keep_output_fn = keep_overviews,
         url_stem = input_url_stem,
         restrictions = restrictions
     )
@@ -736,7 +682,6 @@ def main_download_acl_bibs(output_path, delete_overviews, reformat_bibs, concate
             path, name = FORMAT.SLASH.value.join(bibfile.split(FORMAT.SLASH.value)[:-1]), bibfile.split(FORMAT.SLASH.value)[-1]
             reformatted_bibfile = path + FORMAT.SLASH.value + name.replace(".bib", "_reformatted.bib")
             all_bibfiles.append(reformatted_bibfile)
-            #print("bib: " + bibfile)
             reformat_bib(bibfile, reformatted_bibfile)
     else:
         all_bibfiles = downloaded_bibs
@@ -751,7 +696,6 @@ def __concatenate_bib_files(list_of_input_bibfilenames, output_path, output_bibf
     logger.log(logging.INFO, f"\nConcatenate {len(list_of_input_bibfilenames)} bib-files into '{allbib}'.")
     with open(allbib, "w") as fout:
         for local_bib_fn in list_of_input_bibfilenames:
-            #print(local_bib_fn)
             with open(local_bib_fn) as fin:
                 text = fin.read()
                 
@@ -759,15 +703,8 @@ def __concatenate_bib_files(list_of_input_bibfilenames, output_path, output_bibf
                 fout.write(text)
                 fout.write("\n")
 
-def main_reformat_local_bib(input_bib, output_bib):
-    """
-    Reformat an already downloaded bib file.
-    """
-    
-    reformat_bib(input_bib, output_bib, reformat_entry_key_emm=True)
-    
-    
-    
+
+
     
 def load_argument_parser(print_help=False):
     """Loads the command line arguments, or print the help message.
@@ -778,7 +715,8 @@ def load_argument_parser(print_help=False):
     
     parser = argparse.ArgumentParser(
         description=f'downloads bib files for the journals/proceedings of ACL anthology from {URL.ROOT.value}.',
-        epilog=f'Minimal use: python3.6 aclanthology_bibfiles_downloader.py -o <output_path>\n--> Extract all bib files into <output_path>/bibs/.')
+        epilog=f'Minimal use: python3 aclanthology_bibfiles_downloader.py -o <output_path>'
+               f' --> Extracts all bib files into <output_path>/bibs/.')
         
     if print_help:
         parser.print_help()
@@ -787,9 +725,11 @@ def load_argument_parser(print_help=False):
         parser.add_argument(
             '-o', dest="output_path", type=str, required=True,
             help='required argument: path for the downloaded bib files -- it will be reused if already existing; The individual bib-files will be saved in a subfolder of the given output_path called bibs/.')
+        parser.add_argument('-f', dest="reformat_bibs", action="store_true",
+            help="optional argument for additional formatting of the bib-entries. If set, reformatting is done: the quoted values will be replaced with curly braces, the title with doubled curly braces. See code for more details.")
         parser.add_argument(
-            '-d', dest="delete_overview_files", type=str, default="False",
-            help='whether to keep the intermediate overview file (if False (default): keep it in a subfolder called "' + LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value + '", else they will be deleted as soon as possible)')
+            '-k', dest="keep_overview_files", action="store_true",
+            help='optional argument; if set, the intermediate overview files will be kept in a subfolder called "' + LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value + '"; otherwise they will be deleted as soon as possible.')
         parser.add_argument(
             '-l', dest="log_file", type=str, default="download.log",
             help='name for the log-file; default: download.log; The file will be saved in the current output_path, thus, give only the pure file name for the log-file.')
@@ -812,15 +752,12 @@ def load_argument_parser(print_help=False):
         parser.add_argument('-I', dest="venue_idletters", default=None,
             help="optional argument for downloading bibfiles for more than one venues, format: list the letters separated by space within apostrophs, e.g. 'P J Q'")
         
-        parser.add_argument('-f', dest="reformat_bibs", type=str, default="False",
-            help="optional argument for additional formatting of the bib-entries. If False (default), no reformatting is done. Otherwise, the quoted values will be replaced with curly braces, the title with doubled curly braces. See code for more details.")
-        
     return parser
 
 logger = logging.getLogger("biblogger")
 
 
-def run_download_acl_bibs():
+def run_download_acl_bibs(args_raw:List):
     #LOG
     #logger = logging.getLogger("biblogger")
     #logger.setLevel(logging.DEBUG)
@@ -828,24 +765,16 @@ def run_download_acl_bibs():
     logger.setLevel(logging.INFO)
     logger.addHandler(logging.StreamHandler())
     
-    args_raw = sys.argv
-    
-    if len(args_raw) < 2:
-        load_argument_parser(print_help=True)
-        sys.exit(1)
-    
     argparser = load_argument_parser()
-    args = argparser.parse_args()
+    args = argparser.parse_args(args_raw)
     
     output_path = args.output_path  # new files
     output_path = __normalize_path_end(output_path)
     
-    delete_overview_files = args.delete_overview_files
-    delete_overview_files = False if delete_overview_files == "False" else True
+    keep_overview_files = args.keep_overview_files
     
     concatenated_filename = args.concatenated_file
     reformat_bibs = args.reformat_bibs
-    reformat_bibs = False if reformat_bibs == "False" else True
     
     logfile = args.log_file
     logpath = output_path
@@ -874,51 +803,32 @@ def run_download_acl_bibs():
         if RESTRICTIONS.VENUES.value in restrictions_dict:
             msg_restriction_venues = f"Downloading bibs from the venue(s) with url-letter(s): {restrictions_dict[RESTRICTIONS.VENUES.value]}"
     
-    msg_reformat = "Reformatting bib entries." if reformat_bibs is True else "Keeping bib entries as downloaded."
+    msg_reformat = "Reformatting bib entries." if reformat_bibs else "Keeping bib entries as downloaded."
     msg_concat = f"Output bib-files will be concatenated and saved in '{output_path}{concatenated_filename}' additionally to the files in subfolder '{LOCAL.OUTPUT_SUBFOLDER_BIBS.value}'." if concatenated_filename else f"Output bib-files are saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_BIBS.value}'."
-    msg_keepov = f"Temporary files will be removed at the end of the downloading process." if delete_overview_files else f"The overview files will be saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value}'"
+    msg_keepov = f"The overview files will be saved in subfolder '{LOCAL.OUTPUT_SUBFOLDER_VOLUMEOVERVIEW.value}'" if keep_overview_files else "Temporary files will be removed at the end of the downloading process."
     msg = f"{msg_output}\n- {msg_restriction_years}\n- {msg_restriction_venues}\n- {msg_reformat}\n- {msg_concat}\n- {msg_keepov}\n\n"
     
     logger.log(logging.INFO, msg)
     
     #RUN DOWNLOAD PROCESS
-    main_download_acl_bibs(output_path, delete_overviews=delete_overview_files, reformat_bibs=reformat_bibs, concatenated_filename=concatenated_filename, restrictions=restrictions_dict)
+    main_download_acl_bibs(output_path,
+                           keep_overviews=keep_overview_files,
+                           reformat_bibs=reformat_bibs,
+                           concatenated_filename=concatenated_filename,
+                           restrictions=restrictions_dict)
     
     logger.log(logging.INFO, "(DONE)")
 
-
-def run_reformat_local_bib():
-    
-    
-        # ("../outputs/outputs_1960-1969/bibs/C65-1.bib", "../outputs/outputs_1960-1969/bibs/C65-1_reformatted.bib")
-    local_bibs = [
-        ("../outputs/outputs_1960-1969/all_1960-1969.bib", "../outputs/outputs_1960-1969/all_1960-1969_reformatted.bib") ,
-        ("../outputs/outputs_1970-1979/all_1970-1979.bib", "../outputs/outputs_1970-1979/all_1970-1979_reformatted.bib"),
-        ("../outputs/outputs_1980-1989/all_1980-1989.bib", "../outputs/outputs_1980-1989/all_1980-1989_reformatted.bib"),
-        ("../outputs/outputs_1990-1999/all_1990-1999.bib", "../outputs/outputs_1990-1999/all_1990-1999_reformatted.bib"),
-        ("../outputs/outputs_2000-2009/all_2000-2009.bib", "../outputs/outputs_2000-2009/all_2000-2009_reformatted.bib"),
-        ("../outputs/outputs_2010-2019/all_2010-2019.bib", "../outputs/outputs_2010-2019/all_2010-2019_reformatted.bib")
-    ]
-        
-    for bib_in, bib_out in local_bibs:
-        print(f"reformatting bib: '{bib_in}' to '{bib_out}'")
-        main_reformat_local_bib(bib_in, bib_out)
-    
-    #concatenate reformatted files to
-    output_path = "../outputs/"
-    concatenated_bibfile = "all_1960-2019_reformatted.bib"
-    print(f"Concatenate all reformatted bibs to '{output_path+concatenated_bibfile}'")
-    list_of_input_bibfilenames = [item[1] for item in local_bibs]
-    __concatenate_bib_files(list_of_input_bibfilenames, output_path, concatenated_bibfile)
-    
 
 if __name__ == "__main__":
     
     assert sys.version_info >= (3, 6), "Use Python 3.6 or later"
     
-    args = sys.argv
-    if len(args) == 2 and args[1] == "-r":
-        run_reformat_local_bib()
-    else:
-        run_download_acl_bibs()
+    args_raw = sys.argv
+    
+    if len(args_raw) < 2:
+        load_argument_parser(print_help=True)
+        sys.exit(1)
+        
+    run_download_acl_bibs(args_raw[1:])
     
