@@ -13,6 +13,8 @@ The list of volumes is accessable from this URL: <https://www.aclweb.org/antholo
 
 The downloaded files with the bib-entries for each volume can be imported into a reference management software (e.g. JabRef).
 
+(Note that the current website of the ACL-Anthology will be generated with https://github.com/acl-org/acl-anthology.)
+
 ## Prerequisites
 
 Use at least **python 3.6** .
