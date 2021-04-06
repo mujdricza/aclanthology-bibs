@@ -22,7 +22,7 @@ Options:
 
 
 Author: emm (mujdricza@cl.uni-heidelberg.de)
-Last Version: 20210228 (previous versions: 20191209, 20191201, 20190203, 20180921, 20180524, ...)
+Last Version: 20210406 (previous versions: 20210228, 20191209, 20191201, 20190203, 20180921, 20180524, ...)
 
 Licence: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
@@ -515,6 +515,11 @@ def __reformat_entry(lines_of_entry, reformat_entry_key_emm):
     
     for line in lines_of_entry:  # lines are rstripped already
         matched = False
+        
+        # handle month information explicitely: take it as it is
+        if line.strip().startswith("month"):
+            reformatted_lines.append(line)
+            matched = True
         
         #matching a line with the whole attribute-value pair
         match = BIB.ATTRIBUTEVALUE_PATTERN.value.match(line)

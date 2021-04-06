@@ -86,6 +86,9 @@ Eva Mujdricza-Maydt (mujdricza@cl.uni-heidelberg.de, me.levelek@gmx.de)
 
 ## Verions
 
+- V20210406
+  * fixed month reformatting (complex month information won't be reformatting any more, e.g. `month = apr # " 30 - " # may # " 1",`)
+  
 - V20210228
   * boolean arguments:
      * argument for keeping overview files 
